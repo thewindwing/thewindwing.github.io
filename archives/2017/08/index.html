@@ -8,7 +8,7 @@
 
 <title>
   
-    Archive: 2017/8
+    归档: 2017/8
   
 </title>
 
@@ -78,21 +78,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">Category</a>
+                <a href="javascript:;">分类</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
+                <a href="javascript:;">标签</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
+                <a href="javascript:;">归档</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">3</span></li></ul>
               </li>
             
@@ -230,8 +230,9 @@
 <p><br></p>
 </li>
 </ul>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   his.name=name;</div><div class="line">   <span class="keyword">this</span>.age=age;</div><div class="line"> &#125;;</div><div class="line">&gt; Person.prototype.singing=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div></pre></td></tr></table></figure>
-<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">   <span class="keyword">this</span>.name=name;</div><div class="line">   <span class="keyword">this</span>.age=age;</div><div class="line">&#125;;</div><div class="line">Person.prototype.singing=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  	<span class="built_in">console</span>.log(<span class="string">'you are my super star...'</span>);</div><div class="line">&#125;;	</div><div class="line"><span class="keyword">var</span> child1=<span class="keyword">new</span> Person(<span class="string">'lily'</span>,<span class="number">18</span>);</div><div class="line">child1.singing();</div></pre></td></tr></table></figure>
+<h6 id="原型链查找机制"><a href="#原型链查找机制" class="headerlink" title="原型链查找机制"></a>原型链查找机制</h6><pre><code>![Prototype-chain](/../img/Prototype-chain.png)
+</code></pre><h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
 <li><p><em>原型对象–prototype</em></p>
 <ul>
 <li><p>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</p>
