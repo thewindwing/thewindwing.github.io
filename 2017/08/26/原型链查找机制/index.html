@@ -12,16 +12,16 @@
   
 </title>
 
-<meta name="description" content="date: 2015-05-04 23:29:59 tags:   原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.protot">
+<meta name="description" content="date: 2015-05-04 23:29:59     原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.prototype.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对象属性的搜索访问机制">
 <meta property="og:url" content="http://yoursite.com/2017/08/26/原型链查找机制/index.html">
 <meta property="og:site_name" content="Wing">
-<meta property="og:description" content="date: 2015-05-04 23:29:59 tags:   原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.protot">
-<meta property="og:updated_time" content="2017-08-26T16:11:16.821Z">
+<meta property="og:description" content="date: 2015-05-04 23:29:59     原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.prototype.">
+<meta property="og:updated_time" content="2017-08-26T16:22:30.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象属性的搜索访问机制">
-<meta name="twitter:description" content="date: 2015-05-04 23:29:59 tags:   原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.protot">
+<meta name="twitter:description" content="date: 2015-05-04 23:29:59     原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.prototype.">
 
 
   <link rel="alternative" href="/atom.xml" title="Wing" type="application/atom+xml">
@@ -82,21 +82,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
+                <a href="javascript:;">Category</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">Tag</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
+                <a href="javascript:;">Archive</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">3</span></li></ul>
               </li>
             
@@ -169,7 +169,8 @@
   </div>
   <div class="article-entry">
     <p>date: 2015-05-04 23:29:59</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>  <br></p>
+<hr>
+<p>  <br></p>
 <h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><ul>
 <li><p>当你访问对象的某个成员时：</p>
 <ul>
@@ -182,9 +183,17 @@
 <p><br></p>
 </li>
 </ul>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><p><code>javascript
- hexo new &quot;My New Post&quot;</code></p>
-<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><pre><code>&gt; function Person(){
+&gt;   this.name=name;
+&gt;   this.age=age;
+&gt; };
+&gt; Person.prototype.singing=function(){
+&gt;   console.log(&apos;you are my super star...&apos;);
+&gt; };
+
+&gt; var child1=new Person(&apos;lily&apos;,18);
+&gt; 
+</code></pre><h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
 <li><p><em>原型对象–prototype</em></p>
 <ul>
 <li><p>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</p>
@@ -208,7 +217,7 @@
   <footer class="article-footer">
     
   <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="Attribution-ShareAlike">
       <img src="/images/cc/cc.png">
       
           <img src="/images/cc/by.png">
@@ -216,7 +225,7 @@
           <img src="/images/cc/sa.png">
       
       <span>
-        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       </span>
     </a>
   </div>

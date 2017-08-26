@@ -78,21 +78,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
+                <a href="javascript:;">Category</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">Tag</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
+                <a href="javascript:;">Archive</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">3</span></li></ul>
               </li>
             
@@ -210,7 +210,8 @@
       <div class="article-entry">
         
           <p>date: 2015-05-04 23:29:59</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>  <br></p>
+<hr>
+<p>  <br></p>
 <h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><ul>
 <li><p>当你访问对象的某个成员时：</p>
 <ul>
@@ -223,9 +224,17 @@
 <p><br></p>
 </li>
 </ul>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><p><code>javascript
- hexo new &quot;My New Post&quot;</code></p>
-<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><pre><code>&gt; function Person(){
+&gt;   this.name=name;
+&gt;   this.age=age;
+&gt; };
+&gt; Person.prototype.singing=function(){
+&gt;   console.log(&apos;you are my super star...&apos;);
+&gt; };
+
+&gt; var child1=new Person(&apos;lily&apos;,18);
+&gt; 
+</code></pre><h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
 <li><p><em>原型对象–prototype</em></p>
 <ul>
 <li><p>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</p>
