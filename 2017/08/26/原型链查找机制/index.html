@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/26/原型链查找机制/index.html">
 <meta property="og:site_name" content="Wing">
 <meta property="og:description" content="date: 2015-05-04 23:29:59     原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.prototype.">
-<meta property="og:updated_time" content="2017-08-26T16:38:39.513Z">
+<meta property="og:updated_time" content="2017-08-26T16:40:45.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象属性的搜索访问机制">
 <meta name="twitter:description" content="date: 2015-05-04 23:29:59     原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.prototype.">
@@ -183,7 +183,7 @@
 <p><br></p>
 </li>
 </ul>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><pre><code>```
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><pre><code>```bash
 function Person(){
 &gt;   this.name=name;
 &gt;   this.age=age;
