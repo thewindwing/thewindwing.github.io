@@ -78,21 +78,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">類別</a>
+                <a href="javascript:;">分类</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">標籤</a>
+                <a href="javascript:;">标签</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">彙整</a>
+                <a href="javascript:;">归档</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">3</span></li></ul>
               </li>
             
@@ -191,7 +191,7 @@
     <div class="post-list-item article">
       <h3 class="article-header">
         <a href="/2017/08/26/原型链查找机制/" >
-  1
+  对象属性的搜索访问机制
 </a>
 
       </h3>
@@ -210,17 +210,39 @@
       <div class="article-entry">
         
           <p>date: 2015-05-04 23:29:59</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><h1 id="对象属性的搜索访问机制"><a href="#对象属性的搜索访问机制" class="headerlink" title="对象属性的搜索访问机制"></a>对象属性的搜索访问机制</h1><hr>
-<h2 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h2><ul>
-<li>当你访问对象的某个成员时：<ul>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>  <br></p>
+<h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><ul>
+<li><p>当你访问对象的某个成员时：</p>
+<ul>
 <li>现在自己身上找，找到即返回；</li>
 <li>找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回；</li>
 <li>找不到，则沿着原型链继续查找，直到Object.prototype；</li>
-<li>如果还找不到，则沿着Object.prototype.__proto__继续查找；</li>
-<li>这时发现Object.prototype.__proto__指针指向null，则停止查找，返回undefined。<h2 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h2></li>
+<li>如果还找不到，则沿着Object.prototype.__proto__继续查找；    </li>
+<li>这时发现Object.prototype.__proto__指针指向null，则停止查找，返回undefined。</li>
+</ul>
+<p><br></p>
+</li>
+</ul>
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><p><code>javascript
+ hexo new &quot;My New Post&quot;</code></p>
+<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
+<li><p><em>原型对象–prototype</em></p>
+<ul>
+<li><p>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</p>
+</li>
+<li><p>一般每个实例对象的方法都定义在这个对象的原型上面，如</p>
+<blockquote>
+<p>Array.prototype.push;</p>
+<p>var arr=new Array();</p>
+<p>console.log(arr.push===Array.prototype.push);  //true</p>
+</blockquote>
+</li>
 </ul>
 </li>
-<li>原型对象</li>
+<li><p><em>__proto__</em></p>
+<pre><code>- 每一个对象都有一个\_\_proto__属性（这是一个非标准属性），指向原型对象；
+- 在一些主流浏览器中可以通过对象的\_\_proto__属性访问实例对象的原型对象；
+</code></pre></li>
 </ul>
 
         
