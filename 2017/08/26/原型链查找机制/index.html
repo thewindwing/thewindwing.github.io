@@ -18,10 +18,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/26/原型链查找机制/index.html">
 <meta property="og:site_name" content="Wing">
 <meta property="og:description" content="date: 2015-05-04 23:29:59     原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.prototype.">
-<meta property="og:updated_time" content="2017-08-26T16:59:44.983Z">
+<meta property="og:image" content="http://yoursite.com/2017/08/26/img/Prototype-chain.png">
+<meta property="og:updated_time" content="2017-08-26T17:02:00.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象属性的搜索访问机制">
 <meta name="twitter:description" content="date: 2015-05-04 23:29:59     原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.prototype.">
+<meta name="twitter:image" content="http://yoursite.com/2017/08/26/img/Prototype-chain.png">
 
 
   <link rel="alternative" href="/atom.xml" title="Wing" type="application/atom+xml">
@@ -82,21 +84,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
+                <a href="javascript:;">類別</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">標籤</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
+                <a href="javascript:;">彙整</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">3</span></li></ul>
               </li>
             
@@ -183,9 +185,11 @@
 <p><br></p>
 </li>
 </ul>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">   <span class="keyword">this</span>.name=name;</div><div class="line">   <span class="keyword">this</span>.age=age;</div><div class="line">&#125;;</div><div class="line">Person.prototype.singing=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  	<span class="built_in">console</span>.log(<span class="string">'you are my super star...'</span>);</div><div class="line">&#125;;	</div><div class="line"><span class="keyword">var</span> child1=<span class="keyword">new</span> Person(<span class="string">'lily'</span>,<span class="number">18</span>);</div><div class="line">child1.singing();</div></pre></td></tr></table></figure>
-<h6 id="原型链查找机制"><a href="#原型链查找机制" class="headerlink" title="原型链查找机制"></a>原型链查找机制</h6><pre><code>![Prototype-chain](/../img/Prototype-chain.png)
-</code></pre><h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><blockquote>
+<p>function Person(name,age){<br>        this.name=name;<br>        this.age=age;<br>     };<br>     Person.prototype.singing=function(){<br>        console.log(‘you are my super star…’);<br>     };<br>     var child1=new Person(‘lily’,18);<br>     child1.singing();    </p>
+</blockquote>
+<h6 id="原型链查找机制"><a href="#原型链查找机制" class="headerlink" title="原型链查找机制"></a>原型链查找机制</h6><p><img src="../img/Prototype-chain.png" alt="Prototype-chain"></p>
+<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
 <li><p><em>原型对象–prototype</em></p>
 <ul>
 <li><p>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</p>
@@ -210,7 +214,7 @@
   <footer class="article-footer">
     
   <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="姓名標示-相同方式分享">
       <img src="/images/cc/cc.png">
       
           <img src="/images/cc/by.png">
@@ -218,7 +222,7 @@
           <img src="/images/cc/sa.png">
       
       <span>
-        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+        本著作係採用創用 CC 姓名標示-相同方式分享 4.0 國際 授權條款授權.
       </span>
     </a>
   </div>
