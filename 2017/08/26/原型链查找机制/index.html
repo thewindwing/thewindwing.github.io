@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/26/原型链查找机制/index.html">
 <meta property="og:site_name" content="Wing">
 <meta property="og:description" content="date: 2015-05-04 23:29:59     原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.prototype.">
-<meta property="og:updated_time" content="2017-08-26T16:42:10.486Z">
+<meta property="og:updated_time" content="2017-08-26T16:45:09.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象属性的搜索访问机制">
 <meta name="twitter:description" content="date: 2015-05-04 23:29:59     原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.prototype.">
@@ -183,17 +183,8 @@
 <p><br></p>
 </li>
 </ul>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><pre><code> &apos;function Person(){
-   this.name=name;&apos;
-&gt;   this.age=age;
-&gt; };
-&gt; Person.prototype.singing=function(){
-&gt;   console.log(&apos;you are my super star...&apos;);
-&gt; };
-
-&gt; var child1=new Person(&apos;lily&apos;,18);
-&gt;
-</code></pre><h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   his.name=name;</div><div class="line">   <span class="keyword">this</span>.age=age;</div><div class="line"> &#125;;</div><div class="line">&gt; Person.prototype.singing=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div></pre></td></tr></table></figure>
+<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
 <li><p><em>原型对象–prototype</em></p>
 <ul>
 <li><p>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</p>
