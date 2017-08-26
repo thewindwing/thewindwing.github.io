@@ -8,7 +8,7 @@
 
 <title>
   
-    彙整: 2017
+    归档: 2017
   
 </title>
 
@@ -78,21 +78,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">類別</a>
+                <a href="javascript:;">分类</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">標籤</a>
+                <a href="javascript:;">标签</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">彙整</a>
+                <a href="javascript:;">归档</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">3</span></li></ul>
               </li>
             
@@ -230,11 +230,23 @@
 <p><br></p>
 </li>
 </ul>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt; function Person()&#123;</div><div class="line">   this.name=name;</div><div class="line">   this.age=age;</div><div class="line"> &#125;;</div><div class="line">&gt; Person.prototype.singing=function()&#123;</div><div class="line">&gt;   console.log(&apos;you are my super star...&apos;);</div><div class="line">&gt; &#125;;</div><div class="line"></div><div class="line">&gt; var child1=new Person(&apos;lily&apos;,18);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
-<li><em>原型对象–prototype</em><ul>
-<li>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</li>
-<li>一般每个实例对象的方法都定义在这个对象的原型上面，如<blockquote>
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><pre><code>`function Person(){
+&gt;   this.name=name;
+&gt;   this.age=age;
+&gt; };
+&gt; Person.prototype.singing=function(){
+&gt;   console.log(&apos;you are my super star...&apos;);
+&gt; };
+
+&gt; var child1=new Person(&apos;lily&apos;,18);
+&gt;` 
+</code></pre><h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
+<li><p><em>原型对象–prototype</em></p>
+<ul>
+<li><p>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</p>
+</li>
+<li><p>一般每个实例对象的方法都定义在这个对象的原型上面，如</p>
+<blockquote>
 <p>Array.prototype.push;</p>
 <p>var arr=new Array();</p>
 <p>console.log(arr.push===Array.prototype.push);  //true</p>

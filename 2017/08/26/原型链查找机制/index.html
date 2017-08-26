@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/26/原型链查找机制/index.html">
 <meta property="og:site_name" content="Wing">
 <meta property="og:description" content="date: 2015-05-04 23:29:59     原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.prototype.">
-<meta property="og:updated_time" content="2017-08-26T16:29:15.965Z">
+<meta property="og:updated_time" content="2017-08-26T16:37:47.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象属性的搜索访问机制">
 <meta name="twitter:description" content="date: 2015-05-04 23:29:59     原理： 当你访问对象的某个成员时：  现在自己身上找，找到即返回； 找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回； 找不到，则沿着原型链继续查找，直到Object.prototype； 如果还找不到，则沿着Object.prototype.__proto__继续查找；     这时发现Object.prototype.">
@@ -82,21 +82,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">類別</a>
+                <a href="javascript:;">分类</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">標籤</a>
+                <a href="javascript:;">标签</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">彙整</a>
+                <a href="javascript:;">归档</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">3</span></li></ul>
               </li>
             
@@ -183,11 +183,23 @@
 <p><br></p>
 </li>
 </ul>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt; function Person()&#123;</div><div class="line">   this.name=name;</div><div class="line">   this.age=age;</div><div class="line"> &#125;;</div><div class="line">&gt; Person.prototype.singing=function()&#123;</div><div class="line">&gt;   console.log(&apos;you are my super star...&apos;);</div><div class="line">&gt; &#125;;</div><div class="line"></div><div class="line">&gt; var child1=new Person(&apos;lily&apos;,18);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
-<li><em>原型对象–prototype</em><ul>
-<li>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</li>
-<li>一般每个实例对象的方法都定义在这个对象的原型上面，如<blockquote>
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><pre><code>`function Person(){
+&gt;   this.name=name;
+&gt;   this.age=age;
+&gt; };
+&gt; Person.prototype.singing=function(){
+&gt;   console.log(&apos;you are my super star...&apos;);
+&gt; };
+
+&gt; var child1=new Person(&apos;lily&apos;,18);
+&gt;` 
+</code></pre><h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
+<li><p><em>原型对象–prototype</em></p>
+<ul>
+<li><p>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</p>
+</li>
+<li><p>一般每个实例对象的方法都定义在这个对象的原型上面，如</p>
+<blockquote>
 <p>Array.prototype.push;</p>
 <p>var arr=new Array();</p>
 <p>console.log(arr.push===Array.prototype.push);  //true</p>
@@ -206,7 +218,7 @@
   <footer class="article-footer">
     
   <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="姓名標示-相同方式分享">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
       <img src="/images/cc/cc.png">
       
           <img src="/images/cc/by.png">
@@ -214,7 +226,7 @@
           <img src="/images/cc/sa.png">
       
       <span>
-        本著作係採用創用 CC 姓名標示-相同方式分享 4.0 國際 授權條款授權.
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
       </span>
     </a>
   </div>
