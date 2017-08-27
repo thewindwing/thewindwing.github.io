@@ -8,13 +8,13 @@
 
 <title>
   
-    Wing
+    彙整: 2015/5
   
 </title>
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Wing">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2015/05/index.html">
 <meta property="og:site_name" content="Wing">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Wing">
@@ -149,171 +149,15 @@
 
   
   
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/08/26/2/" >
-  
-</a>
-
-      </h3>
+    
       
-
-      <div class="article-info">
-        <a href="/2017/08/26/2/"><span class="article-date">
-  2017-08-26
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>title: 2<br>date: 2015-05-04 23:29:59<br>tags:</p>
-
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/08/26/原型链查找机制/" >
-  对象属性的搜索访问机制
-</a>
-
-      </h3>
       
-
-      <div class="article-info">
-        <a href="/2017/08/26/原型链查找机制/"><span class="article-date">
-  2017-08-26
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>date: 2015-05-04 23:29:59</p>
-<p>  <br></p>
-<h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><ul>
-<li><p>当你访问对象的某个成员时：</p>
-<ul>
-<li>现在自己身上找，找到即返回；</li>
-<li>找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回；</li>
-<li>找不到，则沿着原型链继续查找，直到Object.prototype；</li>
-<li>如果还找不到，则沿着Object.prototype.__proto__继续查找；    </li>
-<li>这时发现Object.prototype.__proto__指针指向null，则停止查找，返回undefined。</li>
-</ul>
-<p><br></p>
-</li>
-</ul>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><blockquote>
-<p>function Person(name,age){<br>        this.name=name;<br>        this.age=age;<br>     };<br>     Person.prototype.singing=function(){<br>        console.log(‘you are my super star…’);<br>     };<br>     var child1=new Person(‘lily’,18);<br>     child1.singing();    </p>
-</blockquote>
-<h6 id="原型链查找机制"><a href="#原型链查找机制" class="headerlink" title="原型链查找机制"></a>原型链查找机制</h6><p><img src="../img/Prototype-chain.png" alt="Prototype-chain"></p>
-<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
-<li><p><em>原型对象–prototype</em></p>
-<ul>
-<li><p>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</p>
-</li>
-<li><p>一般每个实例对象的方法都定义在这个对象的原型上面，如</p>
-<blockquote>
-<p>Array.prototype.push;</p>
-<p>var arr=new Array();</p>
-<p>console.log(arr.push===Array.prototype.push);  //true</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><em>__proto__</em><ul>
-<li>每一个对象都有一个__proto__属性（这是一个非标准属性），指向原型对象；</li>
-<li>在一些主流浏览器中可以通过对象的__proto__属性访问实例对象的原型对象；</li>
-</ul>
-</li>
-</ul>
-
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/08/23/hello-world/" >
-  你好World
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/08/23/hello-world/"><span class="article-date">
-  2017-08-23
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo,    <br>  you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<blockquote>
-<p>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
-</blockquote>
-<pre><code>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-</code></pre><p> Vestibulum enim wisi, viverra nec</p>
-<p><img src="/path/to/img.jpg" alt="Alt text"></p>
-<p> This is <a href="http://example.com/" title="Title" target="_blank" rel="external">an example</a> inline link.</p>
-<pre><code>*&quot;Optional Title Here&quot;*
-</code></pre><p>bulum <code>enim</code></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="/archives/2015" class="archive-year">2015</a></h1>
+        </div>
+        <div class="post-list">
+    
   
 
     <div class="post-list-item article">
@@ -385,8 +229,6 @@
       </div>
     </div>
 
-  
-    </div>
   
 
 
