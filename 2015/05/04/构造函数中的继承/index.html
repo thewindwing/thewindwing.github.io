@@ -8,16 +8,20 @@
 
 <title>
   
-    归档: 2017
+    构造函数中的继承
   
 </title>
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wing">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+<meta name="description" content="原因： 当两个或多个构造函数具有很多相同的属性和方法时，我们就抽象出一个父类（构造函数）来写公共的属性和方法。  具体做法： 父构造函数：  公共的属性：写到父构造函数内 公共的方法：写到父构造函数的原型对象内   子构造函数：  属性继承：用父.call方法改变this指向来继承 方法继承： 原型对象拷贝继承 利用原型链继承      实例解析： function Teacher(name,ag">
+<meta property="og:type" content="article">
+<meta property="og:title" content="构造函数中的继承">
+<meta property="og:url" content="http://yoursite.com/2015/05/04/构造函数中的继承/index.html">
 <meta property="og:site_name" content="Wing">
+<meta property="og:description" content="原因： 当两个或多个构造函数具有很多相同的属性和方法时，我们就抽象出一个父类（构造函数）来写公共的属性和方法。  具体做法： 父构造函数：  公共的属性：写到父构造函数内 公共的方法：写到父构造函数的原型对象内   子构造函数：  属性继承：用父.call方法改变this指向来继承 方法继承： 原型对象拷贝继承 利用原型链继承      实例解析： function Teacher(name,ag">
+<meta property="og:updated_time" content="2017-08-27T02:37:02.451Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wing">
+<meta name="twitter:title" content="构造函数中的继承">
+<meta name="twitter:description" content="原因： 当两个或多个构造函数具有很多相同的属性和方法时，我们就抽象出一个父类（构造函数）来写公共的属性和方法。  具体做法： 父构造函数：  公共的属性：写到父构造函数内 公共的方法：写到父构造函数的原型对象内   子构造函数：  属性继承：用父.call方法改变this指向来继承 方法继承： 原型对象拷贝继承 利用原型链继承      实例解析： function Teacher(name,ag">
 
 
   <link rel="alternative" href="/atom.xml" title="Wing" type="application/atom+xml">
@@ -145,100 +149,93 @@
       
         <div style="max-width: 1000px">
       
-          
-
+          <article id="post-构造函数中的继承" class="article article-type-post">
+  
+    <h1 class="article-header">
+      构造函数中的继承
+    </h1>
   
   
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2017" class="archive-year">2017</a></h1>
-        </div>
-        <div class="post-list">
-    
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/08/26/2/" >
-  
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/08/26/2/"><span class="article-date">
-  2017-08-26
+  <div class="article-info">
+    <span class="article-date">
+  2015-05-04
 </span>
-</a>
-        
 
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>title: 2<br>date: 2015-05-04 23:29:59<br>tags:</p>
-
-        
-      </div>
-    </div>
-
-  
-
-  
-  
     
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/08/23/hello-world/" >
-  你好World
-</a>
+    
 
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/08/23/hello-world/"><span class="article-date">
-  2017-08-23
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo,    <br>  you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<blockquote>
-<p>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+  </div>
+  <div class="article-entry">
+    <h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><ul>
+<li>当两个或多个构造函数具有很多相同的属性和方法时，我们就抽象出一个父类（构造函数）来写公共的属性和方法。</li>
+</ul>
+<h3 id="具体做法："><a href="#具体做法：" class="headerlink" title="具体做法："></a>具体做法：</h3><ul>
+<li><p>父构造函数：</p>
+<ul>
+<li>公共的属性：写到父构造函数内</li>
+<li>公共的方法：写到父构造函数的原型对象内</li>
+</ul>
+</li>
+<li><p>子构造函数：</p>
+<ul>
+<li>属性继承：用父.call方法改变this指向来继承</li>
+<li>方法继承：<ul>
+<li>原型对象拷贝继承</li>
+<li>利用原型链继承</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="实例解析："><a href="#实例解析：" class="headerlink" title="实例解析："></a>实例解析：</h3><blockquote>
+<p>function Teacher(name,age){<br>      &nbsp;&nbsp;this.name=name;<br>      &nbsp;&nbsp;this.age=age;<br>      &nbsp;&nbsp;this.speaking=function(){<br>         &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘speaking’);}<br>      &nbsp;&nbsp;this.teaching=function(){<br>         &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘teaching’);}<br>    &nbsp;&nbsp;} </p>
+<p>function Student(name,age){<br>      &nbsp;&nbsp;this.name=name;<br>      &nbsp;&nbsp;this.age=age;<br>      &nbsp;&nbsp;this.speaking=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘speaking’);}<br>      &nbsp;&nbsp;this.studying=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘studying’);}<br>  } </p>
 </blockquote>
-<pre><code>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-</code></pre><p> Vestibulum enim wisi, viverra nec</p>
-<p><img src="/path/to/img.jpg" alt="Alt text"></p>
-<p> This is <a href="http://example.com/" title="Title" target="_blank" rel="external">an example</a> inline link.</p>
-<pre><code>*&quot;Optional Title Here&quot;*
-</code></pre><p>bulum <code>enim</code></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<p>上面两个构造函数具有一些相同的属性和方法，抽象出一个公共的构造函数</p>
+<blockquote>
+<p>function Person(name, age) {<br>    &nbsp;&nbsp;this.name = name<br>    &nbsp;&nbsp;this.age = age<br>  }<br>  Person.prototype.speaking = function () {<br>    &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘speaking’);<br>  }</p>
+</blockquote>
+<p>Teacher和Student简化为：</p>
+<blockquote>
+<p>function Teacher(name,age){  //属性继承<br>  Person.call(this,name,age);<br>      &nbsp;&nbsp;this.teaching=function(){<br>         &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘teaching’);<br>           }<br>    }<br>  extend(Teacher.prototype,Person.prototype);//方法继承–拷贝继承</p>
+<p>function Student(name,age){<br>      &nbsp;&nbsp;Person.call(this,name,age);<br>      &nbsp;&nbsp;this.studying=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘studying’);}<br>  }<br>  extend(Student.prototype,Person.prototype);//方法继承–拷贝继承</p>
+</blockquote>
+<p>拷贝继承封装函数：</p>
+<blockquote>
+<p>function extend(target,source){<br>    &nbsp;&nbsp;for(var key in source){<br>        &nbsp;&nbsp;&nbsp;&nbsp;target[key]=source[key];}<br>  }</p>
+</blockquote>
+<p><strong>其实实战中最常用的方法继承是原型链继承</strong></p>
+<blockquote>
+<p>Teacher.prototype=new Person();<br>  Study.prototype=new Person();</p>
+<p>var teacher=new Teacher(‘lily’,18);<br>teacher.speaking();</p>
+</blockquote>
+<p>原型链继承的详析看 <strong>构造函数继承</strong> 章节</p>
 
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
         
-      </div>
-    </div>
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
 
-  
+
+    
+
+  </footer>
+</article>
+
 
 
 

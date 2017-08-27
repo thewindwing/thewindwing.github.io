@@ -8,7 +8,7 @@
 
 <title>
   
-    彙整
+    归档
   
 </title>
 
@@ -78,22 +78,22 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">類別</a>
+                <a href="javascript:;">分类</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">標籤</a>
+                <a href="javascript:;">标签</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">彙整</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">1</span></li></ul>
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">7</span></li></ul>
               </li>
             
           
@@ -196,79 +196,6 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2017/08/26/原型链查找机制/" >
-  对象属性的搜索访问机制
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/08/26/原型链查找机制/"><span class="article-date">
-  2017-08-26
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>date: 2015-05-04 23:29:59</p>
-<p>  <br></p>
-<h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><ul>
-<li><p>当你访问对象的某个成员时：</p>
-<ul>
-<li>现在自己身上找，找到即返回；</li>
-<li>找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回；</li>
-<li>找不到，则沿着原型链继续查找，直到Object.prototype；</li>
-<li>如果还找不到，则沿着Object.prototype.__proto__继续查找；    </li>
-<li>这时发现Object.prototype.__proto__指针指向null，则停止查找，返回undefined。</li>
-</ul>
-<p><br></p>
-</li>
-</ul>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><blockquote>
-<p>function Person(name,age){<br>        this.name=name;<br>        this.age=age;<br>     };<br>     Person.prototype.singing=function(){<br>        console.log(‘you are my super star…’);<br>     };<br>     var child1=new Person(‘lily’,18);<br>     child1.singing();    </p>
-</blockquote>
-<h6 id="原型链查找机制"><a href="#原型链查找机制" class="headerlink" title="原型链查找机制"></a>原型链查找机制</h6><p><img src="../img/Prototype-chain.png" alt="Prototype-chain"></p>
-<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
-<li><p><em>原型对象–prototype</em></p>
-<ul>
-<li><p>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</p>
-</li>
-<li><p>一般每个实例对象的方法都定义在这个对象的原型上面，如</p>
-<blockquote>
-<p>Array.prototype.push;</p>
-<p>var arr=new Array();</p>
-<p>console.log(arr.push===Array.prototype.push);  //true</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><em>__proto__</em><ul>
-<li>每一个对象都有一个__proto__属性（这是一个非标准属性），指向原型对象；</li>
-<li>在一些主流浏览器中可以通过对象的__proto__属性访问实例对象的原型对象；</li>
-</ul>
-</li>
-</ul>
-
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
         <a href="/2017/08/23/hello-world/" >
   你好World
 </a>
@@ -330,7 +257,203 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2015/05/04/面向对象中的继承/" >
+        <a href="/2015/06/15/call、apply方法/" >
+  函数的call、apply方法
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2015/06/15/call、apply方法/"><span class="article-date">
+  2015-06-15
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2015/06/12/浏览器函数提升中的bug/" >
+  浏览器函数提升中的bug
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2015/06/12/浏览器函数提升中的bug/"><span class="article-date">
+  2015-06-12
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2015/06/10/函数的原型链/" >
+  函数原型链
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2015/06/10/函数的原型链/"><span class="article-date">
+  2015-06-10
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h4 id="每一个函数都是Function的实例"><a href="#每一个函数都是Function的实例" class="headerlink" title="每一个函数都是Function的实例"></a>每一个函数都是Function的实例</h4><blockquote>
+<p>var f1=new Function();</p>
+</blockquote>
+<h4 id="函数查找机制"><a href="#函数查找机制" class="headerlink" title="函数查找机制"></a>函数查找机制</h4><p><img src="../img/function-prototype-chain.bmp" alt="函数原型链"></p>
+<p><strong>所有函数的原型对象都指向Function.prototype，包括Function自己</strong><br>即： </p>
+<blockquote>
+<p>f1.__proto__===Function.prototype;<br>Function.__proto__===Function.prototype;</p>
+</blockquote>
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2015/06/08/函数定义方式/" >
+  函数的自定义方式
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2015/06/08/函数定义方式/"><span class="article-date">
+  2015-06-08
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h3 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h3><blockquote>
+<p>function f1(){}</p>
+<ul>
+<li>最大特性：预解析时具有函数提升</li>
+<li>实例：<br>console.log(typeof fn);//这里输出的是function，不是number<br>var f1=123;<br>function f1(){<br>console.log(‘hello’);<br>}<br>conosle.log(f1); //这里的结果是123<ul>
+<li>解析：</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>因为预解析时，同名函数和变量，函数的优先级高，与先后顺序无关。</li>
+<li>在执行阶段，因为为函f1重新复制了123，而并没调改函数f1，所以会直接跳过<code>function f1(){}</code>执行下面的代码。<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3>var f1=function(){}<ul>
+<li><h3 id="new-Function-创建函数"><a href="#new-Function-创建函数" class="headerlink" title="new Function()创建函数"></a>new Function()创建函数</h3></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2015/05/05/原型链继承/" >
+  原型链继承原理
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2015/05/05/原型链继承/"><span class="article-date">
+  2015-05-05
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h3 id="图表解析"><a href="#图表解析" class="headerlink" title="图表解析"></a>图表解析</h3><blockquote>
+<p>Teacher.prototype=new Person();<br>Study.prototype=new Person();<br>var teacher=new Teacher(‘lily’,18);<br>teacher.speaking();</p>
+</blockquote>
+<p><img src="../img/prototype-chain-inherit.bmp" alt="原型链继承"></p>
+<p>当调用speaking方法时:<br>现在teacher自己身上找，找不到则沿着原型链去原型对象（new Person）上找,<br>找到则返回，找不到继续沿着原型链找（Person.prototype）<br>找到则停止查找。</p>
+<p>teacher中即使改变speaking方法的内容，也不会影响Person中的相应speaking方法。<br>因为<code>teacher.speaking=function(){console.log(&#39;hello&#39;);}</code>只会在自己的原型对象相应的添加了一个speaking 方法。</p>
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2015/05/04/构造函数中的继承/" >
   构造函数中的继承
 </a>
 
@@ -338,7 +461,7 @@
       
 
       <div class="article-info">
-        <a href="/2015/05/04/面向对象中的继承/"><span class="article-date">
+        <a href="/2015/05/04/构造函数中的继承/"><span class="article-date">
   2015-05-04
 </span>
 </a>
@@ -371,27 +494,101 @@
 </li>
 </ul>
 <h3 id="实例解析："><a href="#实例解析：" class="headerlink" title="实例解析："></a>实例解析：</h3><blockquote>
-<p>function Teacher(name,age){<br>      this.name=name;<br>      this.age=age;<br>      this.speaking=function(){<br>         console.log(‘speaking’);<br>           }<br>      this.teaching=function(){<br>         console.log(‘teaching’);<br>           }<br>    } </p>
-<p>function Student(name,age){<br>      this.name=name;<br>      this.age=age;<br>      this.speaking=function(){<br>        console.log(‘speaking’);<br>      }<br>      this.studying=function(){<br>        console.log(‘studying’);<br>      }<br>  } </p>
+<p>function Teacher(name,age){<br>      &nbsp;&nbsp;this.name=name;<br>      &nbsp;&nbsp;this.age=age;<br>      &nbsp;&nbsp;this.speaking=function(){<br>         &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘speaking’);}<br>      &nbsp;&nbsp;this.teaching=function(){<br>         &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘teaching’);}<br>    &nbsp;&nbsp;} </p>
+<p>function Student(name,age){<br>      &nbsp;&nbsp;this.name=name;<br>      &nbsp;&nbsp;this.age=age;<br>      &nbsp;&nbsp;this.speaking=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘speaking’);}<br>      &nbsp;&nbsp;this.studying=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘studying’);}<br>  } </p>
 </blockquote>
 <p>上面两个构造函数具有一些相同的属性和方法，抽象出一个公共的构造函数</p>
 <blockquote>
-<p>function Person(name, age) {<br>    this.name = name<br>    this.age = age<br>  }<br>  Person.prototype.speaking = function () {<br>    console.log(‘speaking’);<br>  }</p>
+<p>function Person(name, age) {<br>    &nbsp;&nbsp;this.name = name<br>    &nbsp;&nbsp;this.age = age<br>  }<br>  Person.prototype.speaking = function () {<br>    &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘speaking’);<br>  }</p>
 </blockquote>
 <p>Teacher和Student简化为：</p>
 <blockquote>
-<p>function Teacher(name,age){  //属性继承<br>  Person.call(this,name,age);<br>      this.teaching=function(){<br>         console.log(‘teaching’);<br>           }<br>    }<br>  extend(Teacher.prototype,Person.prototype);//方法继承–拷贝继承</p>
-<p>function Student(name,age){<br>      Person.call(this,name,age);<br>      this.studying=function(){<br>        console.log(‘studying’);<br>      }<br>  }<br>  extend(Student.prototype,Person.prototype);//方法继承–拷贝继承</p>
+<p>function Teacher(name,age){  //属性继承<br>  Person.call(this,name,age);<br>      &nbsp;&nbsp;this.teaching=function(){<br>         &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘teaching’);<br>           }<br>    }<br>  extend(Teacher.prototype,Person.prototype);//方法继承–拷贝继承</p>
+<p>function Student(name,age){<br>      &nbsp;&nbsp;Person.call(this,name,age);<br>      &nbsp;&nbsp;this.studying=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘studying’);}<br>  }<br>  extend(Student.prototype,Person.prototype);//方法继承–拷贝继承</p>
 </blockquote>
 <p>拷贝继承封装函数：</p>
 <blockquote>
-<p>function extend(target,source){<br>    for(var key in source){<br>        target[key]=source[key];<br>    }<br>  }</p>
+<p>function extend(target,source){<br>    &nbsp;&nbsp;for(var key in source){<br>        &nbsp;&nbsp;&nbsp;&nbsp;target[key]=source[key];}<br>  }</p>
 </blockquote>
 <p><strong>其实实战中最常用的方法继承是原型链继承</strong></p>
 <blockquote>
 <p>Teacher.prototype=new Person();<br>  Study.prototype=new Person();</p>
+<p>var teacher=new Teacher(‘lily’,18);<br>teacher.speaking();</p>
 </blockquote>
 <p>原型链继承的详析看 <strong>构造函数继承</strong> 章节</p>
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2015/04/16/原型链查找机制/" >
+  对象属性的搜索访问机制
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2015/04/16/原型链查找机制/"><span class="article-date">
+  2015-04-16
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>  <br></p>
+<h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><ul>
+<li><p>当你访问对象的某个成员时：</p>
+<ul>
+<li>现在自己身上找，找到即返回；</li>
+<li>找不到，则沿着原型链向上查找，如果在上一个原型对象中找到，则返回；</li>
+<li>找不到，则沿着原型链继续查找，直到Object.prototype；</li>
+<li>如果还找不到，则沿着Object.prototype.__proto__继续查找；    </li>
+<li>这时发现Object.prototype.__proto__指针指向null，则停止查找，返回undefined。</li>
+</ul>
+<p><br></p>
+</li>
+</ul>
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><blockquote>
+<p>function Person(name,age){<br>        &nbsp;&nbsp;this.name=name;<br>        &nbsp;&nbsp;this.age=age;<br>     };</p>
+<p>Person.prototype.singing=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘you are my super star…’);<br>  };<br>var child1=new Person(‘lily’,18);<br>child1.singing();    </p>
+</blockquote>
+<h6 id="原型链查找机制"><a href="#原型链查找机制" class="headerlink" title="原型链查找机制"></a>原型链查找机制</h6><p><img src="../img/Prototype-chain.png" alt="Prototype-chain"></p>
+<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
+<li><p><em>原型对象–prototype</em></p>
+<ul>
+<li><p>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</p>
+</li>
+<li><p>一般每个实例对象的方法都定义在这个对象的原型上面，如</p>
+<blockquote>
+<p>Array.prototype.push;</p>
+<p>var arr=new Array();</p>
+<p>console.log(arr.push===Array.prototype.push);  //true</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><em>__proto__</em><ul>
+<li>每一个对象都有一个__proto__属性（这是一个非标准属性），指向原型对象；</li>
+<li>在一些主流浏览器中可以通过对象的__proto__属性访问实例对象的原型对象；</li>
+</ul>
+</li>
+</ul>
 
         
       </div>

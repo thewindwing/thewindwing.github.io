@@ -8,16 +8,22 @@
 
 <title>
   
-    归档: 2017
+    原型链继承原理
   
 </title>
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wing">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+<meta name="description" content="图表解析 Teacher.prototype=new Person();Study.prototype=new Person();var teacher=new Teacher(‘lily’,18);teacher.speaking();   当调用speaking方法时:现在teacher自己身上找，找不到则沿着原型链去原型对象（new Person）上找,找到则返回，找不到继续沿着原型链找（P">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原型链继承原理">
+<meta property="og:url" content="http://yoursite.com/2015/05/05/原型链继承/index.html">
 <meta property="og:site_name" content="Wing">
+<meta property="og:description" content="图表解析 Teacher.prototype=new Person();Study.prototype=new Person();var teacher=new Teacher(‘lily’,18);teacher.speaking();   当调用speaking方法时:现在teacher自己身上找，找不到则沿着原型链去原型对象（new Person）上找,找到则返回，找不到继续沿着原型链找（P">
+<meta property="og:image" content="http://yoursite.com/2015/05/05/img/prototype-chain-inherit.bmp">
+<meta property="og:updated_time" content="2017-08-27T03:06:10.746Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wing">
+<meta name="twitter:title" content="原型链继承原理">
+<meta name="twitter:description" content="图表解析 Teacher.prototype=new Person();Study.prototype=new Person();var teacher=new Teacher(‘lily’,18);teacher.speaking();   当调用speaking方法时:现在teacher自己身上找，找不到则沿着原型链去原型对象（new Person）上找,找到则返回，找不到继续沿着原型链找（P">
+<meta name="twitter:image" content="http://yoursite.com/2015/05/05/img/prototype-chain-inherit.bmp">
 
 
   <link rel="alternative" href="/atom.xml" title="Wing" type="application/atom+xml">
@@ -145,100 +151,55 @@
       
         <div style="max-width: 1000px">
       
-          
-
+          <article id="post-原型链继承" class="article article-type-post">
+  
+    <h1 class="article-header">
+      原型链继承原理
+    </h1>
   
   
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2017" class="archive-year">2017</a></h1>
-        </div>
-        <div class="post-list">
-    
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/08/26/2/" >
-  
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/08/26/2/"><span class="article-date">
-  2017-08-26
+  <div class="article-info">
+    <span class="article-date">
+  2015-05-05
 </span>
-</a>
-        
 
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>title: 2<br>date: 2015-05-04 23:29:59<br>tags:</p>
-
-        
-      </div>
-    </div>
-
-  
-
-  
-  
     
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/08/23/hello-world/" >
-  你好World
-</a>
+    
 
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/08/23/hello-world/"><span class="article-date">
-  2017-08-23
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo,    <br>  you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<blockquote>
-<p>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+  </div>
+  <div class="article-entry">
+    <h3 id="图表解析"><a href="#图表解析" class="headerlink" title="图表解析"></a>图表解析</h3><blockquote>
+<p>Teacher.prototype=new Person();<br>Study.prototype=new Person();<br>var teacher=new Teacher(‘lily’,18);<br>teacher.speaking();</p>
 </blockquote>
-<pre><code>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-</code></pre><p> Vestibulum enim wisi, viverra nec</p>
-<p><img src="/path/to/img.jpg" alt="Alt text"></p>
-<p> This is <a href="http://example.com/" title="Title" target="_blank" rel="external">an example</a> inline link.</p>
-<pre><code>*&quot;Optional Title Here&quot;*
-</code></pre><p>bulum <code>enim</code></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<p><img src="../img/prototype-chain-inherit.bmp" alt="原型链继承"></p>
+<p>当调用speaking方法时:<br>现在teacher自己身上找，找不到则沿着原型链去原型对象（new Person）上找,<br>找到则返回，找不到继续沿着原型链找（Person.prototype）<br>找到则停止查找。</p>
+<p>teacher中即使改变speaking方法的内容，也不会影响Person中的相应speaking方法。<br>因为<code>teacher.speaking=function(){console.log(&#39;hello&#39;);}</code>只会在自己的原型对象相应的添加了一个speaking 方法。</p>
 
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
         
-      </div>
-    </div>
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
 
-  
+
+    
+
+  </footer>
+</article>
+
 
 
 

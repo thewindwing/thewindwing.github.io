@@ -8,7 +8,7 @@
 
 <title>
   
-    彙整: 2015/5
+    归档: 2015/5
   
 </title>
 
@@ -78,22 +78,22 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">類別</a>
+                <a href="javascript:;">分类</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">標籤</a>
+                <a href="javascript:;">标签</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">彙整</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">1</span></li></ul>
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">7</span></li></ul>
               </li>
             
           
@@ -162,7 +162,46 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2015/05/04/面向对象中的继承/" >
+        <a href="/2015/05/05/原型链继承/" >
+  原型链继承原理
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2015/05/05/原型链继承/"><span class="article-date">
+  2015-05-05
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h3 id="图表解析"><a href="#图表解析" class="headerlink" title="图表解析"></a>图表解析</h3><blockquote>
+<p>Teacher.prototype=new Person();<br>Study.prototype=new Person();<br>var teacher=new Teacher(‘lily’,18);<br>teacher.speaking();</p>
+</blockquote>
+<p><img src="../img/prototype-chain-inherit.bmp" alt="原型链继承"></p>
+<p>当调用speaking方法时:<br>现在teacher自己身上找，找不到则沿着原型链去原型对象（new Person）上找,<br>找到则返回，找不到继续沿着原型链找（Person.prototype）<br>找到则停止查找。</p>
+<p>teacher中即使改变speaking方法的内容，也不会影响Person中的相应speaking方法。<br>因为<code>teacher.speaking=function(){console.log(&#39;hello&#39;);}</code>只会在自己的原型对象相应的添加了一个speaking 方法。</p>
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2015/05/04/构造函数中的继承/" >
   构造函数中的继承
 </a>
 
@@ -170,7 +209,7 @@
       
 
       <div class="article-info">
-        <a href="/2015/05/04/面向对象中的继承/"><span class="article-date">
+        <a href="/2015/05/04/构造函数中的继承/"><span class="article-date">
   2015-05-04
 </span>
 </a>
@@ -203,25 +242,26 @@
 </li>
 </ul>
 <h3 id="实例解析："><a href="#实例解析：" class="headerlink" title="实例解析："></a>实例解析：</h3><blockquote>
-<p>function Teacher(name,age){<br>      this.name=name;<br>      this.age=age;<br>      this.speaking=function(){<br>         console.log(‘speaking’);<br>           }<br>      this.teaching=function(){<br>         console.log(‘teaching’);<br>           }<br>    } </p>
-<p>function Student(name,age){<br>      this.name=name;<br>      this.age=age;<br>      this.speaking=function(){<br>        console.log(‘speaking’);<br>      }<br>      this.studying=function(){<br>        console.log(‘studying’);<br>      }<br>  } </p>
+<p>function Teacher(name,age){<br>      &nbsp;&nbsp;this.name=name;<br>      &nbsp;&nbsp;this.age=age;<br>      &nbsp;&nbsp;this.speaking=function(){<br>         &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘speaking’);}<br>      &nbsp;&nbsp;this.teaching=function(){<br>         &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘teaching’);}<br>    &nbsp;&nbsp;} </p>
+<p>function Student(name,age){<br>      &nbsp;&nbsp;this.name=name;<br>      &nbsp;&nbsp;this.age=age;<br>      &nbsp;&nbsp;this.speaking=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘speaking’);}<br>      &nbsp;&nbsp;this.studying=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘studying’);}<br>  } </p>
 </blockquote>
 <p>上面两个构造函数具有一些相同的属性和方法，抽象出一个公共的构造函数</p>
 <blockquote>
-<p>function Person(name, age) {<br>    this.name = name<br>    this.age = age<br>  }<br>  Person.prototype.speaking = function () {<br>    console.log(‘speaking’);<br>  }</p>
+<p>function Person(name, age) {<br>    &nbsp;&nbsp;this.name = name<br>    &nbsp;&nbsp;this.age = age<br>  }<br>  Person.prototype.speaking = function () {<br>    &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘speaking’);<br>  }</p>
 </blockquote>
 <p>Teacher和Student简化为：</p>
 <blockquote>
-<p>function Teacher(name,age){  //属性继承<br>  Person.call(this,name,age);<br>      this.teaching=function(){<br>         console.log(‘teaching’);<br>           }<br>    }<br>  extend(Teacher.prototype,Person.prototype);//方法继承–拷贝继承</p>
-<p>function Student(name,age){<br>      Person.call(this,name,age);<br>      this.studying=function(){<br>        console.log(‘studying’);<br>      }<br>  }<br>  extend(Student.prototype,Person.prototype);//方法继承–拷贝继承</p>
+<p>function Teacher(name,age){  //属性继承<br>  Person.call(this,name,age);<br>      &nbsp;&nbsp;this.teaching=function(){<br>         &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘teaching’);<br>           }<br>    }<br>  extend(Teacher.prototype,Person.prototype);//方法继承–拷贝继承</p>
+<p>function Student(name,age){<br>      &nbsp;&nbsp;Person.call(this,name,age);<br>      &nbsp;&nbsp;this.studying=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘studying’);}<br>  }<br>  extend(Student.prototype,Person.prototype);//方法继承–拷贝继承</p>
 </blockquote>
 <p>拷贝继承封装函数：</p>
 <blockquote>
-<p>function extend(target,source){<br>    for(var key in source){<br>        target[key]=source[key];<br>    }<br>  }</p>
+<p>function extend(target,source){<br>    &nbsp;&nbsp;for(var key in source){<br>        &nbsp;&nbsp;&nbsp;&nbsp;target[key]=source[key];}<br>  }</p>
 </blockquote>
 <p><strong>其实实战中最常用的方法继承是原型链继承</strong></p>
 <blockquote>
 <p>Teacher.prototype=new Person();<br>  Study.prototype=new Person();</p>
+<p>var teacher=new Teacher(‘lily’,18);<br>teacher.speaking();</p>
 </blockquote>
 <p>原型链继承的详析看 <strong>构造函数继承</strong> 章节</p>
 
