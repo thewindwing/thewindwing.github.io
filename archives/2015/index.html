@@ -8,7 +8,7 @@
 
 <title>
   
-    归档: 2015
+    彙整: 2015
   
 </title>
 
@@ -78,21 +78,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
+                <a href="javascript:;">類別</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">標籤</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
+                <a href="javascript:;">彙整</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">7</span></li></ul>
               </li>
             
@@ -292,18 +292,25 @@
 <p>function f1(){}</p>
 <ul>
 <li>最大特性：预解析时具有函数提升</li>
-<li>实例：<br>console.log(typeof fn);//这里输出的是function，不是number<br>var f1=123;<br>function f1(){<br>console.log(‘hello’);<br>}<br>conosle.log(f1); //这里的结果是123<ul>
+<li>实例：<br>console.log(typeof f1);//这里输出的是function，不是number<br>var f1=123;<br>function f1(){<br>&nbsp;&nbsp;console.log(‘hello’);<br>}<br>console.log(f1); //这里的结果是123<ul>
 <li>解析：</li>
 </ul>
 </li>
 </ul>
 <ul>
 <li>因为预解析时，同名函数和变量，函数的优先级高，与先后顺序无关。</li>
-<li>在执行阶段，因为为函f1重新复制了123，而并没调改函数f1，所以会直接跳过<code>function f1(){}</code>执行下面的代码。<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3>var f1=function(){}<ul>
-<li><h3 id="new-Function-创建函数"><a href="#new-Function-创建函数" class="headerlink" title="new Function()创建函数"></a>new Function()创建函数</h3></li>
+<li>在执行阶段，因为为函f1重新复制了123，而并没调改函数f1，所以会直接跳过<code>function f1(){}</code>执行下面的代码。</li>
 </ul>
-</li>
+</blockquote>
+<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><blockquote>
+<p>var f1=function(){}</p>
+<ul>
+<li>类似于变量赋值，没有函数提升</li>
+<li>可以没有名字（匿名函数）</li>
 </ul>
+</blockquote>
+<h3 id="new-Function-创建函数"><a href="#new-Function-创建函数" class="headerlink" title="new Function()创建函数"></a>new Function()创建函数</h3><blockquote>
+<p>var sum=new Function(‘x’,’y’,’return x+y’);<br>和下面的sum函数一样<br>function sum(x,y){<br>&nbsp;&nbsp;return x+y;<br>}</p>
 </blockquote>
 
         
