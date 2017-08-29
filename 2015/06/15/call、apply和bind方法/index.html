@@ -8,16 +8,20 @@
 
 <title>
   
-    Archive
+    函数的call、apply和bind方法
   
 </title>
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wing">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="call()方法 call用来改变函数内部this指向，并调用该函数 语法：fun.call(thisArg[,arg1[,arg2[,……]]]) 参数： 第一个参数用来指定内部this指向，传递一个引用类型或this 如果指定null或undefined则内部this指向window           第二个参数开始指定为函数传递参数，并一一对应传递过去（顺序不能改变），是个参数列表   用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数的call、apply和bind方法">
+<meta property="og:url" content="http://yoursite.com/2015/06/15/call、apply和bind方法/index.html">
 <meta property="og:site_name" content="Wing">
+<meta property="og:description" content="call()方法 call用来改变函数内部this指向，并调用该函数 语法：fun.call(thisArg[,arg1[,arg2[,……]]]) 参数： 第一个参数用来指定内部this指向，传递一个引用类型或this 如果指定null或undefined则内部this指向window           第二个参数开始指定为函数传递参数，并一一对应传递过去（顺序不能改变），是个参数列表   用">
+<meta property="og:updated_time" content="2017-08-28T05:44:29.686Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wing">
+<meta name="twitter:title" content="函数的call、apply和bind方法">
+<meta name="twitter:description" content="call()方法 call用来改变函数内部this指向，并调用该函数 语法：fun.call(thisArg[,arg1[,arg2[,……]]]) 参数： 第一个参数用来指定内部this指向，传递一个引用类型或this 如果指定null或undefined则内部this指向window           第二个参数开始指定为函数传递参数，并一一对应传递过去（顺序不能改变），是个参数列表   用">
 
 
   <link rel="alternative" href="/atom.xml" title="Wing" type="application/atom+xml">
@@ -145,369 +149,26 @@
       
         <div style="max-width: 1000px">
       
-          
-
+          <article id="post-call、apply和bind方法" class="article article-type-post">
+  
+    <h1 class="article-header">
+      函数的call、apply和bind方法
+    </h1>
   
   
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2017" class="archive-year">2017</a></h1>
-        </div>
-        <div class="post-list">
-    
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/08/26/2/" >
-  
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/08/26/2/"><span class="article-date">
-  2017-08-26
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>title: 2<br>date: 2015-05-04 23:29:59<br>tags:</p>
-
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/08/23/hello-world/" >
-  你好World
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/08/23/hello-world/"><span class="article-date">
-  2017-08-23
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo,    <br>  you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<blockquote>
-<p>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
-</blockquote>
-<pre><code>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-</code></pre><p> Vestibulum enim wisi, viverra nec</p>
-<p><img src="/path/to/img.jpg" alt="Alt text"></p>
-<p> This is <a href="http://example.com/" title="Title" target="_blank" rel="external">an example</a> inline link.</p>
-<pre><code>*&quot;Optional Title Here&quot;*
-</code></pre><p>bulum <code>enim</code></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2015" class="archive-year">2015</a></h1>
-        </div>
-        <div class="post-list">
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/07/05/seajs/" >
-  seajs模块化
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/07/05/seajs/"><span class="article-date">
-  2015-07-05
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/07/01/this/" >
-  this指向
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/07/01/this/"><span class="article-date">
-  2015-07-01
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/06/30/构造函数/" >
-  构造函数
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/06/30/构造函数/"><span class="article-date">
-  2015-06-30
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/06/28/检测数据类型/" >
-  检测数据类型的方式
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/06/28/检测数据类型/"><span class="article-date">
-  2015-06-28
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/06/28/深拷贝和浅拷贝/" >
-  深拷贝和浅拷贝
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/06/28/深拷贝和浅拷贝/"><span class="article-date">
-  2015-06-28
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/06/22/闭包/" >
-  闭包
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/06/22/闭包/"><span class="article-date">
-  2015-06-22
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/06/20/将伪数组转为数组/" >
-  将伪数组转为数组
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/06/20/将伪数组转为数组/"><span class="article-date">
-  2015-06-20
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/06/15/call、apply和bind方法/" >
-  函数的call、apply和bind方法
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/06/15/call、apply和bind方法/"><span class="article-date">
+  <div class="article-info">
+    <span class="article-date">
   2015-06-15
 </span>
-</a>
-        
 
-        
+    
 
-      </div>
-      <div class="article-entry">
-        
-          <h3 id="call-方法"><a href="#call-方法" class="headerlink" title="call()方法"></a>call()方法</h3><ul>
+    
+
+  </div>
+  <div class="article-entry">
+    <h3 id="call-方法"><a href="#call-方法" class="headerlink" title="call()方法"></a>call()方法</h3><ul>
 <li>call用来改变函数内部this指向，并调用该函数</li>
 <li>语法：<code>fun.call(thisArg[,arg1[,arg2[,……]]])</code></li>
 <li>参数：<ul>
@@ -606,17 +267,31 @@
 </li>
 </ul>
 
-        
-      </div>
-    </div>
-
-  
-
-
-
-  <div class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next</a>
   </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="Attribution-ShareAlike">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
 
 
 
