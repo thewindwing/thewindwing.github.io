@@ -78,21 +78,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
+                <a href="javascript:;">Category</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">Tag</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
+                <a href="javascript:;">Archive</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">13</span></li></ul>
               </li>
             
@@ -251,19 +251,19 @@
       </div>
       <div class="article-entry">
         
-          <h3 id="1-普通函数调用时，this指向window"><a href="#1-普通函数调用时，this指向window" class="headerlink" title="1. 普通函数调用时，this指向window"></a>1. 普通函数调用时，this指向window</h3><p>实例：</p>
+          <h4 id="1-普通函数调用时，this指向window"><a href="#1-普通函数调用时，this指向window" class="headerlink" title="1. 普通函数调用时，this指向window"></a>1. 普通函数调用时，this指向window</h4><p>实例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">   &#125;</div><div class="line">   f(); &amp;nbsp;<span class="comment">//window</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="2-构造函数调用时，this指向实例对象"><a href="#2-构造函数调用时，this指向实例对象" class="headerlink" title="2. 构造函数调用时，this指向实例对象"></a>2. 构造函数调用时，this指向实例对象</h3><p>实例1：</p>
+<h4 id="2-构造函数调用时，this指向实例对象"><a href="#2-构造函数调用时，this指向实例对象" class="headerlink" title="2. 构造函数调用时，this指向实例对象"></a>2. 构造函数调用时，this指向实例对象</h4><p>实例1：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.age=<span class="number">12</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>); &amp;nbsp; <span class="comment">//F     </span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">new</span> F();</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="3-对象方法调用时，this指向该方法所属对象"><a href="#3-对象方法调用时，this指向该方法所属对象" class="headerlink" title="3. 对象方法调用时，this指向该方法所属对象"></a>3. 对象方法调用时，this指向该方法所属对象</h3><p>实例：</p>
+<h4 id="3-对象方法调用时，this指向该方法所属对象"><a href="#3-对象方法调用时，this指向该方法所属对象" class="headerlink" title="3. 对象方法调用时，this指向该方法所属对象"></a>3. 对象方法调用时，this指向该方法所属对象</h4><p>实例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj=&#123;</div><div class="line">    name:<span class="string">'lily'</span>,</div><div class="line">    singing:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>); &amp;nbsp; <span class="comment">//obj</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj.singing();</div></pre></td></tr></table></figure>
-<h3 id="4-事件绑定方法时，this指向绑定的事件对象"><a href="#4-事件绑定方法时，this指向绑定的事件对象" class="headerlink" title="4. 事件绑定方法时，this指向绑定的事件对象"></a>4. 事件绑定方法时，this指向绑定的事件对象</h3><h3 id="5-函数内部的普通函数调用时，this始终指向window"><a href="#5-函数内部的普通函数调用时，this始终指向window" class="headerlink" title="5. 函数内部的普通函数调用时，this始终指向window"></a>5. 函数内部的普通函数调用时，this始终指向window</h3><p>实例：</p>
+<h4 id="4-事件绑定方法时，this指向绑定的事件对象"><a href="#4-事件绑定方法时，this指向绑定的事件对象" class="headerlink" title="4. 事件绑定方法时，this指向绑定的事件对象"></a>4. 事件绑定方法时，this指向绑定的事件对象</h4><h4 id="5-函数内部的普通函数调用时，this始终指向window"><a href="#5-函数内部的普通函数调用时，this始终指向window" class="headerlink" title="5. 函数内部的普通函数调用时，this始终指向window"></a>5. 函数内部的普通函数调用时，this始终指向window</h4><p>实例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.age=<span class="number">12</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//F</span></div><div class="line">        f=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//始终指向window</span></div><div class="line">        &#125;;</div><div class="line">        f();</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">new</span> F();</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="6-定时器函数内部的this指向始终是window"><a href="#6-定时器函数内部的this指向始终是window" class="headerlink" title="6. 定时器函数内部的this指向始终是window"></a>6. 定时器函数内部的this指向始终是window</h3><p>实例：</p>
+<h4 id="6-定时器函数内部的this指向始终是window"><a href="#6-定时器函数内部的this指向始终是window" class="headerlink" title="6. 定时器函数内部的this指向始终是window"></a>6. 定时器函数内部的this指向始终是window</h4><p>实例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line">setTimeout(Person, <span class="number">2000</span>);<span class="comment">//2s后输出window</span></div></pre></td></tr></table></figure>
-<h3 id="7-数组的一些遍历方法内部的this指向一直都是window"><a href="#7-数组的一些遍历方法内部的this指向一直都是window" class="headerlink" title="7. 数组的一些遍历方法内部的this指向一直都是window"></a>7. 数组的一些遍历方法内部的this指向一直都是window</h3><p>实例：</p>
+<h4 id="7-数组的一些遍历方法内部的this指向一直都是window"><a href="#7-数组的一些遍历方法内部的this指向一直都是window" class="headerlink" title="7. 数组的一些遍历方法内部的this指向一直都是window"></a>7. 数组的一些遍历方法内部的this指向一直都是window</h4><p>实例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</div><div class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//window window</span></div><div class="line">   &#125;);</div></pre></td></tr></table></figure>
-<h3 id="8-call、apply、bind方法可以改变内部this的指向"><a href="#8-call、apply、bind方法可以改变内部this的指向" class="headerlink" title="8. call、apply、bind方法可以改变内部this的指向"></a>8. call、apply、bind方法可以改变内部this的指向</h3>
+<h4 id="8-call、apply、bind方法可以改变内部this的指向"><a href="#8-call、apply、bind方法可以改变内部this的指向" class="headerlink" title="8. call、apply、bind方法可以改变内部this的指向"></a>8. call、apply、bind方法可以改变内部this的指向</h4>
         
       </div>
     </div>
@@ -403,13 +403,13 @@
       </div>
       <div class="article-entry">
         
-          <h3 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h3><p>如果一个函数内部返回一个或多个函数，而返回的函数中有对自己的外层作业域中的成员的读取或修改，那么这个函数就称为闭包函数。</p>
-<h3 id="核心："><a href="#核心：" class="headerlink" title="核心："></a>核心：</h3><p><strong><em>作用域链</em></strong></p>
-<h3 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h3><ol>
+          <h4 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h4><p>如果一个函数内部返回一个或多个函数，而返回的函数中有对自己的外层作业域中的成员的读取或修改，那么这个函数就称为闭包函数。</p>
+<h4 id="核心："><a href="#核心：" class="headerlink" title="核心："></a>核心：</h4><p><strong><em>作用域链</em></strong></p>
+<h4 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h4><ol>
 <li>可以在函数外部能够读取函数内部变量。</li>
 <li>让函数内部成员始终存活在内存中。</li>
 </ol>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>];</div><div class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    		arr[i]=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    			<span class="built_in">console</span>.log(i);</div><div class="line">    		&#125;</div><div class="line">    	&#125;</div><div class="line">arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">    		item();</div><div class="line">    	&#125;)</div><div class="line"><span class="comment">//3 3 3</span></div><div class="line"></div><div class="line">解决办法--闭包</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    		arr[i]=(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</div><div class="line">    			<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    			<span class="built_in">console</span>.log(i);</div><div class="line">    		&#125;;</div><div class="line">    		&#125;)(i);</div><div class="line">    	&#125;</div><div class="line">    	arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">    		item();</div><div class="line">    	&#125;)<span class="comment">//0 1 2</span></div></pre></td></tr></table></figure>
+<h4 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>];</div><div class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    		arr[i]=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    			<span class="built_in">console</span>.log(i);</div><div class="line">    		&#125;</div><div class="line">    	&#125;</div><div class="line">arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">    		item();</div><div class="line">    	&#125;)</div><div class="line"><span class="comment">//3 3 3</span></div><div class="line"></div><div class="line">解决办法--闭包</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    		arr[i]=(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</div><div class="line">    			<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    			<span class="built_in">console</span>.log(i);</div><div class="line">    		&#125;;</div><div class="line">    		&#125;)(i);</div><div class="line">    	&#125;</div><div class="line">    	arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">    		item();</div><div class="line">    	&#125;)<span class="comment">//0 1 2</span></div></pre></td></tr></table></figure>
         
       </div>
     </div>
@@ -624,7 +624,7 @@
 
 
   <div class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next</a>
   </div>
 
 

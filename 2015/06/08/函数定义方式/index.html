@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/06/08/函数定义方式/index.html">
 <meta property="og:site_name" content="Wing">
 <meta property="og:description" content="函数声明 function f1(){}  最大特性：预解析时具有函数提升 实例：console.log(typeof f1);//这里输出的是function，不是numbervar f1=123;function f1(){&amp;nbsp;&amp;nbsp;console.log(‘hello’);}console.log(f1); //这里的结果是123 解析：     因为预解析时，同名函数和变量，">
-<meta property="og:updated_time" content="2017-08-27T07:45:16.172Z">
+<meta property="og:updated_time" content="2017-08-30T13:29:40.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数的自定义方式">
 <meta name="twitter:description" content="函数声明 function f1(){}  最大特性：预解析时具有函数提升 实例：console.log(typeof f1);//这里输出的是function，不是numbervar f1=123;function f1(){&amp;nbsp;&amp;nbsp;console.log(‘hello’);}console.log(f1); //这里的结果是123 解析：     因为预解析时，同名函数和变量，">
@@ -82,21 +82,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
+                <a href="javascript:;">Category</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">Tag</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
+                <a href="javascript:;">Archive</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">13</span></li></ul>
               </li>
             
@@ -168,7 +168,7 @@
 
   </div>
   <div class="article-entry">
-    <h3 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h3><blockquote>
+    <h4 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h4><blockquote>
 <p>function f1(){}</p>
 <ul>
 <li>最大特性：预解析时具有函数提升</li>
@@ -182,14 +182,14 @@
 <li>在执行阶段，因为为函f1重新复制了123，而并没调改函数f1，所以会直接跳过<code>function f1(){}</code>执行下面的代码。</li>
 </ul>
 </blockquote>
-<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><blockquote>
+<h4 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h4><blockquote>
 <p>var f1=function(){}</p>
 <ul>
 <li>类似于变量赋值，没有函数提升</li>
 <li>可以没有名字（匿名函数）</li>
 </ul>
 </blockquote>
-<h3 id="new-Function-创建函数"><a href="#new-Function-创建函数" class="headerlink" title="new Function()创建函数"></a>new Function()创建函数</h3><blockquote>
+<h4 id="new-Function-创建函数"><a href="#new-Function-创建函数" class="headerlink" title="new Function()创建函数"></a>new Function()创建函数</h4><blockquote>
 <p>var sum=new Function(‘x’,’y’,’return x+y’);<br>和下面的sum函数一样<br>function sum(x,y){<br>&nbsp;&nbsp;return x+y;<br>}</p>
 </blockquote>
 
@@ -197,7 +197,7 @@
   <footer class="article-footer">
     
   <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="Attribution-ShareAlike">
       <img src="/images/cc/cc.png">
       
           <img src="/images/cc/by.png">
@@ -205,7 +205,7 @@
           <img src="/images/cc/sa.png">
       
       <span>
-        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       </span>
     </a>
   </div>

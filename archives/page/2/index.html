@@ -8,7 +8,7 @@
 
 <title>
   
-    归档
+    Archive
   
 </title>
 
@@ -78,21 +78,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
+                <a href="javascript:;">Category</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">Tag</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
+                <a href="javascript:;">Archive</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">13</span></li></ul>
               </li>
             
@@ -181,7 +181,7 @@
       </div>
       <div class="article-entry">
         
-          <h3 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h3><blockquote>
+          <h4 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h4><blockquote>
 <p>function f1(){}</p>
 <ul>
 <li>最大特性：预解析时具有函数提升</li>
@@ -195,14 +195,14 @@
 <li>在执行阶段，因为为函f1重新复制了123，而并没调改函数f1，所以会直接跳过<code>function f1(){}</code>执行下面的代码。</li>
 </ul>
 </blockquote>
-<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><blockquote>
+<h4 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h4><blockquote>
 <p>var f1=function(){}</p>
 <ul>
 <li>类似于变量赋值，没有函数提升</li>
 <li>可以没有名字（匿名函数）</li>
 </ul>
 </blockquote>
-<h3 id="new-Function-创建函数"><a href="#new-Function-创建函数" class="headerlink" title="new Function()创建函数"></a>new Function()创建函数</h3><blockquote>
+<h4 id="new-Function-创建函数"><a href="#new-Function-创建函数" class="headerlink" title="new Function()创建函数"></a>new Function()创建函数</h4><blockquote>
 <p>var sum=new Function(‘x’,’y’,’return x+y’);<br>和下面的sum函数一样<br>function sum(x,y){<br>&nbsp;&nbsp;return x+y;<br>}</p>
 </blockquote>
 
@@ -238,7 +238,7 @@
       </div>
       <div class="article-entry">
         
-          <h3 id="图表解析"><a href="#图表解析" class="headerlink" title="图表解析"></a>图表解析</h3><blockquote>
+          <h4 id="图表解析"><a href="#图表解析" class="headerlink" title="图表解析"></a>图表解析</h4><blockquote>
 <p>Teacher.prototype=new Person();<br>Study.prototype=new Person();<br>var teacher=new Teacher(‘lily’,18);<br>teacher.speaking();</p>
 </blockquote>
 <p><img src="../img/prototype-chain-inherit.bmp" alt="原型链继承"></p>
@@ -277,10 +277,10 @@
       </div>
       <div class="article-entry">
         
-          <h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><ul>
+          <h4 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h4><ul>
 <li>当两个或多个构造函数具有很多相同的属性和方法时，我们就抽象出一个父类（构造函数）来写公共的属性和方法。</li>
 </ul>
-<h3 id="具体做法："><a href="#具体做法：" class="headerlink" title="具体做法："></a>具体做法：</h3><ul>
+<h4 id="具体做法："><a href="#具体做法：" class="headerlink" title="具体做法："></a>具体做法：</h4><ul>
 <li><p>父构造函数：</p>
 <ul>
 <li>公共的属性：写到父构造函数内</li>
@@ -298,7 +298,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="实例解析："><a href="#实例解析：" class="headerlink" title="实例解析："></a>实例解析：</h3><blockquote>
+<h4 id="实例解析："><a href="#实例解析：" class="headerlink" title="实例解析："></a>实例解析：</h4><blockquote>
 <p>function Teacher(name,age){<br>      &nbsp;&nbsp;this.name=name;<br>      &nbsp;&nbsp;this.age=age;<br>      &nbsp;&nbsp;this.speaking=function(){<br>         &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘speaking’);}<br>      &nbsp;&nbsp;this.teaching=function(){<br>         &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘teaching’);}<br>    &nbsp;&nbsp;} </p>
 <p>function Student(name,age){<br>      &nbsp;&nbsp;this.name=name;<br>      &nbsp;&nbsp;this.age=age;<br>      &nbsp;&nbsp;this.speaking=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘speaking’);}<br>      &nbsp;&nbsp;this.studying=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘studying’);}<br>  } </p>
 </blockquote>
@@ -355,7 +355,7 @@
       <div class="article-entry">
         
           <p>  <br></p>
-<h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><ul>
+<h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><ul>
 <li><p>当你访问对象的某个成员时：</p>
 <ul>
 <li>现在自己身上找，找到即返回；</li>
@@ -367,12 +367,12 @@
 <p><br></p>
 </li>
 </ul>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><blockquote>
+<h4 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h4><blockquote>
 <p>function Person(name,age){<br>        &nbsp;&nbsp;this.name=name;<br>        &nbsp;&nbsp;this.age=age;<br>     };</p>
 <p>Person.prototype.singing=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘you are my super star…’);<br>  };<br>var child1=new Person(‘lily’,18);<br>child1.singing();    </p>
 </blockquote>
 <h6 id="原型链查找机制"><a href="#原型链查找机制" class="headerlink" title="原型链查找机制"></a>原型链查找机制</h6><p><img src="../img/Prototype-chain.png" alt="Prototype-chain"></p>
-<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><ul>
+<h4 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h4><ul>
 <li><p><em>原型对象–prototype</em></p>
 <ul>
 <li><p>每一个函数都有一个属性prototype指向一个对象（原型对象），这个对象的所有属性和方法都会被实例继承；</p>
@@ -404,7 +404,7 @@
 
 
   <div class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/">上一页</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/archives/">Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
   </div>
 
 

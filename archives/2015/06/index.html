@@ -8,7 +8,7 @@
 
 <title>
   
-    归档: 2015/6
+    Archive: 2015/6
   
 </title>
 
@@ -78,21 +78,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
+                <a href="javascript:;">Category</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">Tag</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
+                <a href="javascript:;">Archive</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">13</span></li></ul>
               </li>
             
@@ -280,13 +280,13 @@
       </div>
       <div class="article-entry">
         
-          <h3 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h3><p>如果一个函数内部返回一个或多个函数，而返回的函数中有对自己的外层作业域中的成员的读取或修改，那么这个函数就称为闭包函数。</p>
-<h3 id="核心："><a href="#核心：" class="headerlink" title="核心："></a>核心：</h3><p><strong><em>作用域链</em></strong></p>
-<h3 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h3><ol>
+          <h4 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h4><p>如果一个函数内部返回一个或多个函数，而返回的函数中有对自己的外层作业域中的成员的读取或修改，那么这个函数就称为闭包函数。</p>
+<h4 id="核心："><a href="#核心：" class="headerlink" title="核心："></a>核心：</h4><p><strong><em>作用域链</em></strong></p>
+<h4 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h4><ol>
 <li>可以在函数外部能够读取函数内部变量。</li>
 <li>让函数内部成员始终存活在内存中。</li>
 </ol>
-<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>];</div><div class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    		arr[i]=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    			<span class="built_in">console</span>.log(i);</div><div class="line">    		&#125;</div><div class="line">    	&#125;</div><div class="line">arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">    		item();</div><div class="line">    	&#125;)</div><div class="line"><span class="comment">//3 3 3</span></div><div class="line"></div><div class="line">解决办法--闭包</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    		arr[i]=(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</div><div class="line">    			<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    			<span class="built_in">console</span>.log(i);</div><div class="line">    		&#125;;</div><div class="line">    		&#125;)(i);</div><div class="line">    	&#125;</div><div class="line">    	arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">    		item();</div><div class="line">    	&#125;)<span class="comment">//0 1 2</span></div></pre></td></tr></table></figure>
+<h4 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>];</div><div class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    		arr[i]=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    			<span class="built_in">console</span>.log(i);</div><div class="line">    		&#125;</div><div class="line">    	&#125;</div><div class="line">arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">    		item();</div><div class="line">    	&#125;)</div><div class="line"><span class="comment">//3 3 3</span></div><div class="line"></div><div class="line">解决办法--闭包</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    		arr[i]=(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</div><div class="line">    			<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    			<span class="built_in">console</span>.log(i);</div><div class="line">    		&#125;;</div><div class="line">    		&#125;)(i);</div><div class="line">    	&#125;</div><div class="line">    	arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">    		item();</div><div class="line">    	&#125;)<span class="comment">//0 1 2</span></div></pre></td></tr></table></figure>
         
       </div>
     </div>
@@ -516,7 +516,7 @@
       </div>
       <div class="article-entry">
         
-          <h3 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h3><blockquote>
+          <h4 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h4><blockquote>
 <p>function f1(){}</p>
 <ul>
 <li>最大特性：预解析时具有函数提升</li>
@@ -530,14 +530,14 @@
 <li>在执行阶段，因为为函f1重新复制了123，而并没调改函数f1，所以会直接跳过<code>function f1(){}</code>执行下面的代码。</li>
 </ul>
 </blockquote>
-<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><blockquote>
+<h4 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h4><blockquote>
 <p>var f1=function(){}</p>
 <ul>
 <li>类似于变量赋值，没有函数提升</li>
 <li>可以没有名字（匿名函数）</li>
 </ul>
 </blockquote>
-<h3 id="new-Function-创建函数"><a href="#new-Function-创建函数" class="headerlink" title="new Function()创建函数"></a>new Function()创建函数</h3><blockquote>
+<h4 id="new-Function-创建函数"><a href="#new-Function-创建函数" class="headerlink" title="new Function()创建函数"></a>new Function()创建函数</h4><blockquote>
 <p>var sum=new Function(‘x’,’y’,’return x+y’);<br>和下面的sum函数一样<br>function sum(x,y){<br>&nbsp;&nbsp;return x+y;<br>}</p>
 </blockquote>
 
