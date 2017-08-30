@@ -8,7 +8,7 @@
 
 <title>
   
-    归档: 2015
+    Archive: 2015
   
 </title>
 
@@ -78,21 +78,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
+                <a href="javascript:;">Category</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">Tag</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
+                <a href="javascript:;">Archive</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">13</span></li></ul>
               </li>
             
@@ -214,21 +214,48 @@
       </div>
       <div class="article-entry">
         
-          <h3 id="构造函数中的this"><a href="#构造函数中的this" class="headerlink" title="构造函数中的this"></a>构造函数中的this</h3><table>
+          <table>
 <thead>
 <tr>
-<th>header 1</th>
-<th>header 2</th>
+<th>调用方式</th>
+<th>this指向（非严格模式）</th>
+<th>备注</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>row 1 col 1</td>
-<td>row 1 col 2</td>
+<td>普通函数调用</td>
+<td>window</td>
+<td>严格模式下是undefined</td>
 </tr>
 <tr>
-<td>row 2 col 1</td>
-<td>row 2 col 2</td>
+<td>构造函数调用</td>
+<td>实例对象</td>
+<td></td>
+</tr>
+<tr>
+<td>对象方法调用</td>
+<td>该方法所属对象</td>
+<td>谁来点就指向谁</td>
+</tr>
+<tr>
+<td>事件绑定方法</td>
+<td>绑定的事件对象</td>
+<td></td>
+</tr>
+<tr>
+<td>函数内部的普通函数调用</td>
+<td>window</td>
+<td>始终是</td>
+</tr>
+<tr>
+<td>定时器函数内部</td>
+<td>window</td>
+</tr>
+<tr>
+<td>数组的一些遍历方法内部</td>
+<td>window</td>
+<td>forEach、evry、filter等</td>
 </tr>
 </tbody>
 </table>
@@ -629,7 +656,7 @@
 
 
   <div class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2015/page/2/">2</a><a class="extend next" rel="next" href="/archives/2015/page/2/">下一页</a>
+    <span class="page-number current">1</span><a class="page-number" href="/archives/2015/page/2/">2</a><a class="extend next" rel="next" href="/archives/2015/page/2/">Next</a>
   </div>
 
 
