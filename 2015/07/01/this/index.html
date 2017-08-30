@@ -8,20 +8,20 @@
 
 <title>
   
-    this指向
+    this指向总结
   
 </title>
 
-<meta name="description" content="调用方式 this指向（非严格模式） 备注     普通函数调用 window 严格模式下是undefined   构造函数调用 实例对象    对象方法调用 该方法所属对象 谁来点就指向谁   事件绑定方法 绑定的事件对象    函数内部的普通函数调用 window 始终是   定时器函数内部 window   数组的一些遍历方法内部 window forEach、evry、filter等">
+<meta name="description" content="1. 普通函数调用时，this指向window实例： 123456&amp;lt;script&amp;gt;function f()&amp;#123;    console.log(this);   &amp;#125;   f();//window&amp;lt;/script&amp;gt; 2. 构造函数调用时，this指向实例对象实例： 12 3. 对象方法调用时，this指向该方法所属对象实例： 12 4. 事件绑定方法时，thi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="this指向">
+<meta property="og:title" content="this指向总结">
 <meta property="og:url" content="http://yoursite.com/2015/07/01/this/index.html">
 <meta property="og:site_name" content="Wing">
-<meta property="og:description" content="调用方式 this指向（非严格模式） 备注     普通函数调用 window 严格模式下是undefined   构造函数调用 实例对象    对象方法调用 该方法所属对象 谁来点就指向谁   事件绑定方法 绑定的事件对象    函数内部的普通函数调用 window 始终是   定时器函数内部 window   数组的一些遍历方法内部 window forEach、evry、filter等">
-<meta property="og:updated_time" content="2017-08-30T07:54:25.930Z">
+<meta property="og:description" content="1. 普通函数调用时，this指向window实例： 123456&amp;lt;script&amp;gt;function f()&amp;#123;    console.log(this);   &amp;#125;   f();//window&amp;lt;/script&amp;gt; 2. 构造函数调用时，this指向实例对象实例： 12 3. 对象方法调用时，this指向该方法所属对象实例： 12 4. 事件绑定方法时，thi">
+<meta property="og:updated_time" content="2017-08-30T08:20:01.994Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="this指向">
-<meta name="twitter:description" content="调用方式 this指向（非严格模式） 备注     普通函数调用 window 严格模式下是undefined   构造函数调用 实例对象    对象方法调用 该方法所属对象 谁来点就指向谁   事件绑定方法 绑定的事件对象    函数内部的普通函数调用 window 始终是   定时器函数内部 window   数组的一些遍历方法内部 window forEach、evry、filter等">
+<meta name="twitter:title" content="this指向总结">
+<meta name="twitter:description" content="1. 普通函数调用时，this指向window实例： 123456&amp;lt;script&amp;gt;function f()&amp;#123;    console.log(this);   &amp;#125;   f();//window&amp;lt;/script&amp;gt; 2. 构造函数调用时，this指向实例对象实例： 12 3. 对象方法调用时，this指向该方法所属对象实例： 12 4. 事件绑定方法时，thi">
 
 
   <link rel="alternative" href="/atom.xml" title="Wing" type="application/atom+xml">
@@ -152,7 +152,7 @@
           <article id="post-this" class="article article-type-post">
   
     <h1 class="article-header">
-      this指向
+      this指向总结
     </h1>
   
   
@@ -168,53 +168,21 @@
 
   </div>
   <div class="article-entry">
-    <table>
-<thead>
-<tr>
-<th>调用方式</th>
-<th>this指向（非严格模式）</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>普通函数调用</td>
-<td>window</td>
-<td>严格模式下是undefined</td>
-</tr>
-<tr>
-<td>构造函数调用</td>
-<td>实例对象</td>
-<td></td>
-</tr>
-<tr>
-<td>对象方法调用</td>
-<td>该方法所属对象</td>
-<td>谁来点就指向谁</td>
-</tr>
-<tr>
-<td>事件绑定方法</td>
-<td>绑定的事件对象</td>
-<td></td>
-</tr>
-<tr>
-<td>函数内部的普通函数调用</td>
-<td>window</td>
-<td>始终是</td>
-</tr>
-<tr>
-<td>定时器函数内部</td>
-<td>window</td>
-</tr>
-<tr>
-<td>数组的一些遍历方法内部</td>
-<td>window</td>
-<td>forEach、evry、filter等</td>
-</tr>
-</tbody>
-</table>
-<p>cjij</p>
-
+    <h3 id="1-普通函数调用时，this指向window"><a href="#1-普通函数调用时，this指向window" class="headerlink" title="1. 普通函数调用时，this指向window"></a>1. 普通函数调用时，this指向window</h3><p>实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">   &#125;</div><div class="line">   f();<span class="comment">//window</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="2-构造函数调用时，this指向实例对象"><a href="#2-构造函数调用时，this指向实例对象" class="headerlink" title="2. 构造函数调用时，this指向实例对象"></a>2. 构造函数调用时，this指向实例对象</h3><p>实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="3-对象方法调用时，this指向该方法所属对象"><a href="#3-对象方法调用时，this指向该方法所属对象" class="headerlink" title="3. 对象方法调用时，this指向该方法所属对象"></a>3. 对象方法调用时，this指向该方法所属对象</h3><p>实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="4-事件绑定方法时，this指向绑定的事件对象"><a href="#4-事件绑定方法时，this指向绑定的事件对象" class="headerlink" title="4. 事件绑定方法时，this指向绑定的事件对象"></a>4. 事件绑定方法时，this指向绑定的事件对象</h3><p>实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="5-函数内部的普通函数调用时，this始终指向window"><a href="#5-函数内部的普通函数调用时，this始终指向window" class="headerlink" title="5. 函数内部的普通函数调用时，this始终指向window"></a>5. 函数内部的普通函数调用时，this始终指向window</h3><p>实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="6-定时器函数内部的this指向始终是window"><a href="#6-定时器函数内部的this指向始终是window" class="headerlink" title="6. 定时器函数内部的this指向始终是window"></a>6. 定时器函数内部的this指向始终是window</h3><p>实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="7-数组的一些遍历方法内部的this指向一直都是window"><a href="#7-数组的一些遍历方法内部的this指向一直都是window" class="headerlink" title="7. 数组的一些遍历方法内部的this指向一直都是window"></a>7. 数组的一些遍历方法内部的this指向一直都是window</h3><p>实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="8-call、apply、bind方法可以改变内部this的指向"><a href="#8-call、apply、bind方法可以改变内部this的指向" class="headerlink" title="8. call、apply、bind方法可以改变内部this的指向"></a>8. call、apply、bind方法可以改变内部this的指向</h3>
   </div>
   <footer class="article-footer">
     
