@@ -8,17 +8,22 @@
 
 <title>
   
-    this指向
+    函数原型链
   
 </title>
 
+<meta name="description" content="每一个函数都是Function的实例 var f1=new Function();  函数查找机制 所有函数的原型对象都指向Function.prototype，包括Function自己即：   f1.__proto__===Function.prototype;Function.__proto__===Function.prototype;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="this指向">
-<meta property="og:url" content="http://yoursite.com/2015/07/01/this/index.html">
+<meta property="og:title" content="函数原型链">
+<meta property="og:url" content="http://yoursite.com/2016/06/10/函数的原型链/index.html">
 <meta property="og:site_name" content="Wing">
-<meta property="og:updated_time" content="2017-08-27T07:44:41.484Z">
+<meta property="og:description" content="每一个函数都是Function的实例 var f1=new Function();  函数查找机制 所有函数的原型对象都指向Function.prototype，包括Function自己即：   f1.__proto__===Function.prototype;Function.__proto__===Function.prototype;">
+<meta property="og:image" content="http://yoursite.com/2016/06/10/img/function-prototype-chain.bmp">
+<meta property="og:updated_time" content="2017-08-30T06:43:54.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="this指向">
+<meta name="twitter:title" content="函数原型链">
+<meta name="twitter:description" content="每一个函数都是Function的实例 var f1=new Function();  函数查找机制 所有函数的原型对象都指向Function.prototype，包括Function自己即：   f1.__proto__===Function.prototype;Function.__proto__===Function.prototype;">
+<meta name="twitter:image" content="http://yoursite.com/2016/06/10/img/function-prototype-chain.bmp">
 
 
   <link rel="alternative" href="/atom.xml" title="Wing" type="application/atom+xml">
@@ -146,17 +151,17 @@
       
         <div style="max-width: 1000px">
       
-          <article id="post-this" class="article article-type-post">
+          <article id="post-函数的原型链" class="article article-type-post">
   
     <h1 class="article-header">
-      this指向
+      函数原型链
     </h1>
   
   
 
   <div class="article-info">
     <span class="article-date">
-  2015-07-01
+  2016-06-10
 </span>
 
     
@@ -165,7 +170,15 @@
 
   </div>
   <div class="article-entry">
-    
+    <h4 id="每一个函数都是Function的实例"><a href="#每一个函数都是Function的实例" class="headerlink" title="每一个函数都是Function的实例"></a>每一个函数都是Function的实例</h4><blockquote>
+<p>var f1=new Function();</p>
+</blockquote>
+<h4 id="函数查找机制"><a href="#函数查找机制" class="headerlink" title="函数查找机制"></a>函数查找机制</h4><p><img src="../img/function-prototype-chain.bmp" alt="函数原型链"></p>
+<p><strong>所有函数的原型对象都指向Function.prototype，包括Function自己</strong><br>即： </p>
+<blockquote>
+<p>f1.__proto__===Function.prototype;<br>Function.__proto__===Function.prototype;</p>
+</blockquote>
+
   </div>
   <footer class="article-footer">
     

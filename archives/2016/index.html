@@ -8,17 +8,16 @@
 
 <title>
   
-    this指向
+    Archive: 2016
   
 </title>
 
-<meta property="og:type" content="article">
-<meta property="og:title" content="this指向">
-<meta property="og:url" content="http://yoursite.com/2015/07/01/this/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wing">
+<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
 <meta property="og:site_name" content="Wing">
-<meta property="og:updated_time" content="2017-08-27T07:44:41.484Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="this指向">
+<meta name="twitter:title" content="Wing">
 
 
   <link rel="alternative" href="/atom.xml" title="Wing" type="application/atom+xml">
@@ -146,49 +145,56 @@
       
         <div style="max-width: 1000px">
       
-          <article id="post-this" class="article article-type-post">
+          
+
   
-    <h1 class="article-header">
-      this指向
-    </h1>
   
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="/archives/2016" class="archive-year">2016</a></h1>
+        </div>
+        <div class="post-list">
+    
   
 
-  <div class="article-info">
-    <span class="article-date">
-  2015-07-01
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2016/06/10/函数的原型链/" >
+  函数原型链
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2016/06/10/函数的原型链/"><span class="article-date">
+  2016-06-10
 </span>
-
-    
-
-    
-
-  </div>
-  <div class="article-entry">
-    
-  </div>
-  <footer class="article-footer">
-    
-  <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="Attribution-ShareAlike">
-      <img src="/images/cc/cc.png">
-      
-          <img src="/images/cc/by.png">
+</a>
         
-          <img src="/images/cc/sa.png">
-      
-      <span>
-        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
-      </span>
-    </a>
-  </div>
 
+        
 
-    
+      </div>
+      <div class="article-entry">
+        
+          <h4 id="每一个函数都是Function的实例"><a href="#每一个函数都是Function的实例" class="headerlink" title="每一个函数都是Function的实例"></a>每一个函数都是Function的实例</h4><blockquote>
+<p>var f1=new Function();</p>
+</blockquote>
+<h4 id="函数查找机制"><a href="#函数查找机制" class="headerlink" title="函数查找机制"></a>函数查找机制</h4><p><img src="../img/function-prototype-chain.bmp" alt="函数原型链"></p>
+<p><strong>所有函数的原型对象都指向Function.prototype，包括Function自己</strong><br>即： </p>
+<blockquote>
+<p>f1.__proto__===Function.prototype;<br>Function.__proto__===Function.prototype;</p>
+</blockquote>
 
-  </footer>
-</article>
+        
+      </div>
+    </div>
 
+  
 
 
 

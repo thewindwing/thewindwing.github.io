@@ -93,7 +93,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">Archive</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">14</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">13</span></li></ul>
               </li>
             
           
@@ -162,6 +162,137 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
+        <a href="/2015/06/15/call、apply和bind方法/" >
+  函数的call、apply和bind方法
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2015/06/15/call、apply和bind方法/"><span class="article-date">
+  2015-06-15
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h3 id="call-方法"><a href="#call-方法" class="headerlink" title="call()方法"></a>call()方法</h3><ul>
+<li>call用来改变函数内部this指向，并调用该函数</li>
+<li>语法：<code>fun.call(thisArg[,arg1[,arg2[,……]]])</code></li>
+<li>参数：<ul>
+<li>第一个参数用来指定内部this指向，传递一个引用类型或this<ul>
+<li>如果指定null或undefined则内部this指向window        </li>
+</ul>
+</li>
+<li>第二个参数开始指定为函数传递参数，并一一对应传递过去（顺序不能改变），是个参数列表</li>
+</ul>
+</li>
+<li><p>用途：</p>
+<ul>
+<li>借用构造函数实现实例成员的初始化（属性继承）</li>
+<li><strong>让伪数组可以借用数组的方法</strong><br>   <code>[].push.call(this,5)</code></li>
+</ul>
+</li>
+<li><p>实例1：</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.name = name;</div><div class="line">      <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Teacher</span>(<span class="params">name, age, salary</span>) </span>&#123;</div><div class="line"><span class="comment">//通过call方法改变Person的this指向Teacher实例，并把实例的name和age对应的实参一一传递给Person的参数</span></div><div class="line">      Person.call(<span class="keyword">this</span>, name, age);&amp;nbsp;</div><div class="line">      <span class="keyword">this</span>.salary = salary;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> s1= <span class="keyword">new</span> Student(<span class="string">'lily'</span>,<span class="number">18</span>);</div><div class="line"><span class="built_in">console</span>.log(s1.name);&amp;nbsp;<span class="comment">//'lily'</span></div></pre></td></tr></table></figure>
+<ul>
+<li>实例2：</li>
+</ul>
+<blockquote>
+<p>var obj={0:’a’,1:’b’,2:’c’,length:3};<br>//通过call方法改变forEach方法的this指向obj<br>;[].forEach.call(obj,function(item,index){<br>    console.log(item,index);<br>})</p>
+</blockquote>
+<h3 id="apply-方法"><a href="#apply-方法" class="headerlink" title="apply()方法"></a>apply()方法</h3><ul>
+<li>apply方法和call方法作用一样,用来改变函数内部this指向的</li>
+<li>语法：<code>fun.apply(thisArg,[argsArray])</code></li>
+<li>第一个参数也是用来指定内部this指向的</li>
+<li>区别在于：传参的方式不一样<ul>
+<li>apply第二个参数必须是一个<strong>数组</strong>，apply会把参数数组展开，然后一一对应的传递给函数</li>
+<li>只处理第一个参数数组，后续的都不处理</li>
+</ul>
+</li>
+<li>实例：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params">a, b, c</span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>, a, b, c);</div><div class="line">      <span class="keyword">return</span> <span class="number">123</span>;</div><div class="line">    &#125;</div><div class="line">fn.apply(<span class="keyword">this</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);<span class="comment">//window 1 2 3</span></div><div class="line">fn.apply(<span class="keyword">this</span>,[<span class="number">1</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">5</span>,<span class="number">2</span>]);<span class="comment">//window 1 5 6,第二个数组无效</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="bind-方法"><a href="#bind-方法" class="headerlink" title="bind()方法"></a>bind()方法</h3><ul>
+<li>bind方法也是用来改变函数内部this指向的</li>
+<li>语法：<code>fun.bind(thisArg[,arg1[,arg2[,...]]])</code></li>
+<li>和call、apply区别在于：<ul>
+<li>call和apply在改变this指向的同时会直接调用该函数执行</li>
+<li>而bind<strong>不会调用该函数</strong>而是返回一个指定了this环境的新函数</li>
+</ul>
+</li>
+<li>返回值：<strong>返回由指定的this值和初始化参数改造的原函数拷贝</strong></li>
+<li>参数：<ul>
+<li>当绑定函数调用时，bing中的参数（第二个开始）将至于实参之前传递给被绑定的方法</li>
+</ul>
+</li>
+<li><p>主要用途：</p>
+<ul>
+<li>改变定时器内部this的指向</li>
+<li>改变数组的遍历方法内部this的指向（forEach、every、filter等）</li>
+<li>因为这以上两种情况内部的this都指向window</li>
+</ul>
+</li>
+<li><p>实例：</p>
+</li>
+</ul>
+<ol>
+<li><p>改变定时器内部this的指向</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> user = &#123;</div><div class="line">      name: <span class="string">'haha'</span>,</div><div class="line">      speaking: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">        &#125;.bind(<span class="keyword">this</span>), <span class="number">1000</span>);<span class="comment">//绑定bind后this由window改为指向user</span></div><div class="line">      &#125;</div><div class="line">    &#125;;</div><div class="line">user.speaking();<span class="comment">//结果是：user</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>改变数组的遍历方法内部this的指向</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//内部this指向window</span></div><div class="line">    &#125;.bind(arr));<span class="comment">//bind改变this指向arr</span></div></pre></td></tr></table></figure>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ul>
+<li><p>call和apply特性一样</p>
+<ul>
+<li>都是用来调用函数，而且是立即调用</li>
+<li>但是可以在调用函数的同时，通过第一个参数指定函数内部this的指向</li>
+<li>call调用时，参数必须以参数列表的形式传递，即以逗号分隔的方式依次传递即可</li>
+<li>apply调用时，参数必须是一个数组，然后执行时，会将数组内元素一个一个拿出来与形参一一对应进行传递</li>
+<li>如果第一个参数指定了null或undefined，则内部this指向window</li>
+</ul>
+</li>
+<li><p>bind</p>
+<ul>
+<li>可以用来指定内部this的指向，然后生成一个改变了this指向的新的函数</li>
+<li>和call、apply的最大区别就是：bind不会自调用</li>
+<li>bind支持传递参数，但传参的方式比较特殊，一共有两个位置可以传递<ul>
+<li>在bind的同时，以参数列表的形式进行传递</li>
+<li>在调用时，以参数列表形式传递</li>
+<li>以谁的参数为准？<ul>
+<li>两者合并：bing内的参数在前，调用时的参数在后，一起传递到函数内部</li>
+<li>实例：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">type</span>:<span class="string">'obj'</span>&#125;;</div><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x, y, z</span>) </span>&#123;</div><div class="line">     <span class="built_in">console</span>.log(<span class="keyword">this</span>, x, y, z);</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">var</span> newF1 = f1.bind(obj, <span class="number">2</span>);</div><div class="line">   newF1(<span class="number">4</span>,<span class="number">6</span>);<span class="comment">//obj 2 4 6</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
         <a href="/2015/06/12/浏览器函数提升中的bug/" >
   浏览器函数提升中的bug
 </a>
@@ -182,47 +313,6 @@
       <div class="article-entry">
         
           
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/06/10/函数的原型链/" >
-  函数原型链
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/06/10/函数的原型链/"><span class="article-date">
-  2015-06-10
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <h4 id="每一个函数都是Function的实例"><a href="#每一个函数都是Function的实例" class="headerlink" title="每一个函数都是Function的实例"></a>每一个函数都是Function的实例</h4><blockquote>
-<p>var f1=new Function();</p>
-</blockquote>
-<h4 id="函数查找机制"><a href="#函数查找机制" class="headerlink" title="函数查找机制"></a>函数查找机制</h4><p><img src="../img/function-prototype-chain.bmp" alt="函数原型链"></p>
-<p><strong>所有函数的原型对象都指向Function.prototype，包括Function自己</strong><br>即： </p>
-<blockquote>
-<p>f1.__proto__===Function.prototype;<br>Function.__proto__===Function.prototype;</p>
-</blockquote>
-
         
       </div>
     </div>
