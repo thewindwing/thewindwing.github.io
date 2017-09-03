@@ -12,13 +12,16 @@
   
 </title>
 
+<meta name="description" content="typeof方式typeof方式对数组、日期、正则的检测结果都是object。这些并不是我们想要的，我们需要的是Array、Date、RegExp。 Object.prototype.toString.call方式在typeof的基础上通过Object.prototype.toString.call（）来进一步判断数据类型，这种方式可以做到严谨的校验。  以上两种方法对比：     数据类型 ty">
 <meta property="og:type" content="article">
 <meta property="og:title" content="检测数据类型的方式">
 <meta property="og:url" content="http://yoursite.com/2015/06/28/检测数据类型/index.html">
 <meta property="og:site_name" content="风之翼">
-<meta property="og:updated_time" content="2017-08-28T11:21:21.859Z">
+<meta property="og:description" content="typeof方式typeof方式对数组、日期、正则的检测结果都是object。这些并不是我们想要的，我们需要的是Array、Date、RegExp。 Object.prototype.toString.call方式在typeof的基础上通过Object.prototype.toString.call（）来进一步判断数据类型，这种方式可以做到严谨的校验。  以上两种方法对比：     数据类型 ty">
+<meta property="og:updated_time" content="2017-09-02T08:57:17.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="检测数据类型的方式">
+<meta name="twitter:description" content="typeof方式typeof方式对数组、日期、正则的检测结果都是object。这些并不是我们想要的，我们需要的是Array、Date、RegExp。 Object.prototype.toString.call方式在typeof的基础上通过Object.prototype.toString.call（）来进一步判断数据类型，这种方式可以做到严谨的校验。  以上两种方法对比：     数据类型 ty">
 
 
   <link rel="alternative" href="/atom.xml" title="风之翼" type="application/atom+xml">
@@ -79,22 +82,22 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
+                <a href="javascript:;">Category</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">Tag</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">13</span></li></ul>
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">14</span></li></ul>
               </li>
             
           
@@ -165,12 +168,98 @@
 
   </div>
   <div class="article-entry">
-    
+    <h4 id="typeof方式"><a href="#typeof方式" class="headerlink" title="typeof方式"></a>typeof方式</h4><p>typeof方式对数组、日期、正则的检测结果都是object。这些并不是我们想要的，我们需要的是Array、Date、RegExp。</p>
+<h4 id="Object-prototype-toString-call方式"><a href="#Object-prototype-toString-call方式" class="headerlink" title="Object.prototype.toString.call方式"></a>Object.prototype.toString.call方式</h4><p>在typeof的基础上通过Object.prototype.toString.call（）来进一步判断数据类型，这种方式可以做到严谨的校验。</p>
+<ul>
+<li>以上两种方法对比：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>typeof（<strong>值都是字符串</strong>）</th>
+<th>Object.prototype.toString.call()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数值</td>
+<td>number</td>
+<td>[object Number]</td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>string</td>
+<td>[object String]</td>
+</tr>
+<tr>
+<td>布尔值</td>
+<td>boolean</td>
+<td>[object Boolean]</td>
+</tr>
+<tr>
+<td>null</td>
+<td>object</td>
+<td>[object Null]</td>
+</tr>
+<tr>
+<td>undefined</td>
+<td>object</td>
+<td>[object Undefined]</td>
+</tr>
+<tr>
+<td>new Date()</td>
+<td>object</td>
+<td>[object Date]</td>
+</tr>
+<tr>
+<td>new Boolean()</td>
+<td>object</td>
+<td>[object Boolean]</td>
+</tr>
+<tr>
+<td>/^ab$/g</td>
+<td>object</td>
+<td>[object RegExp]</td>
+</tr>
+<tr>
+<td>Math.pow</td>
+<td>function</td>
+<td>[object Function]</td>
+</tr>
+<tr>
+<td>函数</td>
+<td>function</td>
+<td>[object Function]</td>
+</tr>
+<tr>
+<td>其他普通对象</td>
+<td>object</td>
+<td>[object Object]</td>
+</tr>
+</tbody>
+</table>
+<p>实例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> /^a$/g); <span class="comment">//object</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="regexp">/^a$/g</span>));<span class="comment">//[object RegExp]</span></div><div class="line"> <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Date</span>()));[object <span class="built_in">Date</span>]</div></pre></td></tr></table></figure></p>
+<h4 id="检测构造函数和实例之间关系的方式"><a href="#检测构造函数和实例之间关系的方式" class="headerlink" title="检测构造函数和实例之间关系的方式"></a>检测构造函数和实例之间关系的方式</h4><ul>
+<li><strong>instanceof 方式</strong></li>
+</ul>
+<p>instanceof运算符主要用来判断某个构造函数与实例对象之间的关系。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"> <span class="keyword">var</span> f=<span class="keyword">new</span> F();</div><div class="line"><span class="built_in">console</span>.log(f <span class="keyword">instanceof</span> F); <span class="comment">//true</span></div></pre></td></tr></table></figure>
+<ul>
+<li><strong>constructor方式</strong></li>
+</ul>
+<p>还可以用实例对象的constructor属性值来检测其原型对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"> <span class="keyword">var</span> f=<span class="keyword">new</span> F();</div><div class="line"><span class="built_in">console</span>.log(f.constructor); <span class="comment">//F()&#123;&#125;</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>比较</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">F.prototype=&#123;</div><div class="line">  speaking:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</div><div class="line">  running:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">&#125;;</div><div class="line"> <span class="keyword">var</span> f=<span class="keyword">new</span> F();</div><div class="line"><span class="built_in">console</span>.log(f.constructor);<span class="comment">//Object,而不是F</span></div></pre></td></tr></table></figure>
+<p>由于我们为某个对象的原型上添加多个方法时，有时会用对象的方式添加，这样自己定义的原型对象会把自带的原型对象覆盖掉，所以需要我们收到添加construor属性，很有可能就会落掉原型对象的constructor属性，所以<strong>建议使用instanceof来检测</strong>构造函数和实例之间的关系。</p>
+
   </div>
   <footer class="article-footer">
     
   <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="Attribution-ShareAlike">
       <img src="/images/cc/cc.png">
       
           <img src="/images/cc/by.png">
@@ -178,7 +267,7 @@
           <img src="/images/cc/sa.png">
       
       <span>
-        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       </span>
     </a>
   </div>

@@ -12,13 +12,16 @@
   
 </title>
 
+<meta name="description" content="工厂函数工厂函数可以解决多个相似对象的创建问题。 例1： 1234567891011121314function createPerson(name,age)&amp;#123;  var per=new Object();  per.name=name;  per.age=age;  per.speaking=function()&amp;#123;    console.log(per.name);  &amp;#1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="构造函数">
 <meta property="og:url" content="http://yoursite.com/2015/06/30/构造函数/index.html">
 <meta property="og:site_name" content="风之翼">
-<meta property="og:updated_time" content="2017-08-28T11:23:34.168Z">
+<meta property="og:description" content="工厂函数工厂函数可以解决多个相似对象的创建问题。 例1： 1234567891011121314function createPerson(name,age)&amp;#123;  var per=new Object();  per.name=name;  per.age=age;  per.speaking=function()&amp;#123;    console.log(per.name);  &amp;#1">
+<meta property="og:updated_time" content="2017-09-02T07:16:04.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="构造函数">
+<meta name="twitter:description" content="工厂函数工厂函数可以解决多个相似对象的创建问题。 例1： 1234567891011121314function createPerson(name,age)&amp;#123;  var per=new Object();  per.name=name;  per.age=age;  per.speaking=function()&amp;#123;    console.log(per.name);  &amp;#1">
 
 
   <link rel="alternative" href="/atom.xml" title="风之翼" type="application/atom+xml">
@@ -79,22 +82,22 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
+                <a href="javascript:;">Category</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">Tag</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">13</span></li></ul>
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">14</span></li></ul>
               </li>
             
           
@@ -165,12 +168,24 @@
 
   </div>
   <div class="article-entry">
-    
+    <h4 id="工厂函数"><a href="#工厂函数" class="headerlink" title="工厂函数"></a>工厂函数</h4><p>工厂函数可以解决多个相似对象的创建问题。</p>
+<p>例1：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> per=<span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">  per.name=name;</div><div class="line">  per.age=age;</div><div class="line">  per.speaking=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(per.name);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> per;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> per1=createPerson(<span class="string">'lily'</span>,<span class="number">18</span>);</div><div class="line"><span class="keyword">var</span> per2=createPerson(<span class="string">'Tom'</span>,<span class="number">17</span>);</div><div class="line">per1.speaking();<span class="comment">//lily</span></div><div class="line">per2.speaking();<span class="comment">//Tom</span></div><div class="line"><span class="built_in">console</span>.log(per1 <span class="keyword">instanceof</span> <span class="built_in">Object</span>);<span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><p>工厂函数虽然可以解决多个相似对象的创建问题。但是他们都是通过Object new出来的，并不能判断他们的对象具体类型是什么，所以构造函数就诞生了。</p>
+<p>例2：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name=name;</div><div class="line">  <span class="keyword">this</span>.age=age;</div><div class="line">  <span class="keyword">this</span>.speaking=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">  &#125;</div><div class="line"> &#125; </div><div class="line"> <span class="keyword">var</span> per1=<span class="keyword">new</span> CreatePerson(<span class="string">'lily'</span>,<span class="number">18</span>);<span class="comment">//通过new操作符来创建Person实例</span></div><div class="line"> <span class="keyword">var</span> per2=<span class="keyword">new</span> CreatePerson(<span class="string">'Tom'</span>,<span class="number">18</span>);</div><div class="line"> per1.speaking();</div><div class="line"> per2.speaking();</div><div class="line"> <span class="built_in">console</span>.log(per1 <span class="keyword">instanceof</span> CreatePerson);<span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h4 id="调用构造函数的步骤："><a href="#调用构造函数的步骤：" class="headerlink" title="调用构造函数的步骤："></a>调用构造函数的步骤：</h4><ol>
+<li>创建一个新对象</li>
+<li>将构造函数的作用域给这个新对象，因此this就指向了这个新对象</li>
+<li>执行构造函数中的代码</li>
+<li>返回这个新对象</li>
+</ol>
+
   </div>
   <footer class="article-footer">
     
   <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="Attribution-ShareAlike">
       <img src="/images/cc/cc.png">
       
           <img src="/images/cc/by.png">
@@ -178,7 +193,7 @@
           <img src="/images/cc/sa.png">
       
       <span>
-        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       </span>
     </a>
   </div>

@@ -8,20 +8,17 @@
 
 <title>
   
-    浏览器函数提升中的bug
+    用canvas绘制刮刮乐
   
 </title>
 
-<meta name="description" content="if语句中的函数声明方式定义函数可能会产生bug实例： 1234567891011var val=true;if(val)&amp;#123;  function fn()&amp;#123;    console.log(&apos;true&apos;);  &amp;#125;&amp;#125;else&amp;#123;  function fn() &amp;#123;    console.log(&apos;false&apos;);  &amp;#125;&amp;#125;fn(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器函数提升中的bug">
-<meta property="og:url" content="http://yoursite.com/2015/06/12/浏览器函数提升中的bug/index.html">
+<meta property="og:title" content="用canvas绘制刮刮乐">
+<meta property="og:url" content="http://yoursite.com/2016/04/10/用canvas制作刮刮乐/index.html">
 <meta property="og:site_name" content="风之翼">
-<meta property="og:description" content="if语句中的函数声明方式定义函数可能会产生bug实例： 1234567891011var val=true;if(val)&amp;#123;  function fn()&amp;#123;    console.log(&apos;true&apos;);  &amp;#125;&amp;#125;else&amp;#123;  function fn() &amp;#123;    console.log(&apos;false&apos;);  &amp;#125;&amp;#125;fn(">
-<meta property="og:updated_time" content="2017-09-02T09:16:57.794Z">
+<meta property="og:updated_time" content="2017-09-02T03:58:17.263Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浏览器函数提升中的bug">
-<meta name="twitter:description" content="if语句中的函数声明方式定义函数可能会产生bug实例： 1234567891011var val=true;if(val)&amp;#123;  function fn()&amp;#123;    console.log(&apos;true&apos;);  &amp;#125;&amp;#125;else&amp;#123;  function fn() &amp;#123;    console.log(&apos;false&apos;);  &amp;#125;&amp;#125;fn(">
+<meta name="twitter:title" content="用canvas绘制刮刮乐">
 
 
   <link rel="alternative" href="/atom.xml" title="风之翼" type="application/atom+xml">
@@ -149,17 +146,17 @@
       
         <div style="max-width: 1000px">
       
-          <article id="post-浏览器函数提升中的bug" class="article article-type-post">
+          <article id="post-用canvas制作刮刮乐" class="article article-type-post">
   
     <h1 class="article-header">
-      浏览器函数提升中的bug
+      用canvas绘制刮刮乐
     </h1>
   
   
 
   <div class="article-info">
     <span class="article-date">
-  2015-06-12
+  2016-04-10
 </span>
 
     
@@ -168,11 +165,7 @@
 
   </div>
   <div class="article-entry">
-    <h4 id="if语句中的函数声明方式定义函数可能会产生bug"><a href="#if语句中的函数声明方式定义函数可能会产生bug" class="headerlink" title="if语句中的函数声明方式定义函数可能会产生bug"></a>if语句中的函数声明方式定义函数可能会产生bug</h4><p>实例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> val=<span class="literal">true</span>;</div><div class="line"><span class="keyword">if</span>(val)&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'true'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'false'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">fn();<span class="comment">//true</span></div></pre></td></tr></table></figure>
-<p>调用fn()时，在IE10以下会输出false，因为fn是通过函数声明方式定义的，这些浏览器在解析前会先进行函数提升。</p>
-<h4 id="解决办法—用函数表达式来定义函数"><a href="#解决办法—用函数表达式来定义函数" class="headerlink" title="解决办法—用函数表达式来定义函数"></a>解决办法—用函数表达式来定义函数</h4><p>但在大多数新得浏览器已解决这个bug，为了兼容这些低版本浏览器最好的方式是，用函数表达式来定义函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> val=<span class="literal">true</span>;</div><div class="line"><span class="keyword">var</span> fn;</div><div class="line"><span class="keyword">if</span>(val)&#123;</div><div class="line">  fn=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'true'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">  fn=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'false'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">fn();<span class="comment">//true</span></div></pre></td></tr></table></figure>
+    
   </div>
   <footer class="article-footer">
     
