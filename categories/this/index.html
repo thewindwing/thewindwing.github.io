@@ -8,22 +8,16 @@
 
 <title>
   
-    原型链继承原理
+    Category: this
   
 </title>
 
-<meta name="description" content="图表解析 Teacher.prototype=new Person();Study.prototype=new Person();var teacher=new Teacher(‘lily’,18);teacher.speaking();">
-<meta property="og:type" content="article">
-<meta property="og:title" content="原型链继承原理">
-<meta property="og:url" content="http://yoursite.com/2015/05/05/原型链继承/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="风之翼">
+<meta property="og:url" content="http://yoursite.com/categories/this/index.html">
 <meta property="og:site_name" content="风之翼">
-<meta property="og:description" content="图表解析 Teacher.prototype=new Person();Study.prototype=new Person();var teacher=new Teacher(‘lily’,18);teacher.speaking();">
-<meta property="og:image" content="http://yoursite.com/2015/05/05/原型链继承/prototype-chain-inherit.bmp">
-<meta property="og:updated_time" content="2017-09-04T16:02:21.540Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="原型链继承原理">
-<meta name="twitter:description" content="图表解析 Teacher.prototype=new Person();Study.prototype=new Person();var teacher=new Teacher(‘lily’,18);teacher.speaking();">
-<meta name="twitter:image" content="http://yoursite.com/2015/05/05/原型链继承/prototype-chain-inherit.bmp">
+<meta name="twitter:title" content="风之翼">
 
 
   <link rel="alternative" href="/atom.xml" title="风之翼" type="application/atom+xml">
@@ -151,60 +145,53 @@
       
         <div style="max-width: 1000px">
       
-          <article id="post-原型链继承" class="article article-type-post">
+          <h1>this</h1>
+
+
   
-    <h1 class="article-header">
-      原型链继承原理
-    </h1>
   
+    <div class="post-list">
   
 
-  <div class="article-info">
-    <span class="article-date">
-  2015-05-05
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2015/07/01/this/" >
+  this指向总结
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2015/07/01/this/"><span class="article-date">
+  2015-07-01
 </span>
-
-    
+</a>
+        
 	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/原型链继承/">原型链继承</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/this/">this</a></li></ul>
 	</span>
 
 
-    
-
-  </div>
-  <div class="article-entry">
-    <h4 id="图表解析"><a href="#图表解析" class="headerlink" title="图表解析"></a>图表解析</h4><blockquote>
-<p>Teacher.prototype=new Person();<br>Study.prototype=new Person();<br>var teacher=new Teacher(‘lily’,18);<br>teacher.speaking();</p>
-</blockquote>
-<a id="more"></a>
-<p><img src="/2015/05/05/原型链继承/prototype-chain-inherit.bmp" alt="原型链继承"></p>
-<p>当调用speaking方法时:<br>现在teacher自己身上找，找不到则沿着原型链去原型对象（new Person）上找,<br>找到则返回，找不到继续沿着原型链找（Person.prototype）<br>找到则停止查找。</p>
-<p>teacher中即使改变speaking方法的内容，也不会影响Person中的相应speaking方法。<br>因为<code>teacher.speaking=function(){console.log(&#39;hello&#39;);}</code>只会在自己的原型对象相应的添加了一个speaking 方法。</p>
-
-  </div>
-  <footer class="article-footer">
-    
-  <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="Attribution-ShareAlike">
-      <img src="/images/cc/cc.png">
-      
-          <img src="/images/cc/by.png">
         
-          <img src="/images/cc/sa.png">
-      
-      <span>
-        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
-      </span>
-    </a>
-  </div>
 
+      </div>
+      <div class="article-entry">
+        
+          <h4 id="1-普通函数调用时，this指向window"><a href="#1-普通函数调用时，this指向window" class="headerlink" title="1. 普通函数调用时，this指向window"></a>1. 普通函数调用时，this指向window</h4><p>实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">   &#125;</div><div class="line">   f(); &amp;nbsp;<span class="comment">//window</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+          <p>
+            <a href="/2015/07/01/this/">
+              Read More
+            </a>
+          </p>
+        
+      </div>
+    </div>
 
-    
-
-  </footer>
-</article>
-
+  
+    </div>
+  
 
 
 

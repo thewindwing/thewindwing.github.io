@@ -17,10 +17,10 @@
   margin-bottom: 0px;
 }
 .sidebar .title a {
-  color: #fff;
+  color: #cfe3cb;
 }
 .sidebar .title a:hover {
-  color: color-link-sidebar;
+  color: #fff;
 }
 .sidebar .subtitle {
   font-size: 14px;
@@ -41,6 +41,7 @@
 }
 .sidebar .author {
   margin-top: 0.5em;
+  color: #4d2;
 }
 .sidebar .description {
   font-size: 14px;

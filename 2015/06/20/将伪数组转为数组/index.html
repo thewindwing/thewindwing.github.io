@@ -12,16 +12,16 @@
   
 </title>
 
-<meta name="description" content="可以借用数组的slice方法将伪数组转为数组原理:&amp;nbsp;&amp;nbsp; 数组的slice方法，若不传任何参数，则截取全部数组，通过这么一调用，则伪数组成了真数组了。若不好理解，通过下面实例会清晰些： 12345678(function()&amp;#123;       var args=[].slice.call(arguments);  //通过call将slice的this指向了argument">
+<meta name="description" content="可以借用数组的slice方法将伪数组转为数组原理:&amp;nbsp;&amp;nbsp; 数组的slice方法，若不传任何参数，则截取全部数组，通过这么一调用，则伪数组成了真数组了。若不好理解，通过下面实例会清晰些：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="将伪数组转为数组">
 <meta property="og:url" content="http://yoursite.com/2015/06/20/将伪数组转为数组/index.html">
 <meta property="og:site_name" content="风之翼">
-<meta property="og:description" content="可以借用数组的slice方法将伪数组转为数组原理:&amp;nbsp;&amp;nbsp; 数组的slice方法，若不传任何参数，则截取全部数组，通过这么一调用，则伪数组成了真数组了。若不好理解，通过下面实例会清晰些： 12345678(function()&amp;#123;       var args=[].slice.call(arguments);  //通过call将slice的this指向了argument">
-<meta property="og:updated_time" content="2017-09-02T03:20:34.111Z">
+<meta property="og:description" content="可以借用数组的slice方法将伪数组转为数组原理:&amp;nbsp;&amp;nbsp; 数组的slice方法，若不传任何参数，则截取全部数组，通过这么一调用，则伪数组成了真数组了。若不好理解，通过下面实例会清晰些：">
+<meta property="og:updated_time" content="2017-09-04T16:03:45.999Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="将伪数组转为数组">
-<meta name="twitter:description" content="可以借用数组的slice方法将伪数组转为数组原理:&amp;nbsp;&amp;nbsp; 数组的slice方法，若不传任何参数，则截取全部数组，通过这么一调用，则伪数组成了真数组了。若不好理解，通过下面实例会清晰些： 12345678(function()&amp;#123;       var args=[].slice.call(arguments);  //通过call将slice的this指向了argument">
+<meta name="twitter:description" content="可以借用数组的slice方法将伪数组转为数组原理:&amp;nbsp;&amp;nbsp; 数组的slice方法，若不传任何参数，则截取全部数组，通过这么一调用，则伪数组成了真数组了。若不好理解，通过下面实例会清晰些：">
 
 
   <link rel="alternative" href="/atom.xml" title="风之翼" type="application/atom+xml">
@@ -82,21 +82,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/函数的自定义方式/">函数的自定义方式</a><span class="category-list-count">1</span></li></ul>
+                <a href="javascript:;">Category</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/call、apply和bind/">call、apply和bind</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/this/">this</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/伪数组转数组/">伪数组转数组</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数原型链/">函数原型链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数提升中的bug/">函数提升中的bug</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数的自定义方式/">函数的自定义方式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/原型链继承/">原型链继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索访问机制/">搜索访问机制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构造函数/">构造函数</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/检测数据类型/">检测数据类型</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/深拷贝和浅拷贝/">深拷贝和浅拷贝</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/继承/">继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闭包/">闭包</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">Tag</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
+                <a href="javascript:;">Archive</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">15</span></li></ul>
               </li>
             
@@ -163,19 +163,23 @@
 </span>
 
     
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/伪数组转数组/">伪数组转数组</a></li></ul>
+	</span>
+
 
     
 
   </div>
   <div class="article-entry">
-    <h4 id="可以借用数组的slice方法将伪数组转为数组"><a href="#可以借用数组的slice方法将伪数组转为数组" class="headerlink" title="可以借用数组的slice方法将伪数组转为数组"></a>可以借用数组的slice方法将伪数组转为数组</h4><h5 id="原理"><a href="#原理" class="headerlink" title="原理:"></a>原理:</h5><p>&nbsp;&nbsp; 数组的slice方法，若不传任何参数，则截取全部数组，通过这么一调用，则伪数组成了真数组了。若不好理解，通过下面实例会清晰些：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="keyword">var</span> args=[].slice.call(<span class="built_in">arguments</span>);  </div><div class="line"><span class="comment">//通过call将slice的this指向了arguments,arguments调用slice方法后，由于没传任何参数，则截取全部数组，即args=[2,5,7,8]成了真数组了。</span></div><div class="line">       <span class="built_in">console</span>.log(args); <span class="comment">//[2,5,7,8]</span></div><div class="line">       args.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(index,item);    <span class="comment">// 0 2    1 5     2 7    3 8</span></div><div class="line">       &#125;)</div><div class="line">    &#125;)(<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">8</span>);</div></pre></td></tr></table></figure>
+    <h4 id="可以借用数组的slice方法将伪数组转为数组"><a href="#可以借用数组的slice方法将伪数组转为数组" class="headerlink" title="可以借用数组的slice方法将伪数组转为数组"></a>可以借用数组的slice方法将伪数组转为数组</h4><h5 id="原理"><a href="#原理" class="headerlink" title="原理:"></a>原理:</h5><p>&nbsp;&nbsp; 数组的slice方法，若不传任何参数，则截取全部数组，通过这么一调用，则伪数组成了真数组了。若不好理解，通过下面实例会清晰些：<br><a id="more"></a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="keyword">var</span> args=[].slice.call(<span class="built_in">arguments</span>);  </div><div class="line"><span class="comment">//通过call将slice的this指向了arguments,arguments调用slice方法后，由于没传任何参数，</span></div><div class="line"><span class="comment">//则截取全部数组，即args=[2,5,7,8]成了真数组了。</span></div><div class="line">       <span class="built_in">console</span>.log(args); <span class="comment">//[2,5,7,8]</span></div><div class="line">       args.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(index,item);    <span class="comment">// 0 2    1 5     2 7    3 8</span></div><div class="line">       &#125;)</div><div class="line">    &#125;)(<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">8</span>);</div></pre></td></tr></table></figure>
 <h4 id="数组的slice方法实现原理"><a href="#数组的slice方法实现原理" class="headerlink" title="数组的slice方法实现原理"></a>数组的slice方法实现原理</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.prototype.mySlice=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="comment">//若一个参数也不传则截取全部数组</span></div><div class="line">      <span class="comment">// 若传一个参数，则截取从这个参数开始的索引到结束的所有数据</span></div><div class="line">      <span class="comment">// 若传两个参数，则截取从第一个参数开始索引到结束参数所对应索引的数据</span></div><div class="line">      <span class="keyword">var</span> start=<span class="number">0</span>;</div><div class="line">      <span class="keyword">var</span> end=<span class="keyword">this</span>.length;</div><div class="line">      <span class="built_in">arguments</span>.length===<span class="number">1</span>&amp;&amp;(strat=<span class="built_in">arguments</span>[<span class="number">0</span>]);</div><div class="line">      <span class="keyword">if</span>(<span class="built_in">arguments</span>.length==<span class="number">2</span>)&#123;</div><div class="line">        strat=<span class="built_in">arguments</span>[<span class="number">0</span>];</div><div class="line">        end=<span class="built_in">arguments</span>[<span class="number">1</span>];</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">var</span> temp=[];</div><div class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> i=start;i&lt;end;i++)&#123;</div><div class="line">        temp.push(<span class="keyword">this</span>[i]);</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> temp;</div><div class="line">    &#125;;</div><div class="line"><span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>].mySlice(<span class="number">2</span>)); <span class="comment">//[1,2,3,4]</span></div></pre></td></tr></table></figure>
   </div>
   <footer class="article-footer">
     
   <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="Attribution-ShareAlike">
       <img src="/images/cc/cc.png">
       
           <img src="/images/cc/by.png">
@@ -183,7 +187,7 @@
           <img src="/images/cc/sa.png">
       
       <span>
-        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       </span>
     </a>
   </div>

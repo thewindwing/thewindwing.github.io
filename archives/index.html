@@ -8,7 +8,7 @@
 
 <title>
   
-    归档
+    Archive
   
 </title>
 
@@ -78,21 +78,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/函数的自定义方式/">函数的自定义方式</a><span class="category-list-count">1</span></li></ul>
+                <a href="javascript:;">Category</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/call、apply和bind/">call、apply和bind</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/this/">this</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/伪数组转数组/">伪数组转数组</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数原型链/">函数原型链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数提升中的bug/">函数提升中的bug</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数的自定义方式/">函数的自定义方式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/原型链继承/">原型链继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索访问机制/">搜索访问机制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构造函数/">构造函数</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/检测数据类型/">检测数据类型</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/深拷贝和浅拷贝/">深拷贝和浅拷贝</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/继承/">继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闭包/">闭包</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">Tag</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
+                <a href="javascript:;">Archive</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">15</span></li></ul>
               </li>
             
@@ -350,6 +350,10 @@
 </span>
 </a>
         
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/this/">this</a></li></ul>
+	</span>
+
 
         
 
@@ -358,17 +362,11 @@
         
           <h4 id="1-普通函数调用时，this指向window"><a href="#1-普通函数调用时，this指向window" class="headerlink" title="1. 普通函数调用时，this指向window"></a>1. 普通函数调用时，this指向window</h4><p>实例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">   &#125;</div><div class="line">   f(); &amp;nbsp;<span class="comment">//window</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h4 id="2-构造函数调用时，this指向实例对象"><a href="#2-构造函数调用时，this指向实例对象" class="headerlink" title="2. 构造函数调用时，this指向实例对象"></a>2. 构造函数调用时，this指向实例对象</h4><p>实例1：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.age=<span class="number">12</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>); &amp;nbsp; <span class="comment">//F     </span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">new</span> F();</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h4 id="3-对象方法调用时，this指向该方法所属对象"><a href="#3-对象方法调用时，this指向该方法所属对象" class="headerlink" title="3. 对象方法调用时，this指向该方法所属对象"></a>3. 对象方法调用时，this指向该方法所属对象</h4><p>实例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj=&#123;</div><div class="line">    name:<span class="string">'lily'</span>,</div><div class="line">    singing:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>); &amp;nbsp; <span class="comment">//obj</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj.singing();</div></pre></td></tr></table></figure>
-<h4 id="4-事件绑定方法时，this指向绑定的事件对象"><a href="#4-事件绑定方法时，this指向绑定的事件对象" class="headerlink" title="4. 事件绑定方法时，this指向绑定的事件对象"></a>4. 事件绑定方法时，this指向绑定的事件对象</h4><h4 id="5-函数内部的普通函数调用时，this始终指向window"><a href="#5-函数内部的普通函数调用时，this始终指向window" class="headerlink" title="5. 函数内部的普通函数调用时，this始终指向window"></a>5. 函数内部的普通函数调用时，this始终指向window</h4><p>实例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.age=<span class="number">12</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//F</span></div><div class="line">        f=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//始终指向window</span></div><div class="line">        &#125;;</div><div class="line">        f();</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">new</span> F();</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h4 id="6-定时器函数内部的this指向始终是window"><a href="#6-定时器函数内部的this指向始终是window" class="headerlink" title="6. 定时器函数内部的this指向始终是window"></a>6. 定时器函数内部的this指向始终是window</h4><p>实例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line">setTimeout(Person, <span class="number">2000</span>);<span class="comment">//2s后输出window</span></div></pre></td></tr></table></figure>
-<h4 id="7-数组的一些遍历方法内部的this指向一直都是window"><a href="#7-数组的一些遍历方法内部的this指向一直都是window" class="headerlink" title="7. 数组的一些遍历方法内部的this指向一直都是window"></a>7. 数组的一些遍历方法内部的this指向一直都是window</h4><p>实例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</div><div class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//window window</span></div><div class="line">   &#125;);</div></pre></td></tr></table></figure>
-<h4 id="8-call、apply、bind方法可以改变内部this的指向"><a href="#8-call、apply、bind方法可以改变内部this的指向" class="headerlink" title="8. call、apply、bind方法可以改变内部this的指向"></a>8. call、apply、bind方法可以改变内部this的指向</h4>
+          <p>
+            <a href="/2015/07/01/this/">
+              Read More
+            </a>
+          </p>
         
       </div>
     </div>
@@ -395,6 +393,10 @@
 </span>
 </a>
         
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/构造函数/">构造函数</a></li></ul>
+	</span>
+
 
         
 
@@ -402,18 +404,12 @@
       <div class="article-entry">
         
           <h4 id="工厂函数"><a href="#工厂函数" class="headerlink" title="工厂函数"></a>工厂函数</h4><p>工厂函数可以解决多个相似对象的创建问题。</p>
-<p>例1：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> per=<span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">  per.name=name;</div><div class="line">  per.age=age;</div><div class="line">  per.speaking=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(per.name);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> per;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> per1=createPerson(<span class="string">'lily'</span>,<span class="number">18</span>);</div><div class="line"><span class="keyword">var</span> per2=createPerson(<span class="string">'Tom'</span>,<span class="number">17</span>);</div><div class="line">per1.speaking();<span class="comment">//lily</span></div><div class="line">per2.speaking();<span class="comment">//Tom</span></div><div class="line"><span class="built_in">console</span>.log(per1 <span class="keyword">instanceof</span> <span class="built_in">Object</span>);<span class="comment">//true</span></div></pre></td></tr></table></figure>
-<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><p>工厂函数虽然可以解决多个相似对象的创建问题。但是他们都是通过Object new出来的，并不能判断他们的对象具体类型是什么，所以构造函数就诞生了。</p>
-<p>例2：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name=name;</div><div class="line">  <span class="keyword">this</span>.age=age;</div><div class="line">  <span class="keyword">this</span>.speaking=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">  &#125;</div><div class="line"> &#125; </div><div class="line"> <span class="keyword">var</span> per1=<span class="keyword">new</span> CreatePerson(<span class="string">'lily'</span>,<span class="number">18</span>);<span class="comment">//通过new操作符来创建Person实例</span></div><div class="line"> <span class="keyword">var</span> per2=<span class="keyword">new</span> CreatePerson(<span class="string">'Tom'</span>,<span class="number">18</span>);</div><div class="line"> per1.speaking();</div><div class="line"> per2.speaking();</div><div class="line"> <span class="built_in">console</span>.log(per1 <span class="keyword">instanceof</span> CreatePerson);<span class="comment">//true</span></div></pre></td></tr></table></figure>
-<h4 id="调用构造函数的步骤："><a href="#调用构造函数的步骤：" class="headerlink" title="调用构造函数的步骤："></a>调用构造函数的步骤：</h4><ol>
-<li>创建一个新对象</li>
-<li>将构造函数的作用域给这个新对象，因此this就指向了这个新对象</li>
-<li>执行构造函数中的代码</li>
-<li>返回这个新对象</li>
-</ol>
-
+<p>例1：<br></p>
+          <p>
+            <a href="/2015/06/30/构造函数/">
+              Read More
+            </a>
+          </p>
         
       </div>
     </div>
@@ -440,6 +436,10 @@
 </span>
 </a>
         
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/检测数据类型/">检测数据类型</a></li></ul>
+	</span>
+
 
         
 
@@ -448,91 +448,11 @@
         
           <h4 id="typeof方式"><a href="#typeof方式" class="headerlink" title="typeof方式"></a>typeof方式</h4><p>typeof方式对数组、日期、正则的检测结果都是object。这些并不是我们想要的，我们需要的是Array、Date、RegExp。</p>
 <h4 id="Object-prototype-toString-call方式"><a href="#Object-prototype-toString-call方式" class="headerlink" title="Object.prototype.toString.call方式"></a>Object.prototype.toString.call方式</h4><p>在typeof的基础上通过Object.prototype.toString.call（）来进一步判断数据类型，这种方式可以做到严谨的校验。</p>
-<ul>
-<li>以上两种方法对比：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>typeof（<strong>值都是字符串</strong>）</th>
-<th>Object.prototype.toString.call()</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>数值</td>
-<td>number</td>
-<td>[object Number]</td>
-</tr>
-<tr>
-<td>字符串</td>
-<td>string</td>
-<td>[object String]</td>
-</tr>
-<tr>
-<td>布尔值</td>
-<td>boolean</td>
-<td>[object Boolean]</td>
-</tr>
-<tr>
-<td>null</td>
-<td>object</td>
-<td>[object Null]</td>
-</tr>
-<tr>
-<td>undefined</td>
-<td>object</td>
-<td>[object Undefined]</td>
-</tr>
-<tr>
-<td>new Date()</td>
-<td>object</td>
-<td>[object Date]</td>
-</tr>
-<tr>
-<td>new Boolean()</td>
-<td>object</td>
-<td>[object Boolean]</td>
-</tr>
-<tr>
-<td>/^ab$/g</td>
-<td>object</td>
-<td>[object RegExp]</td>
-</tr>
-<tr>
-<td>Math.pow</td>
-<td>function</td>
-<td>[object Function]</td>
-</tr>
-<tr>
-<td>函数</td>
-<td>function</td>
-<td>[object Function]</td>
-</tr>
-<tr>
-<td>其他普通对象</td>
-<td>object</td>
-<td>[object Object]</td>
-</tr>
-</tbody>
-</table>
-<p>实例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> /^a$/g); <span class="comment">//object</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="regexp">/^a$/g</span>));<span class="comment">//[object RegExp]</span></div><div class="line"> <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Date</span>()));[object <span class="built_in">Date</span>]</div></pre></td></tr></table></figure></p>
-<h4 id="检测构造函数和实例之间关系的方式"><a href="#检测构造函数和实例之间关系的方式" class="headerlink" title="检测构造函数和实例之间关系的方式"></a>检测构造函数和实例之间关系的方式</h4><ul>
-<li><strong>instanceof 方式</strong></li>
-</ul>
-<p>instanceof运算符主要用来判断某个构造函数与实例对象之间的关系。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"> <span class="keyword">var</span> f=<span class="keyword">new</span> F();</div><div class="line"><span class="built_in">console</span>.log(f <span class="keyword">instanceof</span> F); <span class="comment">//true</span></div></pre></td></tr></table></figure>
-<ul>
-<li><strong>constructor方式</strong></li>
-</ul>
-<p>还可以用实例对象的constructor属性值来检测其原型对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"> <span class="keyword">var</span> f=<span class="keyword">new</span> F();</div><div class="line"><span class="built_in">console</span>.log(f.constructor); <span class="comment">//F()&#123;&#125;</span></div></pre></td></tr></table></figure></p>
-<ul>
-<li>比较</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">F.prototype=&#123;</div><div class="line">  speaking:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</div><div class="line">  running:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">&#125;;</div><div class="line"> <span class="keyword">var</span> f=<span class="keyword">new</span> F();</div><div class="line"><span class="built_in">console</span>.log(f.constructor);<span class="comment">//Object,而不是F</span></div></pre></td></tr></table></figure>
-<p>由于我们为某个对象的原型上添加多个方法时，有时会用对象的方式添加，这样自己定义的原型对象会把自带的原型对象覆盖掉，所以需要我们收到添加construor属性，很有可能就会落掉原型对象的constructor属性，所以<strong>建议使用instanceof来检测</strong>构造函数和实例之间的关系。</p>
-
+          <p>
+            <a href="/2015/06/28/检测数据类型/">
+              Read More
+            </a>
+          </p>
         
       </div>
     </div>
@@ -559,6 +479,10 @@
 </span>
 </a>
         
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/深拷贝和浅拷贝/">深拷贝和浅拷贝</a></li></ul>
+	</span>
+
 
         
 
@@ -566,20 +490,11 @@
       <div class="article-entry">
         
           <h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><p>浅拷贝就是只复制对象的一层。即只能改变对象一层的引用了，如果对象属性值还是对象，则复制的是所包含的子对象的引用值。这样当改变副本的成员值时，原对象成员的属性值也会改变。</p>
-<p>实例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person1=&#123;</div><div class="line">  <span class="string">"name"</span>:<span class="string">'lily'</span>,</div><div class="line">  <span class="string">"age"</span>:<span class="number">20</span>,</div><div class="line">  <span class="string">"hobby"</span>:&#123;<span class="number">1</span>:<span class="string">'swimming'</span>,</div><div class="line"><span class="number">2</span>:[<span class="string">'a'</span>,<span class="string">'b'</span>]&#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> person2=&#123;&#125;;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> person1)&#123;</div><div class="line">  person2[key]=person1[key];</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(person2===person1);<span class="comment">//false 因为person2指向了另一个新的引用</span></div><div class="line">person2.hobby[<span class="string">'1'</span>]=<span class="string">'haha'</span>;</div><div class="line"><span class="built_in">console</span>.log(person1.hobby);<span class="comment">//&#123;1: "haha", 2: Array(2)&#125;</span></div><div class="line"><span class="comment">// 因为person2和person1的hobby属性都同时指向一个对象，所有改变2中的值时也会改变1中的值</span></div></pre></td></tr></table></figure>
-<h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><p>深拷贝就是一层层的复制对象的所有层级，并且不影响原来的对象内容。</p>
-<p>改变浅拷贝问题的解决办法：</p>
-<ul>
-<li>深拷贝方法一：<code>person2=JSON.parse(JSON.stringify(person1));</code></li>
-</ul>
-<p>通过先转换为字符串格式，再转为对象格式，这样一转换就全部拷贝过来，即深拷贝。但这种方法虽然简单但是有<strong>浏览器兼容问题</strong>。 </p>
-<ul>
-<li>深拷贝方法二：<strong>递归</strong></li>
-</ul>
-<p>原理： 若想复制一个对象的所有数据且不影响原对象时，需要递归或遍历每个属性并进行判断是否是复杂数据类型，若是就创建一个新的数组或对象，再遍历其成员，若成员还是复杂类型数据则再创建遍历，直到最深层。即通过递归的方法来实现深拷贝。</p>
-<p>实例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person1=&#123;</div><div class="line">  <span class="string">"name"</span>:<span class="string">'lily'</span>,</div><div class="line">  <span class="string">"age"</span>:<span class="number">20</span>,</div><div class="line">  <span class="string">"hobby"</span>:&#123;<span class="number">1</span>:<span class="string">'swimming'</span>,</div><div class="line"><span class="number">2</span>:[<span class="string">'a'</span>,<span class="string">'b'</span>]&#125;&#125;;</div><div class="line"><span class="keyword">var</span> person2=&#123;&#125;;</div><div class="line"></div><div class="line"><span class="comment">//判断是否是数组的方法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isArray</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(obj)===<span class="string">'[object Array]'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//判断是否是对象的方法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isObject</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(obj)===<span class="string">'[object Object]'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//封装一个函数，来实现递归拷贝</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">target,source</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> source)&#123;</div><div class="line">    <span class="keyword">if</span>(isArray(source[key]))&#123;</div><div class="line">      target[key]=[];</div><div class="line">      extend(target[key],source[key]);</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(isObject(source[key]))&#123;</div><div class="line">      target[key]=&#123;&#125;;</div><div class="line">      extend(target[key],source[key]);      </div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      target[key]=source[key];</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">extend(person2,person1);</div><div class="line">person2.hobby[<span class="string">'1'</span>]=<span class="string">'haha'</span>;</div><div class="line"><span class="built_in">console</span>.log(person1.hobby);<span class="comment">//&#123;1: "swimming", 2:['a','b']&#125;，此时并没有影响person1中的hobby值</span></div></pre></td></tr></table></figure>
+          <p>
+            <a href="/2015/06/28/深拷贝和浅拷贝/">
+              Read More
+            </a>
+          </p>
         
       </div>
     </div>
@@ -622,7 +537,7 @@
 
 
   <div class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">下一页</a>
+    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next</a>
   </div>
 
 

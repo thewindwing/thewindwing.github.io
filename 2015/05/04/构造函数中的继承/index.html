@@ -12,16 +12,16 @@
   
 </title>
 
-<meta name="description" content="原因： 当两个或多个构造函数具有很多相同的属性和方法时，我们就抽象出一个父类（构造函数）来写公共的属性和方法。  具体做法： 父构造函数：  公共的属性：写到父构造函数内 公共的方法：写到父构造函数的原型对象内   子构造函数：  属性继承：用父.call方法改变this指向来继承 方法继承： 原型对象拷贝继承for-in 利用原型链继承      实例解析： function Teacher(n">
+<meta name="description" content="原因： 当两个或多个构造函数具有很多相同的属性和方法时，我们就抽象出一个父类（构造函数）来写公共的属性和方法。  具体做法： 父构造函数：  公共的属性：写到父构造函数内 公共的方法：写到父构造函数的原型对象内   子构造函数：  属性继承：用父.call方法改变this指向来继承 方法继承： 原型对象拷贝继承for-in 利用原型链继承">
 <meta property="og:type" content="article">
 <meta property="og:title" content="构造函数中的继承">
 <meta property="og:url" content="http://yoursite.com/2015/05/04/构造函数中的继承/index.html">
 <meta property="og:site_name" content="风之翼">
-<meta property="og:description" content="原因： 当两个或多个构造函数具有很多相同的属性和方法时，我们就抽象出一个父类（构造函数）来写公共的属性和方法。  具体做法： 父构造函数：  公共的属性：写到父构造函数内 公共的方法：写到父构造函数的原型对象内   子构造函数：  属性继承：用父.call方法改变this指向来继承 方法继承： 原型对象拷贝继承for-in 利用原型链继承      实例解析： function Teacher(n">
-<meta property="og:updated_time" content="2017-08-30T13:30:13.816Z">
+<meta property="og:description" content="原因： 当两个或多个构造函数具有很多相同的属性和方法时，我们就抽象出一个父类（构造函数）来写公共的属性和方法。  具体做法： 父构造函数：  公共的属性：写到父构造函数内 公共的方法：写到父构造函数的原型对象内   子构造函数：  属性继承：用父.call方法改变this指向来继承 方法继承： 原型对象拷贝继承for-in 利用原型链继承">
+<meta property="og:updated_time" content="2017-09-04T16:07:51.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="构造函数中的继承">
-<meta name="twitter:description" content="原因： 当两个或多个构造函数具有很多相同的属性和方法时，我们就抽象出一个父类（构造函数）来写公共的属性和方法。  具体做法： 父构造函数：  公共的属性：写到父构造函数内 公共的方法：写到父构造函数的原型对象内   子构造函数：  属性继承：用父.call方法改变this指向来继承 方法继承： 原型对象拷贝继承for-in 利用原型链继承      实例解析： function Teacher(n">
+<meta name="twitter:description" content="原因： 当两个或多个构造函数具有很多相同的属性和方法时，我们就抽象出一个父类（构造函数）来写公共的属性和方法。  具体做法： 父构造函数：  公共的属性：写到父构造函数内 公共的方法：写到父构造函数的原型对象内   子构造函数：  属性继承：用父.call方法改变this指向来继承 方法继承： 原型对象拷贝继承for-in 利用原型链继承">
 
 
   <link rel="alternative" href="/atom.xml" title="风之翼" type="application/atom+xml">
@@ -82,21 +82,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">分类</a>
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/函数的自定义方式/">函数的自定义方式</a><span class="category-list-count">1</span></li></ul>
+                <a href="javascript:;">Category</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/call、apply和bind/">call、apply和bind</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/this/">this</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/伪数组转数组/">伪数组转数组</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数原型链/">函数原型链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数提升中的bug/">函数提升中的bug</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数的自定义方式/">函数的自定义方式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/原型链继承/">原型链继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索访问机制/">搜索访问机制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构造函数/">构造函数</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/检测数据类型/">检测数据类型</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/深拷贝和浅拷贝/">深拷贝和浅拷贝</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/继承/">继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闭包/">闭包</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
+                <a href="javascript:;">Tag</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
+                <a href="javascript:;">Archive</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">15</span></li></ul>
               </li>
             
@@ -163,6 +163,10 @@
 </span>
 
     
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/继承/">继承</a></li></ul>
+	</span>
+
 
     
 
@@ -189,6 +193,7 @@
 </ul>
 </li>
 </ul>
+<a id="more"></a>
 <h4 id="实例解析："><a href="#实例解析：" class="headerlink" title="实例解析："></a>实例解析：</h4><blockquote>
 <p>function Teacher(name,age){<br>      &nbsp;&nbsp;this.name=name;<br>      &nbsp;&nbsp;this.age=age;<br>      &nbsp;&nbsp;this.speaking=function(){<br>         &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘speaking’);}<br>      &nbsp;&nbsp;this.teaching=function(){<br>         &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘teaching’);}<br>    &nbsp;&nbsp;} </p>
 <p>function Student(name,age){<br>      &nbsp;&nbsp;this.name=name;<br>      &nbsp;&nbsp;this.age=age;<br>      &nbsp;&nbsp;this.speaking=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘speaking’);}<br>      &nbsp;&nbsp;this.studying=function(){<br>        &nbsp;&nbsp;&nbsp;&nbsp;console.log(‘studying’);}<br>  } </p>
@@ -217,7 +222,7 @@
   <footer class="article-footer">
     
   <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="Attribution-ShareAlike">
       <img src="/images/cc/cc.png">
       
           <img src="/images/cc/by.png">
@@ -225,7 +230,7 @@
           <img src="/images/cc/sa.png">
       
       <span>
-        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       </span>
     </a>
   </div>
