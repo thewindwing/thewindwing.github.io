@@ -93,7 +93,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">14</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">15</span></li></ul>
               </li>
             
           
@@ -635,6 +635,47 @@
 <p>调用fn()时，在IE10以下会输出false，因为fn是通过函数声明方式定义的，这些浏览器在解析前会先进行函数提升。</p>
 <h4 id="解决办法—用函数表达式来定义函数"><a href="#解决办法—用函数表达式来定义函数" class="headerlink" title="解决办法—用函数表达式来定义函数"></a>解决办法—用函数表达式来定义函数</h4><p>但在大多数新得浏览器已解决这个bug，为了兼容这些低版本浏览器最好的方式是，用函数表达式来定义函数。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> val=<span class="literal">true</span>;</div><div class="line"><span class="keyword">var</span> fn;</div><div class="line"><span class="keyword">if</span>(val)&#123;</div><div class="line">  fn=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'true'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">  fn=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'false'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">fn();<span class="comment">//true</span></div></pre></td></tr></table></figure>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2015/06/10/函数的原型链/" >
+  函数原型链
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2015/06/10/函数的原型链/"><span class="article-date">
+  2015-06-10
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h4 id="每一个函数都是Function的实例"><a href="#每一个函数都是Function的实例" class="headerlink" title="每一个函数都是Function的实例"></a>每一个函数都是Function的实例</h4><blockquote>
+<p>var f1=new Function();</p>
+</blockquote>
+<h4 id="函数查找机制"><a href="#函数查找机制" class="headerlink" title="函数查找机制"></a>函数查找机制</h4><p><img src="/2015/06/10/函数的原型链/img/function-prototype-chain.bmp" alt="函数原型链"></p>
+<p><strong>所有函数的原型对象都指向Function.prototype，包括Function自己</strong><br>即： </p>
+<blockquote>
+<p>f1.__proto__===Function.prototype;<br>Function.__proto__===Function.prototype;</p>
+</blockquote>
+
         
       </div>
     </div>
