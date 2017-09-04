@@ -8,7 +8,7 @@
 
 <title>
   
-    Archive: 2015/6
+    归档: 2015/6
   
 </title>
 
@@ -78,21 +78,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">Category</a>
+                <a href="javascript:;">分类</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
+                <a href="javascript:;">标签</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
+                <a href="javascript:;">归档</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">14</span></li></ul>
               </li>
             
@@ -327,7 +327,7 @@
     <div class="post-list-item article">
       <h3 class="article-header">
         <a href="/2015/06/28/深拷贝和浅拷贝/" >
-  深拷贝和浅拷贝
+  对象或数组中的深拷贝和浅拷贝
 </a>
 
       </h3>
@@ -345,7 +345,21 @@
       </div>
       <div class="article-entry">
         
-          <h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3>
+          <h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><p>浅拷贝就是只复制对象的一层。即只能改变对象一层的引用了，如果对象属性值还是对象，则复制的是所包含的子对象的引用值。这样当改变副本的成员值时，原对象成员的属性值也会改变。</p>
+<p>实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person1=&#123;</div><div class="line">  <span class="string">"name"</span>:<span class="string">'lily'</span>,</div><div class="line">  <span class="string">"age"</span>:<span class="number">20</span>,</div><div class="line">  <span class="string">"hobby"</span>:&#123;<span class="number">1</span>:<span class="string">'swimming'</span>,</div><div class="line"><span class="number">2</span>:[<span class="string">'a'</span>,<span class="string">'b'</span>]&#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> person2=&#123;&#125;;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> person1)&#123;</div><div class="line">  person2[key]=person1[key];</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(person2===person1);<span class="comment">//false 因为person2指向了另一个新的引用</span></div><div class="line">person2.hobby[<span class="string">'1'</span>]=<span class="string">'haha'</span>;</div><div class="line"><span class="built_in">console</span>.log(person1.hobby);<span class="comment">//&#123;1: "haha", 2: Array(2)&#125;</span></div><div class="line"><span class="comment">// 因为person2和person1的hobby属性都同时指向一个对象，所有改变2中的值时也会改变1中的值</span></div></pre></td></tr></table></figure>
+<h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><p>深拷贝就是一层层的复制对象的所有层级，并且不影响原来的对象内容。</p>
+<p>改变浅拷贝问题的解决办法：</p>
+<ul>
+<li>深拷贝方法一：<code>person2=JSON.parse(JSON.stringify(person1));</code></li>
+</ul>
+<p>通过先转换为字符串格式，再转为对象格式，这样一转换就全部拷贝过来，即深拷贝。但这种方法虽然简单但是有<strong>浏览器兼容问题</strong>。 </p>
+<ul>
+<li>深拷贝方法二：<strong>递归</strong></li>
+</ul>
+<p>原理： 若想复制一个对象的所有数据且不影响原对象时，需要递归或遍历每个属性并进行判断是否是复杂数据类型，若是就创建一个新的数组或对象，再遍历其成员，若成员还是复杂类型数据则再创建遍历，直到最深层。即通过递归的方法来实现深拷贝。</p>
+<p>实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person1=&#123;</div><div class="line">  <span class="string">"name"</span>:<span class="string">'lily'</span>,</div><div class="line">  <span class="string">"age"</span>:<span class="number">20</span>,</div><div class="line">  <span class="string">"hobby"</span>:&#123;<span class="number">1</span>:<span class="string">'swimming'</span>,</div><div class="line"><span class="number">2</span>:[<span class="string">'a'</span>,<span class="string">'b'</span>]&#125;&#125;;</div><div class="line"><span class="keyword">var</span> person2=&#123;&#125;;</div><div class="line"></div><div class="line"><span class="comment">//判断是否是数组的方法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isArray</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(obj)===<span class="string">'[object Array]'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//判断是否是对象的方法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isObject</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(obj)===<span class="string">'[object Object]'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//封装一个函数，来实现递归拷贝</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">target,source</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> source)&#123;</div><div class="line">    <span class="keyword">if</span>(isArray(source[key]))&#123;</div><div class="line">      target[key]=[];</div><div class="line">      extend(target[key],source[key]);</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(isObject(source[key]))&#123;</div><div class="line">      target[key]=&#123;&#125;;</div><div class="line">      extend(target[key],source[key]);      </div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      target[key]=source[key];</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">extend(person2,person1);</div><div class="line">person2.hobby[<span class="string">'1'</span>]=<span class="string">'haha'</span>;</div><div class="line"><span class="built_in">console</span>.log(person1.hobby);<span class="comment">//&#123;1: "swimming", 2:['a','b']&#125;，此时并没有影响person1中的hobby值</span></div></pre></td></tr></table></figure>
         
       </div>
     </div>
