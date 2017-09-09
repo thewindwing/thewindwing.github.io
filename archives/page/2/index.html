@@ -352,11 +352,11 @@
 </li>
 <li><p>E[attr=’val’] —- 选择具有attr属性且属性值等于val的E元素 <strong>val的引号可有可无</strong></p>
 </li>
-<li><p>E[attr*=val] (css3新增) —- 选择具有attr属性且属性值包含val字符串的E元素<br><code>div[class*=a]{border-color:green} //后三个div都被选中</code></p>
+<li><p>E[attr*=val]  —- (css3新增) 选择具有attr属性且属性值包含val字符串的E元素<br><code>div[class*=a]{border-color:green} //后三个div都被选中</code></p>
 </li>
-<li><p>E[attr^=val] (css3新增) —- 选择具有attr属性且属性值为以val开头的字符串的E元素<br><code>div[class^=a]{border-color:plum} //第三个div被选中</code></p>
+<li><p>E[attr^=val] —-  (css3新增) 选择具有attr属性且属性值为以val开头的字符串的E元素<br><code>div[class^=a]{border-color:plum} //第三个div被选中</code></p>
 </li>
-<li><p>E[class$=val] (css3新增) —- 选择具有attr属性且属性值为以val结束的字符串的E元素<br><code>div[class$=a]{border-color:pink} //第二个div和第四个div被选中</code></p>
+<li><p>E[class$=val] —-  (css3新增) 选择具有attr属性且属性值为以val结束的字符串的E元素<br><code>div[class$=a]{border-color:pink} //第二个div和第四个div被选中</code></p>
 </li>
 <li><p>E[attr~=val] —- 选择具有attr属性且属性值仅等于val或者属性值为以空格分隔的字词列表，但其中有一个等于val的E元素<br><code>div[class~=a]{} //第二个和第四个div被选中</code></p>
 </li>
