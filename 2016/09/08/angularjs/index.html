@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    angularjs
+  
+</title>
+
+<meta name="description" content="angularjs是什么? 一款非常优秀的前端高级JS框架 由谷歌团队负责开发维护  框架与库的区别 库：对代码进行封装，调用封装的方法，简化操作，如jQuery 框架：提供代码书写规范，按照规则写代码，框架自动帮我们实现相应的功能 无论是angularjs还是jQuery都是用原生JS封装的  指令">
+<meta name="keywords" content="angularjs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angularjs">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/angularjs/index.html">
+<meta property="og:site_name" content="风之翼">
+<meta property="og:description" content="angularjs是什么? 一款非常优秀的前端高级JS框架 由谷歌团队负责开发维护  框架与库的区别 库：对代码进行封装，调用封装的方法，简化操作，如jQuery 框架：提供代码书写规范，按照规则写代码，框架自动帮我们实现相应的功能 无论是angularjs还是jQuery都是用原生JS封装的  指令">
+<meta property="og:image" content="http://yoursite.com/2016/09/08/angularjs/模块%20页面%20控制器%20页面区域的关系.png">
+<meta property="og:image" content="http://yoursite.com/2016/09/08/angularjs/双向数据绑定.png">
+<meta property="og:updated_time" content="2017-09-29T09:46:56.602Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angularjs">
+<meta name="twitter:description" content="angularjs是什么? 一款非常优秀的前端高级JS框架 由谷歌团队负责开发维护  框架与库的区别 库：对代码进行封装，调用封装的方法，简化操作，如jQuery 框架：提供代码书写规范，按照规则写代码，框架自动帮我们实现相应的功能 无论是angularjs还是jQuery都是用原生JS封装的  指令">
+<meta name="twitter:image" content="http://yoursite.com/2016/09/08/angularjs/模块%20页面%20控制器%20页面区域的关系.png">
+
+
+  <link rel="alternative" href="/atom.xml" title="风之翼" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">风之翼</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">风之翼</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">wing</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/"><img src="/img/QQ20130141837.png"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ajax/">ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/angularjs/">angularjs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/border相关属性/">border相关属性</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/call、apply和bind/">call、apply和bind</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/this/">this</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web适配/">web适配</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/伪数组转数组/">伪数组转数组</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数原型链/">函数原型链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数提升中的bug/">函数提升中的bug</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数的自定义方式/">函数的自定义方式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/动态创建元素/">动态创建元素</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/原型链继承/">原型链继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/同源和跨域请求/">同源和跨域请求</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/插件/">插件</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索访问机制/">搜索访问机制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构造函数/">构造函数</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/检测数据类型/">检测数据类型</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/正则表达式/">正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/深拷贝和浅拷贝/">深拷贝和浅拷贝</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/继承/">继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/获取元素位置/">获取元素位置</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/获取自定义属性/">获取自定义属性</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设置元素的尺寸/">设置元素的尺寸</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/选择器总结/">选择器总结</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闭包/">闭包</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">15</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/denjones/hexo-theme-chan" title="Chan" target="_blank" rel="external">Chan</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="https://github.com/denjones" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-angularjs" class="article article-type-post">
+  
+    <h1 class="article-header">
+      angularjs
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-09-08
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/angularjs/">angularjs</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angularjs/">angularjs</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <h3 id="angularjs是什么"><a href="#angularjs是什么" class="headerlink" title="angularjs是什么?"></a>angularjs是什么?</h3><ul>
+<li>一款非常优秀的前端高级JS框架</li>
+<li>由谷歌团队负责开发维护</li>
+</ul>
+<h3 id="框架与库的区别"><a href="#框架与库的区别" class="headerlink" title="框架与库的区别"></a>框架与库的区别</h3><ul>
+<li>库：对代码进行封装，调用封装的方法，简化操作，如jQuery</li>
+<li>框架：提供代码书写规范，按照规则写代码，框架自动帮我们实现相应的功能</li>
+<li>无论是angularjs还是jQuery都是用原生JS封装的</li>
+</ul>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><a id="more"></a>
+<ul>
+<li><strong>ng-click=”函数调用”</strong> —–为当前元素添加点击事件<ul>
+<li><code>&lt;button ng-click=&quot;val=+val+1&quot;&gt;&lt;/button&gt;</code></li>
+<li><strong>ng-click=”clickfn()” </strong></li>
+<li>ng-click里面不能写原生JS代码 <strong>只能写angularJS中的代码</strong></li>
+<li><strong>函数clickfn应该去控制器内去定义</strong></li>
+</ul>
+</li>
+<li><strong>ng-model=”变量名”</strong> <ul>
+<li>获取表单元素的值，并且-把获取的值复制给变量</li>
+<li>实现数据双向绑定</li>
+</ul>
+</li>
+<li><strong>ng-app=“模块名字”</strong> <ul>
+<li>当页面加载完成以后，angularjs会去页面中找ng-app属性</li>
+<li>如果没找到，则什么也不做</li>
+<li>找到则会执行属性所在元素包裹的代码</li>
+<li>可以接受模块名字作为参数 </li>
+<li>angularjs会将当前页面交给指令所指定的模块去管理</li>
+</ul>
+</li>
+<li><strong>ng-init=”变量1=值1;变量2=值2”</strong><ul>
+<li>给变量赋初始值，一定要写在ng-app内部</li>
+<li>值若是字符串，要加引号<code>ng-init=&quot;我是字符串&quot;</code></li>
+</ul>
+</li>
+<li><strong>ng-view 属性</strong> <ul>
+<li>angularjs会将获取到的模版文件内容放在页面中有ng-view指令的元素中</li>
+</ul>
+</li>
+</ul>
+<h3 id="插值表达式-的作用"><a href="#插值表达式-的作用" class="headerlink" title="插值表达式 { { } }的作用"></a>插值表达式 <code>{ { } }</code>的作用</h3><ul>
+<li>在表达式中可以写ng中的变量</li>
+<li>显示字符串</li>
+<li>进行简单计算 <code>+ - * / %</code></li>
+<li>可以写三元运算符</li>
+<li>不能写循环和if-else判断<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>&gt;</span> <span class="comment">&lt;!--angularjs执行ng-app所在元素包裹的代码--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">ng-model</span>=<span class="string">"val"</span> <span class="attr">ng-init</span>=<span class="string">'val=0'</span>&gt;</span> <span class="comment">&lt;!--设置初始值为0--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"val=+val+1"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="comment">&lt;!--点击一次val+1--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;val&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!--显示变量val的值--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;val+"插值表达式"&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!--字符串字符串--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;1+3&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="comment">&lt;!--简单计算--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;val==5?"yes":"no"&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="comment">&lt;!--三元运算符--&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'angular.min.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> <span class="comment">&lt;!--引入--&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="angularjs是基于模块开发的"><a href="#angularjs是基于模块开发的" class="headerlink" title="angularjs是基于模块开发的"></a>angularjs是基于模块开发的</h3><ul>
+<li>HTML页面和angularjs模块之间是管理和被管理的关系，angularjs是管理者</li>
+</ul>
+<h3 id="如何创建模块？"><a href="#如何创建模块？" class="headerlink" title="如何创建模块？"></a>如何创建模块？</h3><ul>
+<li>语法：<ul>
+<li><strong>模块对象=angular.module(‘模块名字’,[要依赖的模块名字])</strong>–返回值是模块对象</li>
+<li><strong>如果当前模块没有要依赖的模块，第二个参数就要写一个空数组</strong></li>
+<li>angular.module(’模块的名字’,[] )</li>
+</ul>
+</li>
+</ul>
+<h3 id="如何创建控制器"><a href="#如何创建控制器" class="headerlink" title="如何创建控制器"></a>如何创建控制器</h3><ul>
+<li>语法：<ul>
+<li><strong>模块对象.controller(‘控制器名字’,function($scope){回调函数})</strong></li>
+<li>创建多个控制器时，直接复值</li>
+<li><strong>$scope 专门向控制器控制的区域暴露数据的</strong>是一个对象类型</li>
+<li>所有的变量都要去在$scope对象下面去找  $scope.变量</li>
+<li>兄弟控制器之间如果定义了相同的属性 ，不会冲突</li>
+</ul>
+</li>
+<li>作用：<ul>
+<li>为用户界面提供数据</li>
+<li>用户界面的逻辑主要写在控制器中</li>
+</ul>
+</li>
+<li>告诉angularjs页面中的哪一个区域由哪一个控制器去控制<ul>
+<li><strong>ng-controller=’控制器名字’</strong></li>
+<li>告诉angularjs当前区域由这个控制器去控制</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2016/09/08/angularjs/模块 页面 控制器 页面区域的关系.png" alt="页面与模块的关系"></p>
+<h3 id="angularjs中双向数据绑定"><a href="#angularjs中双向数据绑定" class="headerlink" title="angularjs中双向数据绑定"></a>angularjs中双向数据绑定</h3><ul>
+<li>当我们在文本框中写ng-model指令以后，angularjs会监听文本框的值变化事件，当事件发生的时候，angularjs会获取到文本框的最新的值，并且把这个值赋值给$cope下面的相同属性，当$cope下面的属性的值发生变化的时候，angularjs会去页面中找哪一个地方使用了这个变量，将使用到这个变量的地方更新成最新的值，这个现象叫做数据双向绑定。</li>
+<li>html =&gt; js  html中通过表单元素将数据改变 js中跟着同步</li>
+<li>js=&gt;html  js中将数据改变 html中也跟着同步</li>
+<li><strong>实现双向数据绑定的必要条件</strong><ul>
+<li>必须是表单元素</li>
+<li>且元素身上要有ng-model指令<br><img src="/2016/09/08/angularjs/双向数据绑定.png" alt="数据双向绑定"></li>
+</ul>
+</li>
+</ul>
+<h3 id="单页面web应用（single-page-web-application-简称SPA）"><a href="#单页面web应用（single-page-web-application-简称SPA）" class="headerlink" title="单页面web应用（single page web application 简称SPA）"></a>单页面web应用（single page web application 简称SPA）</h3><ul>
+<li>特点：<ul>
+<li><strong>整个网站一个页面构成</strong></li>
+<li><strong>链接对应锚点，锚点对应页面</strong></li>
+<li><strong>通过ajax局部刷新达到页面切换的目的</strong></li>
+<li>公共部分只刷新一次</li>
+<li>不会发生页面跳转白屏现象，跳转过程中可以加载loading等</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>不能被搜索以前收入</li>
+</ul>
+</li>
+<li>应用场景<ul>
+<li>适合不需要被搜索以前搜索到的应用</li>
+<li>如网站后台管理系统，办公OA 混合app（在单页面的基础上包了个Android壳子）</li>
+</ul>
+</li>
+<li>监督地址栏中的锚点值发生变化事件<ul>
+<li><strong>window.onhashchange事件</strong></li>
+</ul>
+</li>
+<li>获取锚点值<ul>
+<li><strong>location.hash</strong></li>
+</ul>
+</li>
+<li>判断锚点值</li>
+<li>根据锚点值获得对应的页面</li>
+</ul>
+<h3 id="在angularjs中实现单页面应用"><a href="#在angularjs中实现单页面应用" class="headerlink" title="在angularjs中实现单页面应用"></a>在angularjs中实现单页面应用</h3><ul>
+<li><strong>路由</strong><ul>
+<li>路由就是<strong>用来配置页面之间的跳转关系的</strong>，配置锚点与页面之间的对应关系</li>
+<li>路由并没有集成在angularjs文件中，而是作为一个单独的模块存在，如果使用路由，需要<strong>将路由模块作为主模块的依赖模块</strong></li>
+<li><strong>路由模块的名字是ngRoute</strong></li>
+<li><strong><code>angular.module(&#39;模块名字&#39;,[&#39;ngRoute&#39;])</code></strong></li>
+<li>模块：<ul>
+<li>入口模块—管理页面的那个模块</li>
+<li>功能模块—路由</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="路由配置"><a href="#路由配置" class="headerlink" title="路由配置"></a>路由配置</h3><ul>
+<li>语法<ul>
+<li><strong>模块对象.config(回调函数)</strong></li>
+<li>回调函数有个参数是<strong>路由配置对象$routeProvider</strong></li>
+<li>路由配置对象有个<strong>when方法</strong>由来配置锚点和页面的跳转</li>
+<li>angularjs要求<strong>锚点必须以“/”开头</strong></li>
+<li>HTML中的锚点要以<strong>#!/开头</strong>  <code>&lt;a href=&quot;#!/index&quot;&gt;&lt;/a&gt;</code></li>
+<li>路由配置对象有个<strong>otherwise方法</strong>用来设置默认跳转到首页<ul>
+<li>页面一打开 地址栏中没有锚点，页面中的坑是空白</li>
+<li>当用户输入一个不存在的锚点时</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="为路由提供模版的三种方法"><a href="#为路由提供模版的三种方法" class="headerlink" title="为路由提供模版的三种方法"></a>为路由提供模版的三种方法</h3><ul>
+<li><ol>
+<li>外联方式：</li>
+</ol>
+<ul>
+<li>使用templateUrl方式载入模板</li>
+<li>需要在http环境下(本地file协议下不支持)，发送ajax请求</li>
+<li>使用最多</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//app为模块对象， myApp为模块的名字 ngRoute为路由模块名字</span></div><div class="line"><span class="keyword">var</span> app=angular.module(<span class="string">'myApp'</span>,[<span class="string">'ngRoute'</span>]);</div><div class="line">app.config(<span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</div><div class="line">    $routeProvider.when(<span class="string">'/锚点'</span>,&#123;</div><div class="line">      templateUrl:<span class="string">'模版文件路径（相对路径）'</span>,</div><div class="line">      controller:<span class="string">'控制器1'</span>;</div><div class="line">      <span class="comment">//当使用了路由后，就不需要直接在页面中写ng-controller指令。而是在配置中改</span></div><div class="line">      &#125;).when(<span class="string">'/index'</span>,&#123;</div><div class="line">        templateUrl:<span class="string">'./tpl/index.html'</span>,</div><div class="line">        controller:<span class="string">'控制器2'</span></div><div class="line">        &#125;).otherwise(<span class="string">'默认跳转到首页'</span>)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li><p>2.内联方式：</p>
+<ul>
+<li>使用template载入模版</li>
+<li>不发送ajax请求，可以用file或 用localhost<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app=angular.module(<span class="string">'myApp'</span>,[<span class="string">'ngRoute'</span>]);</div><div class="line">app.config(<span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</div><div class="line">    $routeProvider.when(<span class="string">'/锚点'</span>,&#123;</div><div class="line">        template:<span class="string">'&lt;div&gt;模版代码&lt;/div&gt;'</span>,</div><div class="line">        controller:<span class="string">'控制器1'</span></div><div class="line">      &#125;).otherwise(<span class="string">'/index'</span>)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>3.内部模版：</p>
+<ul>
+<li>通过script标签载入模版</li>
+<li>不发送ajax请求 可以用file或 用localhost</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;script id=<span class="string">'indexTpl'</span> type=<span class="string">'text/ng-template'</span>&gt;</div><div class="line">  &lt;div&gt;模版代码&lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>script&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line"><span class="keyword">var</span> app=angular.module(<span class="string">'myApp'</span>,[<span class="string">'ngRoute'</span>]);</div><div class="line">app.config(<span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</div><div class="line">    $routeProvider.when(<span class="string">'/锚点1'</span>,&#123;</div><div class="line">        templaterUrl:<span class="string">'模版id地址indexTpl'</span>,</div><div class="line">        controller:<span class="string">'控制器1'</span></div><div class="line">      &#125;)..otherwise(<span class="string">'/index'</span>)</div><div class="line">  &#125;)</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="angularjs相关网站"><a href="#angularjs相关网站" class="headerlink" title="angularjs相关网站"></a>angularjs相关网站</h3><ul>
+<li><a href="http://angularjs.org" target="_blank" rel="external">官方网站</a></li>
+<li><a href="https://code.angularjs.org/1.6.4/docs/api" target="_blank" rel="external">官方文档</a></li>
+<li>[学习网站]<ul>
+<li><a href="http://www.angularjs.net.cn" target="_blank" rel="external">http://www.angularjs.net.cn</a></li>
+<li><a href="http://www.apjs.net" target="_blank" rel="external">http://www.apjs.net</a></li>
+<li><a href="http://www.runoob.com/angularjs/angularjs-tutorial.html" target="_blank" rel="external">http://www.runoob.com/angularjs/angularjs-tutorial.html</a></li>
+<li><a href="https://stackoverflow.com/" target="_blank" rel="external">https://stackoverflow.com/</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2017 风之翼 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
