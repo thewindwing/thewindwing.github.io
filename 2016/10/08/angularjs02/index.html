@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    angularjs02
+  
+</title>
+
+<meta name="description" content="1.路由传递参数123456789101112131415161718192021/* 分为三步：1.在被传递参数页面（详情页）的路由中配置参数占位符(类似于函数的形参).   when(&apos;/article/:id&apos;,&amp;#123;templateUrl:&apos;articleTpl&apos;&amp;#125;) 2.在传递参数页面（列表页）的跳转链接中，将实际的参数传递过去&amp;lt;li&amp;gt;&amp;lt;a href=&quot;">
+<meta name="keywords" content="angularjs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angularjs02">
+<meta property="og:url" content="http://yoursite.com/2016/10/08/angularjs02/index.html">
+<meta property="og:site_name" content="风之翼">
+<meta property="og:description" content="1.路由传递参数123456789101112131415161718192021/* 分为三步：1.在被传递参数页面（详情页）的路由中配置参数占位符(类似于函数的形参).   when(&apos;/article/:id&apos;,&amp;#123;templateUrl:&apos;articleTpl&apos;&amp;#125;) 2.在传递参数页面（列表页）的跳转链接中，将实际的参数传递过去&amp;lt;li&amp;gt;&amp;lt;a href=&quot;">
+<meta property="og:updated_time" content="2017-10-07T04:31:03.897Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angularjs02">
+<meta name="twitter:description" content="1.路由传递参数123456789101112131415161718192021/* 分为三步：1.在被传递参数页面（详情页）的路由中配置参数占位符(类似于函数的形参).   when(&apos;/article/:id&apos;,&amp;#123;templateUrl:&apos;articleTpl&apos;&amp;#125;) 2.在传递参数页面（列表页）的跳转链接中，将实际的参数传递过去&amp;lt;li&amp;gt;&amp;lt;a href=&quot;">
+
+
+  <link rel="alternative" href="/atom.xml" title="风之翼" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">风之翼</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">风之翼</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">wing</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/"><img src="/img/QQ20130141837.png"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">Category</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ajax/">ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/angularjs/">angularjs</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/border相关属性/">border相关属性</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/call、apply和bind/">call、apply和bind</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/this/">this</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web适配/">web适配</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/伪数组转数组/">伪数组转数组</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数原型链/">函数原型链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数提升中的bug/">函数提升中的bug</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数的自定义方式/">函数的自定义方式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/动态创建元素/">动态创建元素</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/原型链继承/">原型链继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/同源和跨域请求/">同源和跨域请求</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/插件/">插件</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索访问机制/">搜索访问机制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构造函数/">构造函数</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/检测数据类型/">检测数据类型</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/正则表达式/">正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/深拷贝和浅拷贝/">深拷贝和浅拷贝</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/继承/">继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/获取元素位置/">获取元素位置</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/获取自定义属性/">获取自定义属性</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设置元素的尺寸/">设置元素的尺寸</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/选择器总结/">选择器总结</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闭包/">闭包</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">Tag</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">15</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/denjones/hexo-theme-chan" title="Chan" target="_blank" rel="external">Chan</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="https://github.com/denjones" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-angularjs02" class="article article-type-post">
+  
+    <h1 class="article-header">
+      angularjs02
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-10-08
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/angularjs/">angularjs</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angularjs/">angularjs</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <h3 id="1-路由传递参数"><a href="#1-路由传递参数" class="headerlink" title="1.路由传递参数"></a>1.路由传递参数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"> 分为三步：</span></div><div class="line"><span class="comment">1.在被传递参数页面（详情页）的路由中配置参数占位符(类似于函数的形参)</span></div><div class="line"><span class="comment">.   when('/article/:id',&#123;</span></div><div class="line"><span class="comment">templateUrl:'articleTpl'&#125;)</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment"> 2.在传递参数页面（列表页）的跳转链接中，将实际的参数传递过去</span></div><div class="line"><span class="comment">&lt;li&gt;&lt;a href="#!/article/1"&gt;&lt;/li&gt;</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment"> 3 在被传递参数页面（详情页）的控制器中获取传递过来的参数</span></div><div class="line"><span class="comment">app.controller('articleCtrl',function($routeParams,$scope)&#123;</span></div><div class="line"><span class="comment">$routeParams:对象 里面保存着传递过来的路由参数 &#123;id:1&#125;</span></div><div class="line"><span class="comment">$scope。msg='当前页面的id是'+$routeParams.id//这样就可以使用传递过来的id放到页面中，通过插值表达式</span></div><div class="line"><span class="comment">&#125;)</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">+ 4.想配置多个参数</span></div><div class="line"><span class="comment">.when('/article/:id/:title',&#123;</span></div><div class="line"><span class="comment">templateUrl:'articleTpl'&#125;)</span></div><div class="line"><span class="comment">//&lt;li&gt;&lt;a href="#!/article/1/我是标题1 "&gt;&lt;/li&gt;</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="2-创建模块的第二个参数写与不写的区别"><a href="#2-创建模块的第二个参数写与不写的区别" class="headerlink" title="2.创建模块的第二个参数写与不写的区别"></a>2.创建模块的第二个参数写与不写的区别</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"> //写：创建模块  var app = angular.module('myApp',[])</span></div><div class="line"><span class="comment">//不写：获取模块  angular.module('myApp')  == app  返回值是获取到的模块对象</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">var app = angular.module('myApp',[])</span></div><div class="line"><span class="comment">app.controller('ctrl',function($scope)&#123;</span></div><div class="line"><span class="comment">$scope.msg='我是mou';</span></div><div class="line"><span class="comment">//$scope不能改 是个形参 只是站位来用的</span></div><div class="line"><span class="comment">//因为angularjs是根据形参的名字传递实参的</span></div><div class="line"><span class="comment">//如果形参名字变了，angularjs就不知道你要干什么了</span></div><div class="line"><span class="comment">//传统的函数是根据形参的顺序传递的angularjs是根据形参的名字传递实参的</span></div><div class="line"><span class="comment">//由于形参很多，如果按顺序只用其中一个 则其前面的都必须写 所有angularjs用形参的名字来传递实参</span></div><div class="line"><span class="comment">&#125;)</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">当用压缩工具压缩代码时会把函数的形参转换为比较短的字符减小代码体积</span></div><div class="line"><span class="comment">安全的方式创建控制器</span></div><div class="line"><span class="comment">控制器的第二个参数改成数组的形式</span></div><div class="line"><span class="comment">数组中的元素和形参值一一对应 </span></div><div class="line"><span class="comment">app.controller(‘ctrl’,['$scope','$timeout',function($scope，$timeout,$http,$location)&#123;</span></div><div class="line"><span class="comment">$scope.msg='我是mou';</span></div><div class="line"><span class="comment">//js压缩工具不会对字符串进行压缩</span></div><div class="line"><span class="comment">//angularjs会先去函数看形参 如果不认识 则去前面找对应的字符串['$scope',</span></div><div class="line"><span class="comment">&#125;])</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">app.controller('ctrl',['$scope','$timeout','$http','$location',function($scope,$timeout,$http,$location)&#123;</span></div><div class="line"><span class="comment">//形参有几个 前面字符串就要写几个对应的 否则报错</span></div><div class="line"><span class="comment">$scope.msg='我是mou';</span></div><div class="line"><span class="comment">&#125;])*/</span></div></pre></td></tr></table></figure>
+<h3 id="4-angularjs中的作用域"><a href="#4-angularjs中的作用域" class="headerlink" title="4.angularjs中的作用域"></a>4.angularjs中的作用域</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*与函数几乎一样 就近原则</span></div><div class="line"><span class="comment">（1）angularjs中控制器控制的区域就是一个局部作用域</span></div><div class="line"><span class="comment">$scope局部作用域</span></div><div class="line"><span class="comment">沿着$scope一层一层往上找的，直到全局作用域</span></div><div class="line"><span class="comment">原生JS的作用域链看不到摸不到 angularjs中可以看到$scope</span></div><div class="line"><span class="comment">相邻控制器之间是独立的，互不影响</span></div><div class="line"><span class="comment">（2）$rootScope 代表全局作用域</span></div><div class="line"><span class="comment">$rootScope 可以挂载一些公共的属性或者方法 */</span></div></pre></td></tr></table></figure>
+<h3 id="5-常用指令之ng-repeat"><a href="#5-常用指令之ng-repeat" class="headerlink" title="5.常用指令之ng-repeat"></a>5.常用指令之ng-repeat</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*1.指令分类：</span></div><div class="line"><span class="comment">内置指令（普通指令、事件指令）自定义指令</span></div><div class="line"><span class="comment">普通指令：</span></div><div class="line"><span class="comment">1.ng-repeat='循环过程中的当前项 in 数据'  遍历数据并且生成DOM元素</span></div><div class="line"><span class="comment">类似于for in 循环</span></div><div class="line"><span class="comment">               in 是固定写法</span></div><div class="line"><span class="comment">               in 后面加上要遍历的数据</span></div><div class="line"><span class="comment">这个指令可以加在任何标签上</span></div><div class="line"><span class="comment">$scope.arr=['a','b','c'];</span></div><div class="line"><span class="comment">如果想在页面列表中显示各数组项</span></div><div class="line"><span class="comment">ng-repeat='item in arr' 循环谁写谁</span></div><div class="line"><span class="comment">&lt;li ng-repeat='item in arr'&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt; 产生3个li 值分别为 a b c</span></div><div class="line"><span class="comment">2.ng-repeat是可以循环对象的</span></div><div class="line"><span class="comment">item是对应的值 ：&lt;div  ng-repeat="item in obj "&gt;&#123;&#123;item&#125;&#125;&lt;/div&gt;</span></div><div class="line"><span class="comment">要显示键和值：&lt;div  ng-repeat="(key,val) in obj "&gt;&#123;&#123;key&#125;&#125; &#123;&#123;val&#125;&#125;&lt;/div&gt;</span></div><div class="line"><span class="comment">key 代表对象的键值    val代表对象键值对应的值</span></div><div class="line"><span class="comment">3.在循环的过程中拿到索引</span></div><div class="line"><span class="comment">1. $index 当前循环的索引 从0开始</span></div><div class="line"><span class="comment">2. $first 当前循环是否是第一次循环 true false 返回值是布尔值</span></div><div class="line"><span class="comment">3. $last 当前循环是否是最后一次循环 </span></div><div class="line"><span class="comment">4. $middle  当前是否是中间项 除了first和last其他都是中间项</span></div><div class="line"><span class="comment">5. $even 是否是偶数项</span></div><div class="line"><span class="comment">6. $odd 是否是奇数项</span></div><div class="line"><span class="comment"> 我们可以利用这些值在循环的过程中做各种判断 达到我们想要的目的</span></div><div class="line"><span class="comment">&lt;li ng-repeat='item in arr'&gt;</span></div><div class="line"><span class="comment">&#123;&#123;item&#125;&#125;</span></div><div class="line"><span class="comment">&lt;p&gt;&#123;&#123;$index&#125;&#125;&lt;/p&gt;</span></div><div class="line"><span class="comment">&lt;/li&gt;</span></div><div class="line"><span class="comment">4.若数组中有重复项会报错  （duplicates 重复的）</span></div><div class="line"><span class="comment">默认情况下遍历的数组中不能有重复类型的值(基本数据类型) 否则会报错 信息如下</span></div><div class="line"><span class="comment">         [ngRepeat:dupes]  ng-repeat指令被愚弄(调戏)了</span></div><div class="line"><span class="comment"> 解决办法: 在遍历的数据后面写上track by 一个唯一(不重复)的值  一般会写$index</span></div><div class="line"><span class="comment">ng-repeat="item in arr track by $index" */</span></div></pre></td></tr></table></figure>
+<h3 id="6-ng-class指令-用来操作类名"><a href="#6-ng-class指令-用来操作类名" class="headerlink" title="6.ng-class指令 用来操作类名"></a>6.ng-class指令 用来操作类名</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*ng-class=“&#123;‘类名1’：‘布尔值’，‘类名2’：‘布尔值’&#125;” 指令专门用来添加或者删除类名的</span></div><div class="line"><span class="comment">对象的属性值可以是变量或者js表达式来表示布尔值</span></div><div class="line"><span class="comment">若布尔值为真则是添加类名</span></div><div class="line"><span class="comment">若布尔值为假则是删除类名</span></div><div class="line"><span class="comment">&lt;div ng-class="&#123;'active':'true'&#125;"&gt;&lt;/div&gt;</span></div><div class="line"><span class="comment">  &lt;input type="checkbox" ng-model='isActive'&gt;//isActive是一个布尔值</span></div><div class="line"><span class="comment">如果复选框选中值为true 如果复选框取消选中值为false</span></div><div class="line"><span class="comment">&lt;div ng-class="&#123;'active':isActive变量&#125;"&gt;&lt;/div&gt;*/</span></div></pre></td></tr></table></figure>
+<h3 id="7-页面加载时一瞬间闪烁-问题"><a href="#7-页面加载时一瞬间闪烁-问题" class="headerlink" title="7.页面加载时一瞬间闪烁{ { { } }问题"></a>7.页面加载时一瞬间闪烁{ <code>{ { } }</code>问题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*AngularJS 应用在加载时防止 AngularJS 代码未加载完而出现的问题。</span></div><div class="line"><span class="comment">1. ng-bind="数据"只会绑定一个数据</span></div><div class="line"><span class="comment">&lt;div ng-bind="msg"&gt;&lt;/div&gt; 将数据显示到div里面  </span></div><div class="line"><span class="comment">2.当div中绑定多个数据时</span></div><div class="line"><span class="comment">ng-bind-template="&#123;&#123;数据1&#125;&#125; &#123;&#123;数据2&#125;&#125;"</span></div><div class="line"><span class="comment">&lt;div ng-bind-template="&#123;&#123;msg&#125;&#125; &#123;&#123;msg2&#125;&#125;"&gt;&lt;/div&gt; </span></div><div class="line"><span class="comment">3.指令ng-cloak解决表达式闪烁问题</span></div><div class="line"><span class="comment">&lt;div ng-cloak&gt;&#123;&#123;数据&#125;&#125;&lt;/div&gt; */</span></div></pre></td></tr></table></figure>
+<h3 id="8-ng-non-bindable"><a href="#8-ng-non-bindable" class="headerlink" title="8.ng-non-bindable"></a>8.ng-non-bindable</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*ng-non-bindable被这个指令包含的内容都不会被解析</span></div><div class="line"><span class="comment">&lt;div ng-non-bindable ng-init= ' hello="123" '&gt;&#123;&#123;hello&#125;&#125;&lt;/div&gt; </span></div><div class="line"><span class="comment">在页面中原封不动的显示&#123;&#123;hello&#125;&#125; ng-init不起作用*/</span></div></pre></td></tr></table></figure>
+<h3 id="9-ng-show和ng-hide"><a href="#9-ng-show和ng-hide" class="headerlink" title="9.ng-show和ng-hide"></a>9.ng-show和ng-hide</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">ng-show='布尔值'和ng-hide='布尔值'控制元素的显示和隐藏 （通过classdisplay）</span></div><div class="line"><span class="comment">ng-show='true'显示 false时为隐藏  ng-show=变量 默认值为显示</span></div><div class="line"><span class="comment">ng-hide=''true'隐藏    ng-hide=变量</span></div><div class="line"><span class="comment">布尔值可以是变量或者简单的条件表达式，只要结果是布尔值就行</span></div><div class="line"><span class="comment">&lt;div ng-show="list.length==0"&gt;暂无数据&lt;/div&gt;当list长度为0时显示</span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
+<h3 id="10-ng-if"><a href="#10-ng-if" class="headerlink" title="10. ng-if"></a>10. ng-if</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"> ng-if='布尔值'控制元素的显示和隐藏  true为显示 false为隐藏</span></div><div class="line"><span class="comment">ng-show 和ng-hide通过样式的方式达到显示隐藏元素的目的</span></div><div class="line"><span class="comment">ng-if是通过增加和删除DOM节点的方式达到显示隐藏元素的目的</span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
+<h3 id="11-ng-switch-和ng-switch-when"><a href="#11-ng-switch-和ng-switch-when" class="headerlink" title="11.ng-switch 和ng-switch-when"></a>11.ng-switch 和ng-switch-when</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">ng-switch(相当于元素JS中的switch)</span></div><div class="line"><span class="comment">ng-switch-when(相当于元素JS中的case)</span></div><div class="line"><span class="comment">是一对指令 类似于switch-case语句</span></div><div class="line"><span class="comment">常用于多个选项卡的显示和隐藏（增删DOM元素的方式）</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">&lt;div ng-switch='num'&gt;</span></div><div class="line"><span class="comment">  &lt;button ng-click='num=1'&gt;按钮1&lt;/button&gt;</span></div><div class="line"><span class="comment">  &lt;button ng-click='num=2'&gt;按钮2&lt;/button&gt;</span></div><div class="line"><span class="comment">  &lt;button ng-click='num=3'&gt;按钮3&lt;/button&gt;</span></div><div class="line"><span class="comment">  &lt;div ng-switch-when='1'&gt;按钮1对应的内容&lt;/div&gt;</span></div><div class="line"><span class="comment">  &lt;div ng-switch-when='2'&gt;按钮2对应的内容&lt;/div&gt;</span></div><div class="line"><span class="comment">  &lt;div ng-switch-when='3'&gt;按钮3对应的内容&lt;/div&gt;</span></div><div class="line"><span class="comment">&lt;/div&gt;</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
+<h3 id="12-原生JS中有哪些事件-angularjs中就有哪些事件指令-只多不少"><a href="#12-原生JS中有哪些事件-angularjs中就有哪些事件指令-只多不少" class="headerlink" title="12. 原生JS中有哪些事件 angularjs中就有哪些事件指令 只多不少"></a>12. 原生JS中有哪些事件 angularjs中就有哪些事件指令 只多不少</h3><ul>
+<li>在angularjs事件中如果想用事件对象e不能直接参数用 会返回undefined 需要$event传递过来<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">onclick =&gt;  ng-click</span></div><div class="line"><span class="comment">onmouseenter =&gt; ng-mouseenter</span></div><div class="line"><span class="comment">onchange =&gt; ng-change </span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">ng-dblclick 双击事件</span></div><div class="line"><span class="comment">注意：在angularjs事件中如果想用事件对象e不能直接参数用 会返回undefined 需要$event传递过来</span></div><div class="line"><span class="comment">先：&lt;div ng-dblclick ='dblclickFn($event)'&gt;按钮3对应的内容&lt;/div&gt;</span></div><div class="line"><span class="comment">后：控制器中 app.controller('ctrl',function($scope)&#123;//e可以是任一位置</span></div><div class="line"><span class="comment">$scope.dblckickFn=function(e)&#123;</span></div><div class="line"><span class="comment">console.log(e);//返回一个对象,否则返回undefined</span></div><div class="line"><span class="comment">&#125;</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">&#125;)</span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="13-timeout延时定时器-同setTimeout"><a href="#13-timeout延时定时器-同setTimeout" class="headerlink" title="13.$timeout延时定时器 同setTimeout"></a>13.$timeout延时定时器 同setTimeout</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">app.controller('ctrl',['$scope','$timeout',function($scope,$timeout)&#123;</span></div><div class="line"><span class="comment">$timeout(function()&#123;</span></div><div class="line"><span class="comment">$scope.imgUrl='';</span></div><div class="line"><span class="comment">&#125;,1000)</span></div><div class="line"><span class="comment">&#125;])</span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
+<h3 id="14-ng-src和ng-href"><a href="#14-ng-src和ng-href" class="headerlink" title="14.ng-src和ng-href"></a>14.ng-src和ng-href</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">ng-src 数据解析完成以后 生成正确的src属性，防止404报错</span></div><div class="line"><span class="comment">&lt;img ng-src='&#123;&#123;imgUrl&#125;&#125;'&gt;直接写&lt;img src='&#123;&#123;imgUrl&#125;&#125;'&gt;会404报错，浏览器解析式不认识&#123;&#123;&#125;&#125;</span></div><div class="line"><span class="comment">当浏览器解析时 img中没有src所以不解析 但anguarjs认识ng-src指令，此时再生成正确的src属性</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">ng-href数据解析完成以后 生成正确的href属性,防止用户点击空链接，刷新本页面</span></div><div class="line"><span class="comment">&lt;a ng-href='baidu.com'&gt;&lt;/a&gt; 这样在时间未到之前不是链接，当时间到了才可以点击跳转，防止用户点击空链接</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">angular.forEach(循环的数据，回调函数)</span></div><div class="line"><span class="comment">angular.forEach(循环的数据，function(value,index)&#123;</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">&#125;)</span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">&lt;body ng-app="myApp" ng-controller="ctr"&gt;</span></div><div class="line"><span class="comment">&lt;!--&lt;img src="&#123;&#123;src&#125;&#125;" alt=""&gt;--&gt;</span></div><div class="line"><span class="comment">&lt;!--由于angularJS的引入在img下面，所以会出现404错误--&gt;</span></div><div class="line"><span class="comment">&lt;!--解决办法--&gt;</span></div><div class="line"><span class="comment">&lt;img ng-src="&#123;&#123;src&#125;&#125;"&gt;</span></div><div class="line"><span class="comment">&lt;!--此时浏览器解析时，不认识ng-src,直接跳过，然后angular认识，再解析渲染，所以不会报错--&gt;</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">&lt;!--&lt;a href="&#123;&#123;href&#125;&#125;"&gt;百度&lt;/a&gt;--&gt;</span></div><div class="line"><span class="comment">&lt;!--设置等待时间再跳转，会显示跳转迟钝--&gt;</span></div><div class="line"><span class="comment">&lt;a ng-href="&#123;&#123;href&#125;&#125;"&gt;百度&lt;/a&gt;</span></div><div class="line"><span class="comment">&lt;!--这样在时间未到之前不是链接，当时间到了才可以点击跳转，防止用户点击空链接--&gt;</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">&lt;script src="angular.min.js"&gt;&lt;/script&gt;</span></div><div class="line"><span class="comment">&lt;script&gt;</span></div><div class="line"><span class="comment">    angular.module('myApp',[])</span></div><div class="line"><span class="comment">            .controller('ctr',['$scope','$timeout',function($scope,$timeout)&#123;</span></div><div class="line"><span class="comment">                $scope.src='ps1b.jpg';</span></div><div class="line"><span class="comment">                $timeout(function()&#123;</span></div><div class="line"><span class="comment">                    $scope.href='http://www.baidu.com';</span></div><div class="line"><span class="comment">                &#125;,5000);</span></div><div class="line"><span class="comment">            &#125;])</span></div><div class="line"><span class="comment">&lt;/script&gt;</span></div><div class="line"><span class="comment">&lt;/body&gt;</span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
+<h3 id="17-数据驱动DOM"><a href="#17-数据驱动DOM" class="headerlink" title="17.数据驱动DOM"></a>17.数据驱动DOM</h3><ul>
+<li>如果想操作页面中的DOM 直接操作数据就行  数据添加DOM添加 数据减少DOM减少</li>
+<li>点击按钮时清空数组中的数据 <button ng-click="list.length=0">清空数据</button></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">&lt;body ng-app="myApp" ng-controller="ctr"&gt;</span></div><div class="line"><span class="comment">&lt;ul&gt;</span></div><div class="line"><span class="comment">    &lt;li ng-repeat="item in list track by $index"&gt;</span></div><div class="line"><span class="comment">        &lt;a href="#" ng-bind="item.title"&gt;&lt;/a&gt;</span></div><div class="line"><span class="comment">        &lt;div ng-bind="item.description"&gt;&lt;/div&gt;</span></div><div class="line"><span class="comment">        &lt;br&gt;</span></div><div class="line"><span class="comment">    &lt;/li&gt;</span></div><div class="line"><span class="comment">&lt;/ul&gt;</span></div><div class="line"><span class="comment">&lt;div ng-show="list.length==0"&gt;暂无数据&lt;/div&gt;</span></div><div class="line"><span class="comment">&lt;button ng-click="list.length=0"&gt;清空数据&lt;/button&gt;</span></div><div class="line"><span class="comment">&lt;button ng-click="add()"&gt;添加数据&lt;/button&gt;</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">&lt;script src="angular.min.js"&gt;&lt;/script&gt;</span></div><div class="line"><span class="comment">&lt;script&gt;</span></div><div class="line"><span class="comment">//    清空数据：数组长度为0，显示隐藏的div</span></div><div class="line"><span class="comment">//    添加数据：向数组添加一项</span></div><div class="line"><span class="comment">    angular.module('myApp',[])</span></div><div class="line"><span class="comment">            .controller('ctr',['$scope',function($scope)&#123;</span></div><div class="line"><span class="comment">                $scope.list=[</span></div><div class="line"><span class="comment">                    &#123;</span></div><div class="line"><span class="comment">                        id:'1',</span></div><div class="line"><span class="comment">                        title:'有人在微信QQ上拉你搞投资？那都是骗子！',</span></div><div class="line"><span class="comment">                        description : '喜欢炒股的朋友或许经常在微信或者QQ收到各种“业务员”的推广，。'</span></div><div class="line"><span class="comment">                    &#125;,</span></div><div class="line"><span class="comment">                    &#123;</span></div><div class="line"><span class="comment">                        id:'2',</span></div><div class="line"><span class="comment">                        title:'女子被"男友"骗150万 相处3年不知对方系闺蜜假扮',</span></div><div class="line"><span class="comment">                        description : '时报讯 今年2月，杭州市滨江警方接到一起报警，报警人林芬（化名）称2014年至2017年间。'</span></div><div class="line"><span class="comment">                    &#125;</span></div><div class="line"><span class="comment">                ];</span></div><div class="line"><span class="comment">                $scope.add=function()&#123;</span></div><div class="line"><span class="comment">                    var item=&#123;</span></div><div class="line"><span class="comment">                                id:'3',</span></div><div class="line"><span class="comment">                                title:'后添加数据！',</span></div><div class="line"><span class="comment">                                description : '已是悬崖百丈冰，犹有花枝俏！'</span></div><div class="line"><span class="comment">                            &#125;;</span></div><div class="line"><span class="comment">                    $scope.list.push(item);</span></div><div class="line"><span class="comment">                &#125;</span></div><div class="line"><span class="comment">            &#125;])</span></div><div class="line"><span class="comment">&lt;/script&gt;</span></div><div class="line"><span class="comment">&lt;/body&gt;*/</span></div></pre></td></tr></table></figure>
+<h3 id="18-angularjs中请求数据的方式-http"><a href="#18-angularjs中请求数据的方式-http" class="headerlink" title="18.angularjs中请求数据的方式 $http"></a>18.angularjs中请求数据的方式 $http</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*app.controller('ctrl',['$scope','$http',function($scope,$http)&#123;</span></div><div class="line"><span class="comment">$http(&#123;</span></div><div class="line"><span class="comment">url:'',//请求的地址</span></div><div class="line"><span class="comment">method:'', //请求的方式</span></div><div class="line"><span class="comment">params:&#123;&#125;, //专门用做get传参，不管method是post或者get //向后台传参</span></div><div class="line"><span class="comment">data:&#123;&#125;//post传参用data </span></div><div class="line"><span class="comment">&#125;).then(function(res)&#123;</span></div><div class="line"><span class="comment">//成功回调</span></div><div class="line"><span class="comment">&#125;,function()&#123;</span></div><div class="line"><span class="comment">//失败回调</span></div><div class="line"><span class="comment">&#125;);</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">//简写形式</span></div><div class="line"><span class="comment">$http.get(url,&#123;params:&#123; a:1, b:2&#125; &#125; ).then(function(res)&#123;</span></div><div class="line"><span class="comment">//成功回函数</span></div><div class="line"><span class="comment">&#125;;</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">$http.post(url,&#123; a:1, b:2 &#125; ).then(function(res)&#123;</span></div><div class="line"><span class="comment">//成功回函数</span></div><div class="line"><span class="comment">&#125;;</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">&#125;])*/</span></div></pre></td></tr></table></figure>
+<h3 id="19-解析后台传来的标签内容"><a href="#19-解析后台传来的标签内容" class="headerlink" title="19. 解析后台传来的标签内容"></a>19. 解析后台传来的标签内容</h3><p><code>https://cdn.bootcss.com/angular.js/1.6.4/angular-sanitize.min.js</code><br>第一步：引入angular-sanitize.min.js文件<br>第二步：依赖文件：angular.module(‘app’,[‘ngSanitize’])<br>第三步：引入后就有一个指令 ng-bind-html=</p>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="Attribution-ShareAlike">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2017 风之翼 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
