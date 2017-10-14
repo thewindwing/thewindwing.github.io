@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Node.js01
+  
+</title>
+
+<meta name="description" content="Node.js - Day18天课程介绍 了解Node基本的概念 学习基本的API使用：文件操作API、网络操作API等…  NodeJS 拓展了 Javascript 的编程能力； 使用Node创建Web服务器并掌握后台中MVC三层架构 学习Express框架  基于NodeJS提供的平台，做了进一步的封装，方便我们去快速的开发网站！！！ 学习Sql数据库存储网站数据 写Sql语句、创建 数据库">
+<meta name="keywords" content="Node.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js01">
+<meta property="og:url" content="http://yoursite.com/2016/12/11/nodeJS01/index.html">
+<meta property="og:site_name" content="风之翼">
+<meta property="og:description" content="Node.js - Day18天课程介绍 了解Node基本的概念 学习基本的API使用：文件操作API、网络操作API等…  NodeJS 拓展了 Javascript 的编程能力； 使用Node创建Web服务器并掌握后台中MVC三层架构 学习Express框架  基于NodeJS提供的平台，做了进一步的封装，方便我们去快速的开发网站！！！ 学习Sql数据库存储网站数据 写Sql语句、创建 数据库">
+<meta property="og:updated_time" content="2017-10-14T04:05:12.544Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node.js01">
+<meta name="twitter:description" content="Node.js - Day18天课程介绍 了解Node基本的概念 学习基本的API使用：文件操作API、网络操作API等…  NodeJS 拓展了 Javascript 的编程能力； 使用Node创建Web服务器并掌握后台中MVC三层架构 学习Express框架  基于NodeJS提供的平台，做了进一步的封装，方便我们去快速的开发网站！！！ 学习Sql数据库存储网站数据 写Sql语句、创建 数据库">
+
+
+  <link rel="alternative" href="/atom.xml" title="风之翼" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">风之翼</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">风之翼</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">wing</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/"><img src="/img/QQ20130141837.png"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ajax/">ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/angularjs/">angularjs</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/border相关属性/">border相关属性</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/call、apply和bind/">call、apply和bind</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/this/">this</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web适配/">web适配</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/伪数组转数组/">伪数组转数组</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数原型链/">函数原型链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数提升中的bug/">函数提升中的bug</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数的自定义方式/">函数的自定义方式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/动态创建元素/">动态创建元素</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/原型链继承/">原型链继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/同源和跨域请求/">同源和跨域请求</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/插件/">插件</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索访问机制/">搜索访问机制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构造函数/">构造函数</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/检测数据类型/">检测数据类型</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/正则表达式/">正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/深拷贝和浅拷贝/">深拷贝和浅拷贝</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/继承/">继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/获取元素位置/">获取元素位置</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/获取自定义属性/">获取自定义属性</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设置元素的尺寸/">设置元素的尺寸</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/选择器总结/">选择器总结</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闭包/">闭包</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">15</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/denjones/hexo-theme-chan" title="Chan" target="_blank" rel="external">Chan</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="https://github.com/denjones" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-nodeJS01" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Node.js01
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-12-11
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Node-js/">Node.js</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <h1 id="Node-js-Day1"><a href="#Node-js-Day1" class="headerlink" title="Node.js - Day1"></a>Node.js - Day1</h1><h2 id="8天课程介绍"><a href="#8天课程介绍" class="headerlink" title="8天课程介绍"></a>8天课程介绍</h2><ol>
+<li>了解Node基本的概念</li>
+<li>学习基本的API使用：文件操作API、网络操作API等…  NodeJS 拓展了 Javascript 的编程能力；</li>
+<li>使用Node创建Web服务器并掌握后台中MVC三层架构</li>
+<li>学习Express框架  基于NodeJS提供的平台，做了进一步的封装，方便我们去快速的开发网站！！！</li>
+<li>学习Sql数据库存储网站数据 写Sql语句、创建 数据库、表、字段</li>
+<li>学习Cookie、Session、分页（对于前端，怎么分页？？？有相关的插件，对于后端：分页就是一条Sql语句的事情）</li>
+<li>中间穿插讲解ES6的新特性<a id="more"></a>
+<h2 id="学习Node-js时候的建议"><a href="#学习Node-js时候的建议" class="headerlink" title="学习Node.js时候的建议"></a>学习Node.js时候的建议</h2></li>
+<li>前端和后端的知识体系不同！不要使用前端的思维方式去学习后端开发！</li>
+<li><strong>学习Node.js阶段，把自己当作后端开发人员！</strong></li>
+<li>课堂上对重点的知识做笔记，利用一切时间练习课堂代码；晚上抽半个小时梳理总结今天所学知识点；整理今天的笔记！</li>
+<li>每天吃饭睡觉走大街上，都要在脑海中闪现今天学习的知识点</li>
+<li>学习方式：×××知识点是什么，怎么用，为什么要用它，它解决了什么问题，这个问题如果在公司项目开发中遇到了，我能不能根据自己的理解使用出来</li>
+</ol>
+<h2 id="什么是前端和后端"><a href="#什么是前端和后端" class="headerlink" title="什么是前端和后端"></a>什么是前端和后端</h2><ol>
+<li>前端主要工作：写页面、样式、JS特效、和后端的数据交互、借助于一些前端的框架实现SPA应用；<ul>
+<li>前端主要负责页面展示性的东西，用户所能看到的任何东西，都是前端的工作；</li>
+</ul>
+</li>
+<li>后端主要工作：操作数据库、给前端暴露数据接口、</li>
+<li>前后端协作流程：后端为我们暴露接口、前端根据后端提供的数据接口API和【文档】、进行页面数据的渲染；</li>
+</ol>
+<p>在公司中配环境：自己用的顺手的编辑器、安装下Node和NPM、安装Git或SVN、浏览器<br>下载代码到本地；<br>3天左右的时间熟悉项目（后端架构（Java、.NET、PHP）、前端的架构（NG、Vue、React、Jquery+AJax+模板引擎）、业务（熟悉业务、如果不熟悉，就要问相关负责人）、技术）</p>
+<h2 id="Javascript-的起源"><a href="#Javascript-的起源" class="headerlink" title="Javascript 的起源"></a>Javascript 的起源</h2><p>语言能直接运行吗？？<br>语言只是一个写代码的规范，其实我们写的任何代码，只是一坨字符串而已；<br>语言如果想要发挥作用，必须有有个对应的解析器</p>
+<p>Java  C#  PHP</p>
+<ol>
+<li>诞生：JS的诞生和一个公司有关，有一个网景公司；当时网速只有20~30KB（电话线），当时，就是为了进行客户端验证，为了减少不必要的网络请求，提高网络效率，网景公司决定研究一门语言，来解决这个问题；JS作者在10天之内，就把这门语言写出来了，叫做LiveScript，为了搭上Java这般顺风车，就把LiveScript改名为Javascript；</li>
+<li>浏览器中的一战：微软发现浏览器市场很火，然后就自己开发了一款浏览器【IE】；为了推广自己的IE浏览器，把IE捆绑到了Windows操作系统中；JScript<ul>
+<li>一战胜利的果实：ECMAScript标准的确立；就是一个语言规范；只规定了如何进行分支判断、如何定义变量、如何定义方法…..</li>
+</ul>
+</li>
+<li>短暂的和平期：IE6【微软发现自己已经天下无敌了，然后就把IE6的开发团队给解散了！】在和平期间，JS这门语言主要做什么：表单验证、简单的特效、狗皮膏药（当时被称为脚本语言）</li>
+<li>二战：【主角：谷歌、IE、火（浴火重生）狐】谷歌在2008年，借助于AJax，开始火起来了！一方面提升渲染引擎的效率、另一方面，提升JS解析引擎的效率，最终，二战以谷歌的胜利结束；谷歌有了一款世界上效率最快的JS解析引擎，叫做chrome V8引擎；</li>
+<li>注意：谷歌的 v8 引擎是用来解析执行JS代码的；</li>
+</ol>
+<h2 id="Node-js-的起源"><a href="#Node-js-的起源" class="headerlink" title="Node.js 的起源"></a>Node.js 的起源</h2><p><a href="http://blog.csdn.net/u012028371/article/details/54884056" target="_blank" rel="external">nodejs的历史由来</a></p>
+<ul>
+<li>作者，之前主要是做高性能服务器维护的；高性能的服务器有哪些<strong>必要的条件</strong>；必须要是<strong>异步非阻塞的</strong>、<strong>基于事件驱动的</strong>；</li>
+<li>作者在分析了上面两条基本条件之后，就开始研发高性能服务器！</li>
+<li><code>C,C++</code>,<code>Java,C#</code>,<code>Javascript</code></li>
+<li>对于程序员来说，如果同时提供了同步和异步两种编程方式，程序员肯定会选择同步；</li>
+<li>作者选择<code>Javascript</code>最主要的原因，就是这门语言是<code>单线程的</code></li>
+<li>多线程：程序员能主动开启子线程的语言，就叫做多线程的语言；<code>Thread td = new Thread();</code></li>
+<li>作者最终，选择的语言是Javascript、解析引擎是V8；免费、开源、由谷歌团队进行维护更新</li>
+<li>刚开始，作者写出来的这个东西叫做<code>web.js</code>;后来，随着项目扩大和功能的完善，作者发现这款产品，不仅能做高性能的服务器，还能做许多事情，比如可以用这个东西去做前端包管理；于是就改名叫做<code>Node.js</code>;</li>
+<li>像前端需要好用的工具，都是使用<code>node.js</code>开发出来的！</li>
+</ul>
+<h2 id="ECMAScript、浏览器中的Javascript、Node中的Javascript"><a href="#ECMAScript、浏览器中的Javascript、Node中的Javascript" class="headerlink" title="ECMAScript、浏览器中的Javascript、Node中的Javascript"></a>ECMAScript、浏览器中的Javascript、Node中的Javascript</h2><ul>
+<li>ECMAScript：语言规范；定义了如何定义变量、分支语句、函数、对象、内置对象；（ECMAScript语言规范就是一本书，这本书中，通过详细的规范，定义了这门语言中一些必要的特性；）</li>
+<li>浏览器中的Javascript：<ul>
+<li>浏览器中的Javascript组成部分：DOM +  BOM + ECMAScript核心</li>
+</ul>
+</li>
+<li>Node中的Javascript：Node中的JS，剔除了浏览器中扩展的DOM和BOM这两套API；在Node中，没有浏览器的概念，所以Node不需要DOM 和 BOM， Node中只有一个V8JS解析引擎；<ul>
+<li>Node中的Javascript组成部分：ECMAScript核心 + 核心API模块 + 一些第三方API模块</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>思考：为什么经常听说JS有兼容性，而很少听说Java或C#有兼容性？</p>
+</blockquote>
+<h2 id="什么是Node-js"><a href="#什么是Node-js" class="headerlink" title="什么是Node.js"></a>什么是Node.js</h2><ul>
+<li><strong>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。</strong><ul>
+<li>我们使用JS写的Node代码，说白了，只是单纯的字符串而已；</li>
+<li>如果想要执行这些写好的代码，必须要有一个解析执行环境，这个环境就是chrome 的 V8 引擎；</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。</strong><ul>
+<li>事件驱动：当触发某个事件的时候，执行事件中指定的代码！</li>
+<li>非阻塞式 I/O 的模型：采用非阻塞的操作，能够提高CPU处理的效率！代码表现形式是：会经常写回调函数。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Node.js 的包管理器 npm，是全球最大的开源库生态系统。</strong><ul>
+<li>npm由两层含义：首先它表示NPM的官网；其次，表示NPM这个包管理工具，能够方便我们从官网下载包；</li>
+<li>先使用<code>npm init -y</code>初始化一下包管理文件<code>package.json</code>，将来所有安装的包，都会记录到这个文件中</li>
+<li>使用<code>npm install 包名 --save/--save-dev</code>去安装包；其中，<code>install</code>可以简写成<code>i</code>;</li>
+<li><code>--save</code>表示把包安装到部署依赖中（在开发和部署上线都需要使用的包）； <code>--save-dev</code>表示安装到开发依赖（只在项目开发阶段需要用到的包）；</li>
+<li><code>--save</code>可以简写成<code>-S</code>；<code>--save-dev</code>可以简写成<code>-D</code>;</li>
+<li><code>npm uninstall 包名 --save/--save-dev</code>或者<code>npm remove 包名 --save/--save-dev</code></li>
+<li><code>npm i webpack -g</code>,其中，<code>-g</code>表示全局安装某些包，通过<code>-g</code>安装的包都在<code>C:\Users\用户名\AppData\Roaming\npm</code>下面</li>
+<li>使用 -g 安装的包都存放到了<code>C:\Users\自己的用户名\AppData\Roaming\npm</code>目录中；全局安装的包可以通过 cmd 命令行在任何地方使用；</li>
+<li>如果只需要安装项目运行的依赖，可以运行<code>npm i --production</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>NPM 和 （Github、码云） 和 Git之间的关系<ul>
+<li>NPM是包管理平台（里面托管了各种各样的第三方包）</li>
+<li>Github、码云 代码托管平台（托管了各种各样的代码仓库）</li>
+<li>Git是用来对代码进行分支版本管理</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：Node.js 就是一个Javascript的服务端运行环境（依赖于Chrome 的V8引擎解析执行JS代码），为Javascript提供了服务器端编程的能力！</p>
+</blockquote>
+<h2 id="Node-js-可以做哪些事情"><a href="#Node-js-可以做哪些事情" class="headerlink" title="Node.js 可以做哪些事情"></a>Node.js 可以做哪些事情</h2><ul>
+<li>【★】Node可以作为前端的一个工具去使用，通过NPM安装好用的工具；Node可以开发一些前端的工具【i5ting_toc】</li>
+<li>【★】Node能做服务器</li>
+<li>【★】Node还可以操作数据库并对外提供数据接口</li>
+</ul>
+<h2 id="【★★】为什么要学习Node-js"><a href="#【★★】为什么要学习Node-js" class="headerlink" title="【★★】为什么要学习Node.js"></a>【★★】为什么要学习Node.js</h2><ul>
+<li>从企业角度分析：<ul>
+<li>企业对<code>一专多能</code>人才的需求：怎么才能最大限度的压榨员工；省钱</li>
+<li>多高性能服务器的需求：怎么才能最大限度的压榨服务器；</li>
+<li>Node适合做快速的网络请求，但是不适合做大数据业务逻辑的处理；</li>
+</ul>
+</li>
+<li>从自身角度分析：<ul>
+<li>挣钱；</li>
+<li>对将来职业生涯有好处：学了Node之后，为我们构建了后端的知识体系，无论将来你会不会做后端的Node开发，但是，起码你已经构建了完整的前后端知识体系！</li>
+<li>后面学到的任何新技术：Vue.js，React,React-Native都是基于Node的！包括后面要学的一个构建工具<code>webpack</code>！</li>
+</ul>
+</li>
+</ul>
+<h2 id="在Node中执行相关的JS代码的两种方式"><a href="#在Node中执行相关的JS代码的两种方式" class="headerlink" title="在Node中执行相关的JS代码的两种方式"></a>在Node中执行相关的JS代码的两种方式</h2><ol>
+<li><p>直接在命令行中输入<code>node</code>，进入Node的<code>REPL</code>运行环境：</p>
+<ul>
+<li>R：Read：读取用户输入的字符串内容</li>
+<li>E：Evaluate：把用户输入的字符串，当作JS代码去解析执行</li>
+<li>P：Print：打印输出Evaluate解析的结果</li>
+<li>L：Loop：进入下一次循环</li>
+</ul>
+</li>
+<li><p>将Node代码写入到一个js文件中，然后通过<code>node 要执行的JS文件路径</code>去运行Node代码</p>
+</li>
+</ol>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>为什么可以通过命令行形式，直接启动<code>node</code>或者<code>notepad</code>呢？？？<br>注意：每当修改了环境变量之后，需要重新启动命令窗口！</p>
+<h3 id="什么是环境变量"><a href="#什么是环境变量" class="headerlink" title="什么是环境变量"></a>什么是环境变量</h3><p>Path环境变量的作用：能够让我们通过  命令行的形式  快速启动一个应用程序；</p>
+<h3 id="用户变量和系统变量的区别"><a href="#用户变量和系统变量的区别" class="headerlink" title="用户变量和系统变量的区别"></a>用户变量和系统变量的区别</h3><p>用户变量：用户变量是属于每一个用户的，用户之间的用户变量是私有的，不共享的；<br>系统变量：系统变量是共享的，只能用户能够登录这台电脑，那么就能访问系统变量中的任何东西！【将来在配置环境变量的时候，推荐大家配置到系统变量中！】</p>
+<h3 id="配置环境变量的两种方式"><a href="#配置环境变量的两种方式" class="headerlink" title="配置环境变量的两种方式"></a>配置环境变量的两种方式</h3><ol>
+<li>第一种方式：直接把路径添加到path环境变量中；</li>
+<li>第二种方式：先在环境变量中创建一个新变量，名字类似于：<code>ZOOM_HOME</code>这样，值是我们程序的根目录；然后，再把这个变量名，引用到 <code>Path</code>环境变量中，类似于：<code>%ZOOM_HOME%</code></li>
+</ol>
+<h2 id="Path变量的查找规则"><a href="#Path变量的查找规则" class="headerlink" title="Path变量的查找规则"></a>Path变量的查找规则</h2><ol>
+<li>先从当前的目录中查找有没有这个应用程序，如果有，则直接运行，如果没有，则去系统环境变量中，path环境变量下挨个查找对应的文件夹，如果在对应文件夹中能找到，则直接运行，如果找不到，最终报错！</li>
+</ol>
+<h2 id="【★★】使用fs模块来操作文件"><a href="#【★★】使用fs模块来操作文件" class="headerlink" title="【★★】使用fs模块来操作文件"></a>【★★】使用fs模块来操作文件</h2><ol>
+<li><p>fs.readFile</p>
+</li>
+<li><p>fs.writeFile</p>
+</li>
+<li><p>fs.appendFile</p>
+</li>
+</ol>
+<h2 id="【★★★】fs模块中路径问题"><a href="#【★★★】fs模块中路径问题" class="headerlink" title="【★★★】fs模块中路径问题"></a>【★★★】fs模块中路径问题</h2><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><h2 id="Node中的使用http模块创建最基本的web服务器"><a href="#Node中的使用http模块创建最基本的web服务器" class="headerlink" title="Node中的使用http模块创建最基本的web服务器"></a>Node中的使用http模块创建最基本的web服务器</h2><p>之前有没有接触过Web服务器？？？<br>其实，PHPStudy中集成了一个叫做<code>Apache</code>的软件；这个软件就是一个服务器软件，能够托管一个网站；<br>其实在Node中，并没有类似于<code>Apache</code>这样软件；我们可以通过简单的几行代码，写出一个Web服务器！</p>
+<h2 id="【★★★】HTTP协议中的-请求-处理-响应-模型"><a href="#【★★★】HTTP协议中的-请求-处理-响应-模型" class="headerlink" title="【★★★】HTTP协议中的 请求 - 处理 - 响应 模型"></a>【★★★】HTTP协议中的 <code>请求 - 处理 - 响应</code> 模型</h2><h2 id="【★★】step-by-step-构建HTTP服务器"><a href="#【★★】step-by-step-构建HTTP服务器" class="headerlink" title="【★★】step by step 构建HTTP服务器"></a>【★★】step by step 构建HTTP服务器</h2><h3 id="升级1：根据不同的URL地址响应不同HTML消息"><a href="#升级1：根据不同的URL地址响应不同HTML消息" class="headerlink" title="升级1：根据不同的URL地址响应不同HTML消息"></a>升级1：根据不同的URL地址响应不同HTML消息</h3><h3 id="升级2：根据不同URL地址-响应不同的页面"><a href="#升级2：根据不同URL地址-响应不同的页面" class="headerlink" title="升级2：根据不同URL地址 - 响应不同的页面"></a>升级2：根据不同URL地址 - 响应不同的页面</h3><h3 id="升级3：在响应不同页面的同时响应静态资源（css、图片、js）"><a href="#升级3：在响应不同页面的同时响应静态资源（css、图片、js）" class="headerlink" title="升级3：在响应不同页面的同时响应静态资源（css、图片、js）"></a>升级3：在响应不同页面的同时响应静态资源（css、图片、js）</h3><h3 id="【★★★】【难点】升级4：根据不同URL地址-响应不同文件的改造"><a href="#【★★★】【难点】升级4：根据不同URL地址-响应不同文件的改造" class="headerlink" title="【★★★】【难点】升级4：根据不同URL地址 - 响应不同文件的改造"></a>【★★★】【难点】升级4：根据不同URL地址 - 响应不同文件的改造</h3><h3 id="【★★】【难点】网页中资源请求路径问题"><a href="#【★★】【难点】网页中资源请求路径问题" class="headerlink" title="【★★】【难点】网页中资源请求路径问题"></a>【★★】【难点】网页中资源请求路径问题</h3><ol>
+<li>资源请求路径（html,css,js,image），对于后端来说，<strong>只一个标识符而已</strong>，<strong>并不一定</strong>非要对应实际的文件物理路径</li>
+<li>但是，为了开发方便（说白了就是为了写HTML的时候有路径只能提示），我们一般都期望把资源的请求路径和实际文件的物理路径对应上</li>
+<li>一定要区分html中书写的路径标识符 <code>../</code>    <code>./</code>  和 <code>/</code> <strong>在浏览器中</strong>代表含义！</li>
+</ol>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
+<li><a href="http://www.cnblogs.com/ghost-xyx/p/4035615.html" target="_blank" rel="external">JavaScript——历史与简介</a></li>
+<li><a href="http://www.infoq.com/cn/articles/what-is-nodejs/" target="_blank" rel="external">深入浅出Node.js（一）：什么是Node.js</a></li>
+<li><a href="http://www.cnblogs.com/eric-nirnava/p/IO.html" target="_blank" rel="external">I/O事件概述</a></li>
+<li><a href="http://www.cnblogs.com/lua5/archive/2011/02/01/1948760.html" target="_blank" rel="external">理解Node.js事件驱动编程</a></li>
+<li><a href="http://nodejs.cn/api/documentation.html" target="_blank" rel="external">Node.js 中文网</a></li>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js 英文官网</a></li>
+<li><a href="http://www.runoob.com/nodejs/nodejs-tutorial.html" target="_blank" rel="external">Node.js 菜鸟教程</a></li>
+<li><a href="https://cnodejs.org/" target="_blank" rel="external">CNode：Node.js专业中文社区</a></li>
+<li><a href="http://download.csdn.net/download/u010733705/9555797" target="_blank" rel="external">深入浅出Node.js(朴灵)完整扫描版.pdf</a></li>
+<li><a href="http://www.nowamagic.net/academy/detail/23350305" target="_blank" rel="external">HTTP Keep-Alive是什么？如何工作？</a></li>
+<li><a href="http://www.nowamagic.net/librarys/veda/detail/2576" target="_blank" rel="external">浏览器User-agent String里的历史故事</a></li>
+<li><a href="https://aui.github.io/art-template/docs/api.html" target="_blank" rel="external">art-template API</a></li>
+<li><a href="http://www.jb51.net/article/95199.htm" target="_blank" rel="external">yarn与npm的命令行小结</a></li>
+</ul>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2017 风之翼 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
