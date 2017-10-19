@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Express.js
+  
+</title>
+
+<meta name="description" content="什么是Express.js Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架； Express 不对 Node.js 已有的特性进行二次抽象，只是在Node.js之上扩展了构建 Web 应用所需的基本功能。   总结什么是Express.js：是一个基于Node.js的Web开发框架。Express框架并没有覆盖或删除原生的API，而是基于原生的API，做了进一">
+<meta name="keywords" content="Node.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Express.js">
+<meta property="og:url" content="http://yoursite.com/2017/02/20/express/index.html">
+<meta property="og:site_name" content="风之翼">
+<meta property="og:description" content="什么是Express.js Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架； Express 不对 Node.js 已有的特性进行二次抽象，只是在Node.js之上扩展了构建 Web 应用所需的基本功能。   总结什么是Express.js：是一个基于Node.js的Web开发框架。Express框架并没有覆盖或删除原生的API，而是基于原生的API，做了进一">
+<meta property="og:updated_time" content="2017-10-19T07:30:40.616Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Express.js">
+<meta name="twitter:description" content="什么是Express.js Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架； Express 不对 Node.js 已有的特性进行二次抽象，只是在Node.js之上扩展了构建 Web 应用所需的基本功能。   总结什么是Express.js：是一个基于Node.js的Web开发框架。Express框架并没有覆盖或删除原生的API，而是基于原生的API，做了进一">
+
+
+  <link rel="alternative" href="/atom.xml" title="风之翼" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">风之翼</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">风之翼</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">wing</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/"><img src="/img/QQ20130141837.png"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">Category</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Express-js/">Express.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ajax/">ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/angularjs/">angularjs</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/border相关属性/">border相关属性</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/call、apply和bind/">call、apply和bind</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/this/">this</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web适配/">web适配</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/伪数组转数组/">伪数组转数组</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数原型链/">函数原型链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数提升中的bug/">函数提升中的bug</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数的自定义方式/">函数的自定义方式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/动态创建元素/">动态创建元素</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/原型链继承/">原型链继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/同源和跨域请求/">同源和跨域请求</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/插件/">插件</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索访问机制/">搜索访问机制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构造函数/">构造函数</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/检测数据类型/">检测数据类型</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/正则表达式/">正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/深拷贝和浅拷贝/">深拷贝和浅拷贝</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/继承/">继承</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/获取元素位置/">获取元素位置</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/获取自定义属性/">获取自定义属性</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设置元素的尺寸/">设置元素的尺寸</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/选择器总结/">选择器总结</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闭包/">闭包</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">Tag</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">15</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/denjones/hexo-theme-chan" title="Chan" target="_blank" rel="external">Chan</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="https://github.com/denjones" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-express" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Express.js
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2017-02-20
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Express-js/">Express.js</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <h2 id="什么是Express-js"><a href="#什么是Express-js" class="headerlink" title="什么是Express.js"></a>什么是Express.js</h2><ol>
+<li>Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架；</li>
+<li>Express 不对 Node.js 已有的特性进行二次抽象，只是在Node.js之上扩展了构建 Web 应用所需的基本功能。</li>
+</ol>
+<blockquote>
+<p>总结什么是Express.js：是一个基于Node.js的Web开发框架。Express框架并没有覆盖或删除原生的API，而是基于原生的API，做了进一步的封装，提供了更好用的一些API，方便快速进行Web开发！<br>res.render、res.json、res.redirect、req.query<br>Node.js是Javascript的服务器端运行环境！express只是基于Node，提供了开发Web应用的框架和API。</p>
+</blockquote>
+<h2 id="如何创建基本的HTTP服务（新旧方式对比）"><a href="#如何创建基本的HTTP服务（新旧方式对比）" class="headerlink" title="如何创建基本的HTTP服务（新旧方式对比）"></a>如何创建基本的HTTP服务（新旧方式对比）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">var express = require(&apos;express&apos;);</div><div class="line"></div><div class="line">// 创建一个 app 出来</div><div class="line">var app = express();</div><div class="line"></div><div class="line">// 捕获 get 类型的 / 请求</div><div class="line">app.get(&apos;/&apos;, function (req, res) &#123;</div><div class="line">  // 支持原生的 end 方法</div><div class="line">  res.end(&apos;OK&apos;);</div><div class="line">&#125;);</div><div class="line">// 捕获 get 类型的 /a 请求</div><div class="line">app.get(&apos;/a&apos;, function (req, res) &#123;</div><div class="line">  // 通过 express 封装的 send 方法，返回内容，会自动添加响应头，更加方便便捷</div><div class="line">  res.send(&apos;&lt;h1&gt;你好啊&lt;/h1&gt;&apos;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 启动 app 监听程序</div><div class="line">app.listen(3000, function () &#123;</div><div class="line">  console.log(&apos;App running at http://127.0.0.1:3000&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="http模块原生end方法和-express中send方法的对比"><a href="#http模块原生end方法和-express中send方法的对比" class="headerlink" title="http模块原生end方法和 express中send方法的对比"></a>http模块原生<code>end</code>方法和 express中<code>send</code>方法的对比</h2><ol>
+<li>send方法中默认处理了中文乱码问题</li>
+<li>send方法默认返回的格式就是HTML类型的文本内容</li>
+</ol>
+<h2 id="根据不同的路由method和url响应不同的文本消息"><a href="#根据不同的路由method和url响应不同的文本消息" class="headerlink" title="根据不同的路由method和url响应不同的文本消息"></a>根据不同的路由<code>method</code>和<code>url</code>响应不同的文本消息</h2><h2 id="根据不同的路由method和url响应不同的html页面"><a href="#根据不同的路由method和url响应不同的html页面" class="headerlink" title="根据不同的路由method和url响应不同的html页面"></a>根据不同的路由<code>method</code>和<code>url</code>响应不同的html页面</h2><ol>
+<li>res.sendFile</li>
+</ol>
+<h2 id="分别从原生和express的app-js中抽离router路由模块"><a href="#分别从原生和express的app-js中抽离router路由模块" class="headerlink" title="分别从原生和express的app.js中抽离router路由模块"></a>分别从原生和express的<code>app.js</code>中抽离<code>router</code>路由模块</h2><h2 id="Express中的路由"><a href="#Express中的路由" class="headerlink" title="Express中的路由"></a>Express中的路由</h2><h2 id="中间件的概念"><a href="#中间件的概念" class="headerlink" title="中间件的概念"></a>中间件的概念</h2><p>在自来水的处理过程中，中间的每一个处理环节，可以叫做中间件！<br>中间件就是用来处理原材料的，那么，在自来水处理过程中，处理的原料是水；在express中，中间件处理的原料是 request 对象 和 response 对象；<br>![自来水处理过程]Express/自来水处理过程.jpg)</p>
+<p><strong>概念：</strong>中间件（Middleware） <strong>是一个函数</strong>，它可以访问<strong>请求对象</strong>（request object (req)）, <strong>响应对象</strong>（response object (res)）, 和 web 应用中处于请求-响应循环流程中的中间件，一般被命名为 next 的变量。</p>
+<p>经过中间件的处理之后，express就向 req 和 res ,对象身上，挂在了一些好用的方法和属性<br>req.query<br>res.send()<br>res.json()</p>
+<ul>
+<li>中间件的功能包括：<ul>
+<li>执行任何代码。</li>
+<li>修改请求和响应对象。</li>
+<li>终结请求-响应循环。</li>
+<li>调用堆栈中的下一个中间件。</li>
+</ul>
+</li>
+</ul>
+<h2 id="body-parser-中间件的使用步骤"><a href="#body-parser-中间件的使用步骤" class="headerlink" title="body-parser 中间件的使用步骤"></a>body-parser 中间件的使用步骤</h2><p>在 express 中，可以使用 body-parser 第三方中间件，去帮我们出去 post 提交过来的数据</p>
+<ol>
+<li>使用 npm 安装</li>
+<li>导入 这个第三方中间件 模块</li>
+<li>使用 app.use()注册刚才导入的中间件，到 app身上</li>
+</ol>
+<h2 id="Express-里中间件的分类（形式上的分类）"><a href="#Express-里中间件的分类（形式上的分类）" class="headerlink" title="Express 里中间件的分类（形式上的分类）"></a>Express 里中间件的分类（形式上的分类）</h2><ol>
+<li>应用级别的中间件： 所有挂载到 app 身上的方法，都叫做 “应用级别的中间件”  app.get  app.post  app.use</li>
+<li>路由级别的中间件： 挂载到了 router 对象上，这个 router 对象 是经过调用 <code>express.Router()</code> 得到了；    router.get    router.post   router.use</li>
+<li>错误处理中间件: 有四个参数   err, req, res, next</li>
+<li>express唯一的一个内置中间件： express.static(root, [options]) 用于托管静态资源</li>
+<li>第三方中间件： 非Express官方提供的中间件，叫做第三方中间件</li>
+</ol>
+<h2 id="在Express中使用路由"><a href="#在Express中使用路由" class="headerlink" title="在Express中使用路由"></a>在Express中使用路由</h2><ol>
+<li><p>定义路由的 <code>router</code> 文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var express = require(&apos;express&apos;);</div><div class="line">// 使用 express 的 Router() 方法，得到一个路由实例</div><div class="line">var router = express.Router();</div><div class="line"></div><div class="line">// 通过 Method 和 请求路径，分发不同的请求到不同的处理函数中</div><div class="line">router.get(&apos;/&apos;, function (req, res) &#123;</div><div class="line">  res.send(&apos;&lt;h1&gt;首页&lt;/h1&gt;&apos;);</div><div class="line">&#125;).get(&apos;/movie&apos;, function (req, res) &#123;</div><div class="line">  res.send(&apos;&lt;h1&gt;电影&lt;/h1&gt;&apos;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">module.exports = router;</div></pre></td></tr></table></figure>
+</li>
+<li><p>导入路由并注册使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var express = require(&apos;express&apos;);</div><div class="line">// 导入路由</div><div class="line">var router = require(&apos;./router&apos;);</div><div class="line"></div><div class="line">// 创建一个 app 出来</div><div class="line">var app = express();</div><div class="line">// 注册路由</div><div class="line">app.use(router);</div><div class="line"></div><div class="line">// 启动 app 监听程序</div><div class="line">app.listen(3000, function () &#123;</div><div class="line">  console.log(&apos;App running at http://127.0.0.1:3000&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="在express中使用模板引擎"><a href="#在express中使用模板引擎" class="headerlink" title="在express中使用模板引擎"></a>在express中使用模板引擎</h2><p><code>ejs</code>默认的模板文件后缀名是<code>.ejs</code>，如果你想让<code>ejs</code>模板引擎的默认后缀名是<code>.html</code>，需要进行相关的设置</p>
+<h3 id="使用ejs"><a href="#使用ejs" class="headerlink" title="使用ejs"></a>使用ejs</h3><ol>
+<li><p>运行npm安装<code>ejs</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm i ejs -S</div></pre></td></tr></table></figure>
+</li>
+<li><p>注册模板引擎：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.set(&apos;view engine&apos;, &apos;ejs&apos;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>同时，也可以修改默认的模板文件存放路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.set(&apos;views&apos;, __dirname + &apos;/views&apos;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用ejs将模板渲染出来，同时将渲染的结果发送给客户端：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">res.render(&apos;模板名称&apos;, &#123;&#125;); // 第一个参数是模板的名称，第二个参数是模板要渲染的数据</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// node.js调用render函数</div><div class="line">res.render(&apos;hero_index&apos;, &#123;</div><div class="line">        username: &apos;尼古拉斯·赵四&apos;,</div><div class="line">        hobby: [&apos;吃饭&apos;, &apos;唱歌&apos;, &apos;打电话&apos;],</div><div class="line">        isShow: false</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>html模板字符串：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">    &lt;h1 style=&quot;color:&lt;%= !isShow?&apos;red&apos;:&apos;&apos; %&gt;;&quot;&gt;这是EJS的模板页面 - &lt;%= username %&gt;&lt;/h1&gt;</div><div class="line">    &lt;% if(!isShow)&#123; %&gt;</div><div class="line">    &lt;h3&gt;这是一个漂亮的h3标题&lt;/h3&gt;</div><div class="line">    &lt;% &#125; %&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;% hobby.forEach(function(item, i)&#123; %&gt;</div><div class="line">        &lt;li&gt;&lt;%= item %&gt;&lt;/li&gt;</div><div class="line">        &lt;% &#125;) %&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure></p>
+<ol>
+<li><p>如何修改ejs的定界符:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 导入 EJS 并修改定界符</div><div class="line">var ejs = require(&apos;ejs&apos;);</div><div class="line">ejs.delimiter = &apos;?&apos;;</div><div class="line"></div><div class="line">app.engine(&apos;ejs&apos;, ejs.renderFile);</div><div class="line">// 设置完毕之后，在调用res.render()函数的时候，模板文件必须带后缀名</div></pre></td></tr></table></figure>
+</li>
+<li><p>如何使用公共模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;!--导入公共的头部--&gt;</div><div class="line">&lt;?- include(&apos;header&apos;) ?&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;ejs&lt;/h1&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">  &lt;? names.forEach(function(item)&#123; ?&gt;</div><div class="line">    &lt;li&gt;&lt;?= item ?&gt;&lt;/li&gt;</div><div class="line">  &lt;? &#125;) ?&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;!--导入公共的底部--&gt;</div><div class="line">&lt;?- include(&apos;footer&apos;) ?&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank" rel="external">MDN - JSON.stringify()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader" target="_blank" rel="external">MDN - FileReader</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FormData" target="_blank" rel="external">MDN - FormData</a></li>
+<li><a href="http://www.expressjs.com.cn/" target="_blank" rel="external">Express - 中文网</a></li>
+<li><a href="http://expressjs.com/" target="_blank" rel="external">Express - 英文官网</a></li>
+<li><a href="http://www.runoob.com/nodejs/nodejs-tutorial.html" target="_blank" rel="external">Node.js 教程</a></li>
+<li><a href="https://www.runoob.com/w3cnote/express-4-x-api.html" target="_blank" rel="external">菜鸟教程 - Express 4.x API 中文文档</a></li>
+<li><a href="https://blog.gtwang.org/programming/learn-to-use-the-new-router-in-expressjs-4/" target="_blank" rel="external">Express.js 4.0 的路由（Router）功能用法教學</a></li>
+<li><a href="https://github.com/aui/art-template" target="_blank" rel="external">github - art-template</a></li>
+<li><a href="https://github.com/aui/express-art-template" target="_blank" rel="external">github - express-art-template</a></li>
+<li><a href="https://github.com/mde/ejs" target="_blank" rel="external">github - ejs</a></li>
+</ul>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="Attribution-ShareAlike">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2017 风之翼 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
